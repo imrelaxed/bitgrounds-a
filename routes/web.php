@@ -46,3 +46,10 @@ Route::get('home/your', 'HomeController@index');
 
 // Other
 Route::get('home', 'HomeController@index');
+
+// Email Testing Routes
+Route::get('test/email', function(){ return view('emails.layout'); });
+Route::get('test/email/password-reset', function(){ return view('emails.password'); });
+Route::get('test/email/new-sign-up', function(){
+    return view('emails.signup')->with('email_title', 'Thanks for choosing ' . env('APP_NAME') . '!');
+});
