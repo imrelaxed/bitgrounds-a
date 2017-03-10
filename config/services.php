@@ -16,7 +16,7 @@ return [
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+        'secret' => isset($app_settings->service_mailgun_api_key) ?: '',
     ],
 
     'ses' => [
@@ -32,7 +32,7 @@ return [
     'stripe' => [
         'model' => App\User::class,
         'key' => env('STRIPE_KEY'),
-        'secret' => env('STRIPE_SECRET'),
+        'secret' => isset($app_settings->service_stripe_api_key) ?: '',
     ],
 
 ];

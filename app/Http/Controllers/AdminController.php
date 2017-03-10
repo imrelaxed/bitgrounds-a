@@ -20,7 +20,7 @@ class AdminController extends Controller {
     public function getIndex()
     {
         $title = 'Admin Dashboard';
-        $settings = 'kappa123'; //ApplicationSetting::findOrFail(1);
+        ApplicationSetting::findOrFail(1);
         return view('admin.index', compact('title', 'settings'));
 
     }
@@ -30,6 +30,7 @@ class AdminController extends Controller {
         $setting = ApplicationSetting::findOrFail(1);
 
         $input = Request::except('_token');
+
         foreach($input as $key => $value) {
             $setting[$key] = $value;
         }
