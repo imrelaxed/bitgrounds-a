@@ -41,8 +41,8 @@ Route::get('components',     'StaticPageController@components');
 Auth::routes();
 
 // User and Admin controllers
-Route::get('admin', 'AdminConroller@getIndex');
-Route::post('admin', 'AdminConroller@postUpdateSettings');
+Route::get('admin', 'AdminController@getIndex');
+Route::post('admin', 'AdminController@postUpdateSettings');
 Route::get('home/your', 'HomeController@index');
 
 // Other

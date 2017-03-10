@@ -20,7 +20,7 @@ class AdminController extends Controller {
     public function getIndex()
     {
         $title = 'Admin Dashboard';
-        $settings = ApplicationSetting::findOrFail(1);
+        $settings = 'kappa123'; //ApplicationSetting::findOrFail(1);
         return view('admin.index', compact('title', 'settings'));
 
     }
