@@ -16,6 +16,7 @@ class MacroServiceProvider extends HtmlServiceProvider
         // will not be generated
         parent::register();
         // Load macros
+        require base_path() . '/app/Macros/BootstrapMacro.php';
         require base_path() . '/app/Macros/FormMacro.php';
 
     }
