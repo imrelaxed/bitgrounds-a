@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width" />
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width" />
 
-    <title>{{ $email_title or env('APP_NAME') }}</title>
+      <title>@yield('title')</title>
 
-    <style type="text/css">
-        #outlook a { padding:0; }
-        body { width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; }
+      <style type="text/css">
+
+        #outlook a { padding:0; } 
+        body { width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; } 
         .ReadMsgBody { width:100%; }
-        .ExternalClass { width:100%; }
+        .ExternalClass { width:100%; } 
         .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height:100%; }
         #wrappertable { margin:0; padding:0; width:100% !important; line-height:100% !important; }
         a, a:link { color:#3498db; text-decoration:underline; }
@@ -25,127 +26,128 @@
         h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited { color:purple !important; }
         table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
         table td { border-collapse:collapse; }
-        span.yshortcuts, a span.yshortcuts { color:#000000; background-color:none; border:none; }
+        span.yshortcuts, a span.yshortcuts { color:#000000; background-color:none; border:none; } 
         span.yshortcuts:hover, span.yshortcuts:active, span.yshortcuts:focus { color:#000000; background-color:transparent; border:none; }
         .appleLinksWhite a, .appleLinksBlack a { text-decoration:none !important; }
         .appleLinksWhite a { color:#ffffff !important; }
         .appleLinksBlack a { color:#000000 !important; }
-
+        
         @media screen and (-webkit-min-device-pixel-ratio:0) {
-            /*
-              Detect WebKit based clients.
-              Windows Phone 8.1 GDR1 and above will also parse CSS in this query due to changes to IE Mobile.
-            */
+          /* 
+            Detect WebKit based clients. 
+            Windows Phone 8.1 GDR1 and above will also parse CSS in this query due to changes to IE Mobile.
+          */
         }
         @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-            /* Detect tablet devices */
+          /* Detect tablet devices */
         }
         @media screen and (max-device-width: 480px), screen and (max-width: 480px) {
-
-        }
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            /* True "Retina" devices 2x */
-        }
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-            /* Not quite "Retina" but high-res */
+        
         }
 
-    </style>
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+          /* True "Retina" devices 2x */
+        }
+        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) { 
+          /* Not quite "Retina" but high-res */
+        }
+        
+      </style>
+            
+      <!--[if IEMobile 7]>
+        <style type="text/css">
+          /* Windows Phone 7 specific styles here */
+        </style>
+      <![endif]-->
 
-    <!--[if IEMobile 7]>
-    <style type="text/css">
-        /* Windows Phone 7 specific styles here */
-    </style>
-    <![endif]-->
+      <!--[if gte mso 9]>
+        <style type="text/css">
+          /* Outlook specific styles here */
+        </style>
+      <![endif]-->
 
-    <!--[if gte mso 9]>
-    <style type="text/css">
-        /* Outlook specific styles here */
-    </style>
-    <![endif]-->
-
-    <!--[if gte mso 9]>
-    <xml>
-        <o:OfficeDocumentSettings>
+      <!--[if gte mso 9]>
+        <xml>
+          <o:OfficeDocumentSettings>
             <o:AllowPNG/>
             <o:PixelsPerInch>96</o:PixelsPerInch>
-        </o:OfficeDocumentSettings>
-    </xml>
-    <![endif]-->
+          </o:OfficeDocumentSettings>
+        </xml>
+      <![endif]-->
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-<span style="display:none !important; color:#ffffff; font-size:1px; line-height:0; overflow:hidden; mso-hide:all;">{{ $email_preheader or 'Preheader text here' }}</span>
+    <span style="display:none !important; color:#ffffff; font-size:1px; line-height:0; overflow:hidden; mso-hide:all;">@yield('title')</span>
 
-<table border="0" cellpadding="0" cellspacing="0" width="100%" id="wrappertable" style="table-layout:fixed;">
-    <tr>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="wrappertable" style="table-layout:fixed;">
+      <tr>
         <td align="center" valign="top" id="wrappercell">
+                    
+          {{-- CONTENT CONTAINER TABLE --}}
+          <table border="0" cellpadding="0" cellspacing="0" width="600" align="center" style="width:600px;font-family:Helvetica, Arial;font-size:15px;line-height:150%;color:#606060;" id="containertable">
+            <tr>
+              <td align="center" valign="top" id="containercell">
 
-            {{-- CONTENT CONTAINER TABLE --}}
-            <table border="0" cellpadding="0" cellspacing="0" width="600" align="center" style="width:600px;font-family:Helvetica, Arial;font-size:15px;line-height:150%;color:#606060;" id="containertable">
-                <tr>
-                    <td align="center" valign="top" id="containercell">
+                  <div style="width:600px; height:200px; background-color:#34495e;">
+                     <h1 style="color:#fff !important; margin: 0; margin-top:90px; display:inline-block;">@yield('title')</h1>
+                  </div>
 
-                        <img src="{{ $email_header_image_source or 'http://placehold.it/600x200/34495e/ffffff&text=Sidequest' }}" width="600" height="200" style="display:block; margin-bottom:45px;" />
+                  @yield('content')
 
-                        <h1 style="color:#404040 !important;">@yield('title')</h1>
+                  <br />
 
-                        @yield('content')
+                  <div>All the best,</div>
+                  <div style="font-weight:bold;">The {{ $app_settings->name or '' }} Team</div>
+              </td>
+            </tr>
+          </table> {{-- END CONTAINER TABLE --}}
 
-                        <br />
+          {{-- FOOTER CONTAINER TABLE --}}
+          <table border="0" cellpadding="0" cellspacing="0" width="600" align="center" style="width:600px;font-family:Helvetica, Arial;font-size:12px;line-height:150%;color:#606060;text-align:center;border-top: 1px solid #f1eae0;margin-top:35px;" id="containerfootertable">
+            <tr>
+              <td align="center" valign="top" id="containerfootercell">
 
-                        <div>All the best,</div>
-                        <div style="font-weight:bold;">The {{ env('APP_NAME') }} Team</div>
-                    </td>
-                </tr>
-            </table> {{-- END CONTAINER TABLE --}}
+                  <br /><br />
 
-            {{-- FOOTER CONTAINER TABLE --}}
-            <table border="0" cellpadding="0" cellspacing="0" width="600" align="center" style="width:600px;font-family:Helvetica, Arial;font-size:12px;line-height:150%;color:#606060;text-align:center;border-top: 1px solid #f1eae0;margin-top:35px;" id="containerfootertable">
-                <tr>
-                    <td align="center" valign="top" id="containerfootercell">
+                  <img src="{{ $app_settings->apple_touch_icon_152x152 or 'http://placehold.it/152x152/34495e/ffffff&text=Sidequest' }}" width="152" height="152" style="display:block; margin-bottom:25px;" />
+                  
+                  <div style="font-weight:bold;">{{ $app_settings->name or '' }}</div>
+                  @if ( isset($app_settings->company_address) )
+                  <div>{{ $app_settings->company_address or '' }}</div>
+                  @endif
+                  <br />
+                  @if ( isset($app_settings->customer_support_email) )
+                  <div>Need any help? Contact us at <a href="mailto:{{ $app_settings->customer_support_email or '' }}" style="color:#3498db;">{{ $app_settings->customer_support_email or '' }}</a></div>
+                  @endif
 
-                        <br /><br />
-
-                        <img src="{{ $email_footer_image_source or 'http://placehold.it/50x50/34495e/ffffff&text=Sidequest' }}" width="50" height="50" style="display:block; margin-bottom:25px;" />
-
-                        <div style="font-weight:bold;">{{ env('APP_NAME') }}</div>
-                        @if ( env('APP_COMPANY_ADDRESS') )
-                            <div>{{ env('APP_COMPANY_ADDRESS') }}</div>
-                        @endif
-                        <br />
-                        @if ( env('APP_COMPANY_CUSTOMER_SUPPORT_EMAIL') )
-                            <div>Need any help? Contact us at <a href="mailto:{{ env('APP_COMPANY_CUSTOMER_SUPPORT_EMAIL') }}" style="color:#3498db;">{{ env('APP_COMPANY_CUSTOMER_SUPPORT_EMAIL') }}</a></div>
-                        @endif
-
-                    </td>
-                </tr>
-            </table> {{-- END CONTAINER TABLE --}}
+              </td>
+            </tr>
+          </table> {{-- END CONTAINER TABLE --}}
 
         </td>
-    </tr>
-</table> {{-- END WRAPPER TABLE --}}
+      </tr>
+    </table> {{-- END WRAPPER TABLE --}}
 
-<div itemscope itemtype="http://schema.org/EmailMessage">
-    <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="{{ env('APP_NAME') }}"/>
+    <div itemscope itemtype="http://schema.org/EmailMessage">
+      <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="{{ $app_settings->name or '' }}"/>
         <link itemprop="url" href="{{ URL::full() }}"/>
-        @if( env('SOCIAL_GOOGLE_PLUS_ID') )
-            <link itemprop="url/googlePlus" href="https://plus.google.com/{{ env('SOCIAL_GOOGLE_PLUS_ID') }}" />
+        @if( isset($app_settings->social_google_plus_id) )
+        <link itemprop="url/googlePlus" href="https://plus.google.com/{{ $app_settings->social_google_plus_id or '' }}" />
         @endif
+      </div>
     </div>
-</div>
-
-</body>
+        
+  </body>
 </html>
 
-{{--
+{{-- 
   CHECKLIST TO FOLLOW BEFORE SENDING AN EMAIL CAMPAIGN
   http://www.emailonacid.com/blog/details/C4/your_email_marketingpredeployment_checklist
   https://www.campaignmonitor.com/blog/post/4166/the-essential-email-marketing-checklist
   http://www.displayblock.com/2014/09/22/robust-testing-process-email-campaigns
-
+    
   Check every aspect of an email campaign before sending!
 --}}

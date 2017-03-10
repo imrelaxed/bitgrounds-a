@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title or 'Bitgrounds' }} @if( isset($title) ) &#8212; Bitgrounds @endif</title>
+    <title>{{ $title or $app_settings->name }} @if( isset($title) )— {{ $app_settings->name }} @endif</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
