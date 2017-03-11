@@ -9,6 +9,9 @@
 
                 <div class="panel-body">
                     You are logged in!
+                    <br><hr><br>
+                    @include('modules.forms.upgrade')
+
                 </div>
             </div>
         </div>
