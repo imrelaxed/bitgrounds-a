@@ -42,11 +42,24 @@ Auth::routes();
 
 // Admin controller
 Route::get('admin', 'AdminController@getIndex');
-Route::post('admin', 'AdminController@postUpdateSettings');
+Route::post('admin/update-settings', 'AdminController@postUpdateSettings');
+Route::get('admin/users', 'AdminController@getUsers');
 
 //User controller
 Route::post('user/upgrade', 'UserController@postUpgrade');
 
+// Subscription Controller
+Route::group(['prefix' => 'subscription'], function(){
+
+    Route::post('/', 'SubscriptionController@subscribe')->name('subscribe');
+    Route::get('/cancel', 'SubscriptionController@confirmCancellation')->name('confirmCancellation');
+    Route::post('/cancel', 'SubscriptionController@cancelSubscription')->name('subscriptionCancel');
+    Route::post('/resume', 'SubscriptionController@resumeSubscription')->name('subscriptionResume');
+
+    Route::get('/invoices', 'InvoiceController@index')->name('invoices');
+    Route::get('/invoice/{id}', 'InvoiceController@download')->name('downloadInvoice');
+
+});
 
 
 // Other
@@ -59,3 +72,10 @@ Route::get('test/email/password-reset', function(){ return view('emails.password
 Route::get('test/email/new-sign-up', function(){
     return view('emails.welcome')->with('app_settings', App\ApplicationSetting::find(1));
 });
+
+// Handling Stripe Webhooks
+Route::post(
+    'stripe/webhook',
+    '\Laravel\Cashier\Http\Controllers\WebhookController@handleWebhook'
+);
+

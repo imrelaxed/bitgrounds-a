@@ -15,6 +15,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        parent::__construct();
     }
 
     /**
@@ -24,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-
+        $app_settings = $this->app_settings;
+        $user = Auth::user();
         // Check is subscribed
         $is_subscribed = Auth::user()->subscribed('main');
 
@@ -32,6 +34,6 @@ class HomeController extends Controller
         $subscription = Auth::user()->subscription('main');
 
         $title = 'Dashboard';
-        return view('home', compact('title', 'is_subscribed', 'subscription'));
+        return view('home', compact('title', 'user', 'is_subscribed', 'subscription', 'app_settings'));
     }
 }

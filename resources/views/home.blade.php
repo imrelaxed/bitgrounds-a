@@ -17,7 +17,10 @@
                         You are PRO, congrats
 
                     @endif
-
+                    @if ( $user->subscribed('main') )
+                        <br>User is passed
+                        @endif
+                {{ $app_settings->name }}
                 </div>
             </div>
         </div>
