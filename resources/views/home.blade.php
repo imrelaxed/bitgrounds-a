@@ -12,6 +12,12 @@
                     <br><hr><br>
                     @include('modules.forms.upgrade')
 
+                    @if( $is_subscribed )
+
+                        You are PRO, congrats
+
+                    @endif
+
                 </div>
             </div>
         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        // Check is subscribed
+        $is_subscribed = Auth::user()->subscribed('main');
+
+        // If subscribed get the subscription
+        $subscription = Auth::user()->subscription('main');
+
         $title = 'Dashboard';
-        return view('home', compact('title'));
+        return view('home', compact('title', 'is_subscribed', 'subscription'));
     }
 }

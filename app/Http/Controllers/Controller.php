@@ -39,11 +39,12 @@ class Controller extends BaseController
      * Create a new controller instance.
      *
      */
+    /*
     public function __construct()
     {
         $this->user = $this->signedIn = Auth::user();
       //  $this->app_settings = ApplicationSetting::findOrFail(1);
        // View::share('app_settings', $this->app_settings);
     }
-
+*/
 }

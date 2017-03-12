@@ -16,26 +16,32 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
         $this->call(ApplicationSettingsTableSeeder::class);
-        $this->call(UsersTableSeeder::class);
+        $this->call(UserTableSeeder::class);
     }
 }
+
 /**
  * Prepare a User Database Seed
  */
-class UsersTableSeeder extends Seeder
+class UserTableSeeder extends Seeder
 {
 
     public function run()
     {
         DB::table('users')->delete();
-        $userData = [
-            'name' =>	'John Doe',
-            'email' => 'foo@bar.com',
-            'password' => bcrypt('secret')
+
+        $data = [
+            'name' 			=> 'Vlad Gruby',
+            'email' 		=> 'admin@bitgrounds.com',
+            'password' 	=> bcrypt('secret'),
+            'admin' 		=> 1
         ];
-        User::create($userData);
+
+        User::create($data);
+
     }
 }
+
 
 /**
  * Prepare an Application Settings Database Seed

@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -65,7 +64,7 @@ class CreateApplicationSettingsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('application_settings');
+		Schema::drop('application_settings');
 	}
 
 }

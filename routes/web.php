@@ -40,13 +40,18 @@ Route::get('components',     'StaticPageController@components');
 */
 Auth::routes();
 
-// User and Admin controllers
+// Admin controller
 Route::get('admin', 'AdminController@getIndex');
 Route::post('admin', 'AdminController@postUpdateSettings');
-Route::get('home/your', 'HomeController@index');
+
+//User controller
+Route::post('user/upgrade', 'UserController@postUpgrade');
+
+
 
 // Other
 Route::get('home', 'HomeController@index');
+Route::get('home/your', 'HomeController@index');
 
 // Email Testing Routes
 Route::get('test/email', function(){ return view('emails.layout'); });
