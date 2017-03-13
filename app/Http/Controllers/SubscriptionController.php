@@ -6,6 +6,7 @@ use App\Plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Input;
 
 class SubscriptionController extends Controller
 {
@@ -21,6 +22,14 @@ class SubscriptionController extends Controller
         $plan = $this->getPlanByIdOrFail($id);
 
         return view('plan', compact('plan'));
+    }
+
+    public function postUpdateCreditCard()
+    {
+        $token = Input::get('token');
+        $this->user->updateCard($token);
+
+        return redirect()->back()->with('notice', 'Your credit card information has been updated!');
     }
 
     /**

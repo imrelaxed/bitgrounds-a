@@ -1,24 +1,32 @@
-{!! Form::open(['url' => '/subscription/swap-plan']) !!}
   <h4>Your plan</h4>
   <p>You are on the <strong>
-    @foreach($plans as $plan)
-      @if($user->stripe_plan == $plan->plan_id) 
-        {{ $plan->name }} 
-      @endif
-    @endforeach
+      {{ $subscription->stripe_plan }}
   </strong> plan.</p>
   
-  <label>
-    <div>Change your plan</div>
-    <select name="plan_to_swap_to" id="plan_to_swap_to">
+    <h3>Change your plan</h3>
       @foreach($plans as $plan)
-        <option value="{{ $plan->plan_id }}" @if($user->stripe_plan == $plan->plan_id) selected @endif >{{ $plan->name }}</option>
-      @endforeach
-    </select>
-    
-  </label>
+          <div class="col-md-6">
+              <div class="panel {{ ( $is_subscribed && $subscription->stripe_plan ==  $plan->id ) ? 'panel-success' :  'panel-primary' }}">
+                  <div class="panel-heading text-uppercase">{{ $plan->id }}</div>
+                  <div class="panel-body text-center">
+                      <h3 class="modal-title">
+                          {{ $plan->name }}
+                      </h3>
 
-  <div class="form-group">
-    {!! Form::submit('Change plan') !!}
+                      <p>{{ $plan->currency }} {{ $plan->amount / 100 }} / {{ $plan->interval }}</p>
+                  </div>
+                  <div class="panel-footer">
+                      @if( $is_subscribed &&  ( $subscription->stripe_plan ==  $plan->id ) )
+                          <a href="#" class="btn btn-default btn-block">
+                              Current Plan
+                          </a>
+                      @else
+                          <a href="{{ route('plan', $plan->id) }}" class="btn btn-success btn-block">
+                              Change
+                          </a>
+                      @endif
+                  </div>
+              </div>
+          </div>
+          @endforeach
   </div>
-{!! Form::close() !!}

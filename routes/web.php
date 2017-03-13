@@ -51,7 +51,7 @@ Route::get('admin/engine-room', 'AdminController@getEngineRoom');
 Route::get('admin/clear-logs', 'AdminController@getClearLogs');
 
 
-//User controller
+// User controller
 Route::group(['prefix' => 'user'], function(){
 
     Route::get('settings', 'UserController@index')->name('settings');
@@ -62,9 +62,11 @@ Route::group(['prefix' => 'user'], function(){
 });
 
 // Subscription Controller
+Route::get('/plan/{id}', 'SubscriptionController@show')->name('plan');
 Route::group(['prefix' => 'subscription'], function(){
 
     Route::post('/', 'SubscriptionController@subscribe')->name('subscribe');
+    Route::post('/update-credit-card', 'SubscriptionController@postUpdateCreditCard');
     Route::get('/cancel', 'SubscriptionController@confirmCancellation')->name('confirmCancellation');
     Route::post('/cancel', 'SubscriptionController@cancelSubscription')->name('subscriptionCancel');
     Route::post('/resume', 'SubscriptionController@resumeSubscription')->name('subscriptionResume');

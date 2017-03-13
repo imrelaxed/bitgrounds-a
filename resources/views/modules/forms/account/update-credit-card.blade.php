@@ -1,5 +1,5 @@
 <h4>Your card information</h4>
-<p>The card we have on file ends with {{ $user->getLastFourCardDigits() }}.</p>
+<p>The card we have on file ends with {{ $lastfour }}.</p>
   
 {!! Form::open(['url' => '/subscription/update-credit-card', 'role' => 'payment-form', 'data-gateway-publishable-key' => $app_settings->service_stripe_api_key_publishable]) !!}
   
