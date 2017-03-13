@@ -24,6 +24,14 @@ class StaticPageController extends Controller {
         $title = 'Embark';
         return view('welcome', compact('title'));
     }
+
+    public function pricing()
+    {
+        $title = 'Pricing';
+        $plans = Plan::all();
+        return view('pages.pricing', compact('title', 'plans'));
+    }
+
     public function about()
     {
         $title = 'About';

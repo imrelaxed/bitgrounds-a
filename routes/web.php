@@ -42,19 +42,27 @@ Auth::routes();
 
 // Admin controller
 Route::get('admin', 'AdminController@getIndex');
-Route::get('admin/import-subscription-plans', 'AdminController@getPlans');
 Route::post('admin/update-settings', 'AdminController@postUpdateSettings');
 Route::get('admin/users', 'AdminController@getUsers');
 Route::get('admin/developer-zone', 'AdminController@getDeveloperZone');
 Route::get('admin/analytics', 'AdminController@getAnalytics');
 Route::get('admin/engine-room', 'AdminController@getEngineRoom');
 Route::get('admin/clear-logs', 'AdminController@getClearLogs');
+Route::get('admin/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+// Admin plans control
+Route::get('admin/plans', 'AdminController@getPlans');
+Route::get('admin/flush-cached-plans', 'AdminController@getFlushCachedPlan');
+Route::get('admin/import-subscription-plans', 'AdminController@getImportSubscriptionPlans');
+Route::post('admin/update-cached-plan/{plan_id}', 'AdminController@postUpdateCachedPlan');
+Route::post('admin/delete-cached-plan/{plan_id}', 'AdminController@postDeleteCachedPlan');
+Route::post('admin/delete-stripe-plan/{plan_id}', 'AdminController@postDeleteStripePlan');
 
 
 // User controller
 Route::group(['prefix' => 'user'], function(){
 
-    Route::get('settings', 'UserController@index')->name('settings');
+    Route::get('settings', 'UserController@index')->name('settings')->middleware('subscribed');
     Route::post('settings', 'UserController@postSettings');
     Route::get('invoices', 'InvoiceController@index')->name('invoices');
     Route::get('invoice/{id}', 'InvoiceController@download')->name('downloadInvoice');
@@ -62,6 +70,7 @@ Route::group(['prefix' => 'user'], function(){
 });
 
 // Subscription Controller
+Route::post('/subscription/swap-plan', 'SubscriptionController@postSwapPlan')->name('swapPlans');
 Route::get('/plan/{id}', 'SubscriptionController@show')->name('plan');
 Route::group(['prefix' => 'subscription'], function(){
 

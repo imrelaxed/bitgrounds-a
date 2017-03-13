@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Plan;
 
 class HomeController extends Controller
 {
@@ -25,8 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $app_settings = $this->app_settings;
-        $user = Auth::user();
+        $plans = Plan::all();
         // Check is subscribed
         $is_subscribed = Auth::user()->subscribed('main');
 
@@ -34,6 +34,6 @@ class HomeController extends Controller
         $subscription = Auth::user()->subscription('main');
 
         $title = 'Dashboard';
-        return view('home', compact('title', 'user', 'is_subscribed', 'subscription', 'app_settings'));
+        return view('home', compact('title', 'plans', 'is_subscribed', 'subscription', 'app_settings'));
     }
 }

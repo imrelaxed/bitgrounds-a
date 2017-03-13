@@ -16,7 +16,7 @@
           {!! Html::navItem('/admin/developer-zone', 'Developer Zone', 'code') !!}
           {!! Html::navItem('/admin/analytics', 'Analytics', 'bar-chart') !!}
           {!! Html::navItem('/admin/engine-room', 'Engine Room', 'key') !!}
-          {!! Html::navItem('/auth/logout', 'Sign out', 'sign-out', 'bottom') !!}
+          {!! Html::navItem('/admin/logout', 'Sign out', 'sign-out', 'bottom') !!}
 
         </nav>
       </aside>

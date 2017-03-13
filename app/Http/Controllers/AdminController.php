@@ -2,8 +2,7 @@
 
 use App\ApplicationSetting;
 use App\User;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request as Requests;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Request;
 use Auth;
 use Artisan;
@@ -39,6 +38,7 @@ class AdminController extends Controller {
         return view('admin.index', compact('title', 'settings', 'user'));
 
     }
+
     public function getUsers()
     {
         $title = 'Users';
@@ -79,11 +79,15 @@ class AdminController extends Controller {
     public function getPlans()
     {
         $title = 'Plans';
+        $cachedPlans = Plan::getStripePlans();
         $plans = Plan::all();
-        return view('admin.plans', compact('title', 'plans'));
+        return view('admin.plans', compact('title', 'plans', 'cachedPlans'));
     }
 
-
+    public function getFlushCachedPlan () {
+        Cache::forget('stripe.plans');
+        return redirect()->back();
+    }
 
 
     public function postUpdateSettings()
@@ -163,6 +167,60 @@ class AdminController extends Controller {
     public function getClearLogs()
     {
         Artisan::call('clear:logs');
+        return redirect()->back();
+    }
+    /**
+     * Handles importing Stripe plans into cache.
+     *
+     * @param \App\Http\Controllers\PlanController $plan
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function getImportSubscriptionPlans(PlanController $plan)
+    {
+        $plan->importPlansToCache();
+        return redirect()->back();
+    }
+
+
+    /**
+     * Handles updating a cached plan.
+     *
+     * @param \App\Http\Controllers\PlanController $plan
+     * @param null                                 $plan_id
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postUpdateCachedPlan(PlanController $plan, $plan_id = null)
+    {
+        $plan->updateCachedPlan($plan_id);
+        return redirect()->back();
+    }
+
+    /**
+     * Handles deleting a cached plan.
+     *
+     * @param \App\Http\Controllers\PlanController $plan
+     * @param null                                 $plan_id
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postDeleteCachedPlan(PlanController $plan, $plan_id = null)
+    {
+        $plan->deleteCachedPlan($plan_id);
+        return redirect()->back();
+    }
+
+    /**
+     * Handles deleting a plan on Stripe.
+     *
+     * @param \App\Http\Controllers\PlanController $plan
+     * @param null                                 $plan_stripe_id
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postDeleteStripePlan(PlanController $plan, $plan_stripe_id = null)
+    {
+        $plan->deletePlanFromStripe($plan_stripe_id);
         return redirect()->back();
     }
 

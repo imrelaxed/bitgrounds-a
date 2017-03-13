@@ -21,9 +21,14 @@
                               Current Plan
                           </a>
                       @else
-                          <a href="{{ route('plan', $plan->id) }}" class="btn btn-success btn-block">
+                          <a href="{{ route('plan', $plan->id) }}" class="btn btn-success btn-block" onclick="event.preventDefault();
+                                                     document.getElementById('swap-form').submit();">
                               Change
                           </a>
+                          <form id="swap-form" action="{{ route('swapPlans') }}" method="POST" style="display: none;">
+                              <input type="hidden" name="plan_to_swap_to" id="plan_to_swap_to" value="{{ $plan->id }}">
+                              {{ csrf_field() }}
+                          </form>
                       @endif
                   </div>
               </div>

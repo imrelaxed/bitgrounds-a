@@ -6,7 +6,7 @@ use App\Plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Input;
+use Illuminate\Support\Facades\Input;
 
 class SubscriptionController extends Controller
 {
@@ -22,6 +22,20 @@ class SubscriptionController extends Controller
         $plan = $this->getPlanByIdOrFail($id);
 
         return view('plan', compact('plan'));
+    }
+
+    /**
+     * Handles swapping the user's plan for a different one
+     *
+     * @return void
+     */
+    public function postSwapPlan()
+    {
+        $input = Input::get('plan_to_swap_to');
+        $user = Auth::user();
+        $user->subscription('main')->swap($input);
+
+        return redirect()->back()->with('notice', 'Your subscription has been changed as requested!');
     }
 
     public function postUpdateCreditCard()

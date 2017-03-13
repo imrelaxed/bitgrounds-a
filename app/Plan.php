@@ -2,12 +2,14 @@
 
 namespace App;
 
-
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
 use Stripe\Stripe;
 
-class Plan
+class Plan extends Model
 {
+    protected $guarded = ['id'];
+
     public static function getStripePlans()
     {
         // Set the API Key

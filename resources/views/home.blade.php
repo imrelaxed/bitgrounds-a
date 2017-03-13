@@ -30,10 +30,30 @@
                             <a href="{{ route('confirmCancellation') }}" class="btn btn-danger">Cancel Subscription</a>
                         @endif
 
+                </div>
+            </div>
                     @else
 
                         <h4 class="text-danger">You are not subscribed to any plan.
                         </h4>
+
+        </div>
+    </div>
+                        @if( !empty($plans) )
+
+                            <p class="lead text-center">Please choose a plan.</p>
+
+
+
+                            <div class="row text-center">
+                                <div class="col-md-12">
+                                    @include('modules.plans.all')
+                                </div>
+                            </div>
+
+
+
+                            @endif
 
                     @endif
 
@@ -42,8 +62,6 @@
 
 
 
-                </div>
-            </div>
         </div>
     </div>
 </div>
