@@ -1,9 +1,7 @@
 <?php namespace App\Http\Controllers;
 
-use App\User;
-use Illuminate\Http\Request as Requests;
+use App\Plan;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
@@ -17,13 +15,18 @@ class UserController extends Controller {
 
     }
 
-    public function postUpgrade()
+    public function index()
     {
+        $plans = Plan::getStripePlans();
         $user = Auth::user();
-        $token = Input::get('stripeToken');
-        $user->newSubscription('main', 'main')->create($token);
+        // Check is subscribed
+        $is_subscribed = Auth::user()->subscribed('main');
 
-        return redirect()->back();
+        // If subscribed get the subscription
+        $subscription = Auth::user()->subscription('main');
+
+        $title = 'Dashboard';
+        return view('settings', compact('plans', 'user', 'is_subscribed', 'subscription'));
     }
 
 }

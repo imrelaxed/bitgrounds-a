@@ -58,6 +58,16 @@
 
     return $html;
   });
+$html->macro('navbarLogout', function($route = 'logout', $title = 'Logout', $class = '', $active = 'active')
+{
+    $html = "";
+    $active = Request::is(ltrim($route, '/')) ? $active : '';
+
+    $html .= "<li class='$active'><a href='" . url($route) . "' class='$class' onclick=\"event.preventDefault();
+        document.getElementById('logout-form').submit();\">$title</a><li>";
+
+    return $html;
+});
 
   /*
   |--------------------------------------------------------------------------

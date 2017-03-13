@@ -7,6 +7,7 @@ use Illuminate\Http\Request as Requests;
 use Illuminate\Support\Facades\Request;
 use Auth;
 use Artisan;
+use App\Plan;
 
 class AdminController extends Controller {
     /*
@@ -19,9 +20,12 @@ class AdminController extends Controller {
     | get a general overview. Is also nice for non-technical founders.
     |
     */
+    protected $plan;
+
     public function __construct()
     {
         $this->middleware('admin');
+        $this->plan = Plan::getStripePlans();
         parent::__construct();
 
     }
@@ -37,11 +41,10 @@ class AdminController extends Controller {
     }
     public function getUsers()
     {
-        $user = Auth::user();
         $title = 'Users';
         $users = User::where('admin', '=', 0)->paginate(15);
         $total_users = User::where('admin', '=', 0)->count();
-        $total_active_subscribers = $user->subscribed('main')->count();
+        $total_active_subscribers = User::where('subscription_active', '=', 1)->where('admin', '=', 0)->count();
         $total_non_subscribers = $total_users - $total_active_subscribers;
         return view('admin.users', compact('title', 'users', 'total_users', 'total_active_subscribers', 'total_non_subscribers'));
     }
@@ -57,9 +60,10 @@ class AdminController extends Controller {
     {
         $title = 'Analytics';
         $settings = $this->app_settings;
-        $total_customers = User::where('stripe_active', '=', 1)->where('admin', '=', 0)->count();
+        $total_customers = User::where('subscription_active', '=', 1)->where('admin', '=', 0)->count();
         return view('admin.analytics', compact('title', 'settings', 'total_customers'));
     }
+
 
     public function getEngineRoom()
     {
@@ -67,6 +71,18 @@ class AdminController extends Controller {
         $settings = $this->app_settings;
         return view('admin.engine-room', compact('title', 'settings'));
     }
+
+
+    /**
+     * @return \Illuminate\View\View
+     */
+    public function getPlans()
+    {
+        $title = 'Plans';
+        $plans = Plan::all();
+        return view('admin.plans', compact('title', 'plans'));
+    }
+
 
 
 

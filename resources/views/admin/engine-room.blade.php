@@ -22,7 +22,7 @@
                     {!! Form::textField(
                       'service_stripe_api_key_secret', 
                       'Secret API Key <span class="text-muted">(set in .env)</span>', 
-                      env('SERVICE_STRIPE_SECRET_API_KEY'), 
+                      env('STRIPE_SECRET'),
                       ['class' => 'form-control', 'disabled' => 'disabled']) 
                     !!}                    
                     
@@ -59,7 +59,7 @@
 
         {{-- Mandrill --}}
         {!! Form::model($settings, ['url' => 'admin/update-settings']) !!}
-            {!! Html::panelOpen('<strong>Mandrill</strong>') !!}
+            {!! Html::panelOpen('<strong>Mailgun</strong>') !!}
               {!! Html::panelBodyOpen() !!}
 
                 <p>Handles sending targeted, personalized, and automated one-to-one transactional emails.</p>
@@ -67,7 +67,7 @@
                 {!! Form::textField(
                   'service_mandrill_api_key_secret', 
                   'Secret API Key <span class="text-muted">(set in .env)</span>', 
-                  env('SERVICE_MANDRILL_SECRET_API_KEY'), 
+                  env('SERVICE_MAILGUN_SECRET_API_KEY'),
                   ['class' => 'form-control', 'disabled' => 'disabled']) 
                 !!}
 

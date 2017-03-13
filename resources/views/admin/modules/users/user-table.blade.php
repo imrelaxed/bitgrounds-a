@@ -18,9 +18,9 @@
     <tr>
       <td>{{ $user->name }}</td>
       <td>{{ $user->email }}</td>
-      <td>{{ ucfirst($user->getStripePlan()) }}</td>
+      <td>{{ ucfirst($user->subscription('main')->stripe_plan ) }}</td>
       <td class="text-center">
-        @if( !$user->readyForBilling() && $user->stripeIsActive() )
+        @if( !$user->hasStripeId() && $user->subscribed('main') )
 
           <input 
            type="checkbox" 

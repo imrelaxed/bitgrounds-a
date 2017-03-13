@@ -14,6 +14,7 @@ class AddCashierColumns extends Migration {
 	public function up()
 	{
         Schema::table('users', function ($table) {
+            $table->tinyInteger('subscription_active')->default(0);
             $table->string('stripe_id')->nullable();
             $table->string('card_brand')->nullable();
             $table->string('card_last_four')->nullable();

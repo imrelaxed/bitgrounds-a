@@ -1,17 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-us" role="document">
 
 @include('base.head')
 
-<body>
+<body class="@yield('page-class')">
 
-@include('modules.navigation')
+<header class="navbar navbar-static-top {{ $headerClass or '' }}" role="banner">
+    <div class="container-fluid">
+        @include('modules.navigation')
+    </div>
+</header>
+
+@include('modules.sessions.notice')
 
 @yield('content')
 
 @include('base.footer')
-
 @include('base.scripts')
+@yield('additional-scripts')
 <script src="/js/app.js"></script>
 
 @include('services.google-analytics')

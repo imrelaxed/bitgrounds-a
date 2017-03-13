@@ -7,33 +7,45 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 
-                <div class="panel-body">
-                    You are logged in!
-                    <br><hr><br>
-                    @include('modules.forms.upgrade')
+                <div class="panel-body text-center">
+                    <h1>Welcome <span class="text-primary">{{ Auth::user()->name }}</span></h1>
 
                     @if( $is_subscribed )
 
-                        You are PRO, congrats
+                       <h4> You are subscribed to the <span class="text-primary">{{ $subscription->stripe_plan }}</span> plan. </h4> <br>
+
+                        @if( $subscription->onGracePeriod() )
+
+                            <div class="alert alert-warning">
+                                <h4 class="modal-title">Subscription expiring at {{ $subscription->ends_at->toFormattedDateString() }}</h4>
+                            </div>
+
+                            <form method="post" action="{{ route('subscriptionResume') }}">
+                                {{ csrf_field() }}
+                                <button type="submit" class="btn btn-success">Resume Subscription</button>
+                            </form>
+                            <br>
+
+                        @else
+                            <a href="{{ route('confirmCancellation') }}" class="btn btn-danger">Cancel Subscription</a>
+                        @endif
+
+                    @else
+
+                        <h4 class="text-danger">You are not subscribed to any plan.
+                        </h4>
 
                     @endif
-                    @if ( $user->subscribed('main') )
-                        <br>User is passed
-                        @endif
-                {{ $app_settings->name }}
+
+
+
+
+
+
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-    <a href="{{ route('logout') }}"
-       onclick="event.preventDefault();
-        document.getElementById('logout-form').submit();">
-        Logout
-    </a>
-
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        {{ csrf_field() }}
-    </form>
 @endsection

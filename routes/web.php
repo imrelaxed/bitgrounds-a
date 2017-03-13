@@ -42,11 +42,24 @@ Auth::routes();
 
 // Admin controller
 Route::get('admin', 'AdminController@getIndex');
+Route::get('admin/import-subscription-plans', 'AdminController@getPlans');
 Route::post('admin/update-settings', 'AdminController@postUpdateSettings');
 Route::get('admin/users', 'AdminController@getUsers');
+Route::get('admin/developer-zone', 'AdminController@getDeveloperZone');
+Route::get('admin/analytics', 'AdminController@getAnalytics');
+Route::get('admin/engine-room', 'AdminController@getEngineRoom');
+Route::get('admin/clear-logs', 'AdminController@getClearLogs');
+
 
 //User controller
-Route::post('user/upgrade', 'UserController@postUpgrade');
+Route::group(['prefix' => 'user'], function(){
+
+    Route::get('settings', 'UserController@index')->name('settings');
+    Route::post('settings', 'UserController@postSettings');
+    Route::get('invoices', 'InvoiceController@index')->name('invoices');
+    Route::get('invoice/{id}', 'InvoiceController@download')->name('downloadInvoice');
+
+});
 
 // Subscription Controller
 Route::group(['prefix' => 'subscription'], function(){
@@ -56,14 +69,11 @@ Route::group(['prefix' => 'subscription'], function(){
     Route::post('/cancel', 'SubscriptionController@cancelSubscription')->name('subscriptionCancel');
     Route::post('/resume', 'SubscriptionController@resumeSubscription')->name('subscriptionResume');
 
-    Route::get('/invoices', 'InvoiceController@index')->name('invoices');
-    Route::get('/invoice/{id}', 'InvoiceController@download')->name('downloadInvoice');
-
 });
 
 
 // Other
-Route::get('home', 'HomeController@index');
+Route::get('home', 'HomeController@index')->name('home');
 Route::get('home/your', 'HomeController@index');
 
 // Email Testing Routes

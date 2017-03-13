@@ -30,13 +30,15 @@
 
     <ul class="nav navbar-nav navbar-right">
         @if( Auth::guest() )
-            {!! Html::navbarItem('auth/login', 'Sign in') !!}
+            {!! Html::navbarItem('login', 'Sign in') !!}
         @else
 
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Your account <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Account Settings</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="user/settings">Account Settings</a></li>
+                    <li><a href="user/invoices">Payment History</a></li>
                     <li class="divider"></li>
                     <li><a href="#">Send Feedback...</a></li>
                     <li><a href="#">Send Invites...</a></li>
@@ -47,7 +49,10 @@
                     @endif
 
                     <li class="divider"></li>
-                    <li>{!! Html::navbarItem('auth/logout', 'Sign out') !!}</li>
+                    <li>{!! Html::navbarLogout('logout', 'Sign out') !!}</li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                 </ul>
             </li>
 

@@ -16,3 +16,14 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(array('prefix' => 'api/v1'), function()
+{
+
+    // Additional User Routes
+    Route::post('users/{user}/toggleTesterStatus', 'SubscriptionController@toggleTesterStatus', ['middleware' => 'admin']);
+
+    // Default User Resource Routes
+    Route::resource('users', 'UserController');
+
+});

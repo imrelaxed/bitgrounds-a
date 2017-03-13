@@ -1,7 +1,5 @@
 @extends('app')
 
 @section('content')
-
-    Sup dude
-
+  @include('modules.plans.all')
 @endsection

@@ -51,8 +51,8 @@
 <script>
   
   var client = new Keen({
-    projectId: "{{ $service_keen_io_project_id or '550aad9959949a13d1afbe2a' }}",
-    readKey: "{{ $service_keen_io_read_key or '49ae6b58db153d957f65c10a1371eb7afaa446c541fcce6a178fdaf09b55843eecf1a8a6fd09fcab2bc502c6b0f0bf9b4637371f8518ebe428e3a06d6328fe1a54b0d7794d48d5fe0fb8962c4900aefa33ad88a38a168ede96104f586a4e3ff7d4fa8feef0a5478c43a87942ba040930' }}"
+    projectId: "{{ $service_keen_io_project_id or '58bdf87e8db53dfda8a8abc2' }}",
+    readKey: "{{ $service_keen_io_read_key or 'FB4786BF0750F03F8A52B993335334C5262BDA6687CFE956EFEF9FE2A3F9BF1ACAD02C72E058A3297D2969152DFF2AE1CE05C32C429B27E506A03E2259B3E39EA533E2038450693423477B5CA428A0A93184B88AA2D3173C8ABB6441D636DBED' }}"
   });
 
 </script>
