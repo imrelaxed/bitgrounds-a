@@ -16,7 +16,7 @@ class UserController extends Controller {
         parent::__construct();
     }
 
-    public function index()
+    public function getBilling()
     {
 
         $lastfour = auth()->user()->card_last_four;
@@ -31,6 +31,31 @@ class UserController extends Controller {
 
         $title = 'Dashboard';
         return view('settings', compact('plans', 'settings', 'is_subscribed', 'subscription', 'lastfour'));
+    }
+
+    public function getSettings()
+    {
+        $user = Auth::user();
+        return view('user.settings', compact('user'));
+    }
+
+    public function postUpdateSettings()
+    {
+        $user = Auth::user();
+
+        $user->email = Input::get('email');
+        $user->name = Input::get('name');
+
+        if($user->save())
+        {
+            return back()->with('notice', 'Settings updated successfully.');
+        }
+        else
+        {
+            return back()->with('notice', 'Unable to update settings.');
+        }
+
+
     }
 
 }

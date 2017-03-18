@@ -37,10 +37,11 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Your account <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('settings') }}">Account Settings</a></li>
                     @if( auth()->user()->subscribed('main') )
                         <li class="divider"></li>
-                        <li><a href="user/settings">Account Settings</a></li>
-                    <li><a href="user/invoices">Payment History</a></li>
+                        <li><a href="{{ route('billing') }}">Billing Settings</a></li>
+                    <li><a href="{{ route('invoices') }}">Payment History</a></li>
                     @endif
                     <li class="divider"></li>
                     <li><a href="#">Send Feedback...</a></li>

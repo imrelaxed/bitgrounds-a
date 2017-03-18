@@ -62,8 +62,10 @@ Route::post('admin/delete-stripe-plan/{plan_id}', 'AdminController@postDeleteStr
 // User controller
 Route::group(['prefix' => 'user'], function(){
 
-    Route::get('settings', 'UserController@index')->name('settings')->middleware('subscribed');
-    Route::post('settings', 'UserController@postSettings');
+    Route::get('settings', 'UserController@getSettings')->name('settings');
+    Route::post('settings', 'UserController@postUpdateSettings');
+
+    Route::get('billing', 'UserController@getBilling')->name('billing')->middleware('subscribed');
     Route::get('invoices', 'InvoiceController@index')->name('invoices');
     Route::get('invoice/{id}', 'InvoiceController@download')->name('downloadInvoice');
 
