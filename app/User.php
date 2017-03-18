@@ -51,7 +51,7 @@ class User extends Authenticatable
     {
         $this->notify(new ResetPassword($token));
     }
-/* fire event on creation
+/* fire event on creation, decided to go with laravel built in registered event instead.
     public static function boot()
     {
                 static::created(function($model){

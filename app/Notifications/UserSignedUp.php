@@ -13,7 +13,7 @@ class UserSignedUp extends Notification
 {
     use Queueable;
 
-    protected $user;
+    protected $data;
     /**
      * Create a new notification instance.
      *
@@ -46,7 +46,7 @@ class UserSignedUp extends Notification
         return (new MailMessage)
                     ->subject('Welcome to Bitgrounds Hosting!')
                     ->success()
-                    ->line('Welcome on board '. $this->user->name .'! You can access your dashboard by clicking the button below.')
+                    ->line('Welcome on board '. $this->data->user->name .'! You can access your dashboard by clicking the button below.')
                     ->action('Login', url('login'))
                     ->line('Don\'t forget to select a hosting plan if you haven\'t! Thanks for joining!');
     }
