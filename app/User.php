@@ -2,9 +2,12 @@
 
 namespace App;
 
+use Event;
+use App\Events\UserSignedUpEvent;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Cashier\Billable;
+use App\Notifications\ResetPassword;
 use Stripe\Subscription;
 
 class User extends Authenticatable
@@ -38,4 +41,22 @@ class User extends Authenticatable
 
         return false;
     }
+
+    public function findByEmail($email)
+    {
+        return $this->where('email', $email)->first();
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPassword($token));
+    }
+/* fire event on creation
+    public static function boot()
+    {
+                static::created(function($model){
+            event(new UserSignedUpEvent($model));
+        });
+    }
+*/
 }
