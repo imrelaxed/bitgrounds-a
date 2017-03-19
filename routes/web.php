@@ -40,7 +40,7 @@ Route::get('components',     'StaticPageController@components');
 */
 Auth::routes();
 
-// Admin controller
+// Admin controls
 Route::get('admin', 'AdminController@getIndex');
 Route::post('admin/update-settings', 'AdminController@postUpdateSettings');
 Route::get('admin/users', 'AdminController@getUsers');
@@ -50,7 +50,7 @@ Route::get('admin/engine-room', 'AdminController@getEngineRoom');
 Route::get('admin/clear-logs', 'AdminController@getClearLogs');
 Route::get('admin/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-// Admin plans control
+// Admin plan controls
 Route::get('admin/plans', 'AdminController@getPlans');
 Route::get('admin/flush-cached-plans', 'AdminController@getFlushCachedPlan');
 Route::get('admin/import-subscription-plans', 'AdminController@getImportSubscriptionPlans');
@@ -65,11 +65,17 @@ Route::group(['prefix' => 'user'], function(){
     Route::get('settings', 'UserController@getSettings')->name('settings');
     Route::post('settings', 'UserController@postUpdateSettings');
 
+    Route::get('password', 'UserController@getPassword');
+    Route::post('password', 'UserController@postPassword');
+
+
     Route::get('billing', 'UserController@getBilling')->name('billing')->middleware('subscribed');
+
     Route::get('invoices', 'InvoiceController@index')->name('invoices');
     Route::get('invoice/{id}', 'InvoiceController@download')->name('downloadInvoice');
 
 });
+
 
 // Subscription Controller
 Route::post('/subscription/swap-plan', 'SubscriptionController@postSwapPlan')->name('swapPlans');

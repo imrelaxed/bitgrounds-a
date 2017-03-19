@@ -3,9 +3,10 @@
 use App\Plan;
 use App\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 
 class UserController extends Controller {
@@ -39,12 +40,24 @@ class UserController extends Controller {
         return view('user.settings', compact('user'));
     }
 
-    public function postUpdateSettings()
+    public function postUpdateSettings(Request $request)
     {
         $user = Auth::user();
 
-        $user->email = Input::get('email');
-        $user->name = Input::get('name');
+        $this->validate( $request, [
+            'name' => [
+                'required',
+                'max:128',
+            ],
+            'email' => [
+                'required',
+                'max:128',
+                Rule::unique('users')->ignore($user->id),
+            ],
+        ]);
+
+        $user->email = $request->get('email');
+        $user->name =  $request->get('name');
 
         if($user->save())
         {
@@ -54,8 +67,21 @@ class UserController extends Controller {
         {
             return back()->with('notice', 'Unable to update settings.');
         }
-
-
     }
+
+    public function getChangePassword()
+    {
+    //
+    }
+
+    public function postChangePassword(Request $request)
+    {
+        $user = Auth::user();
+        $this->validate( $request, [
+            'newpassword' => 'required|min:6|regex:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/|confirmed',
+        ]);
+    }
+
+
 
 }
