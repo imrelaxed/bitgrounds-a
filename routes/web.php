@@ -65,9 +65,8 @@ Route::group(['prefix' => 'user'], function(){
     Route::get('settings', 'UserController@getSettings')->name('settings');
     Route::post('settings', 'UserController@postUpdateSettings');
 
-    Route::get('password', 'UserController@getPassword');
-    Route::post('password', 'UserController@postPassword');
-
+    Route::get('password', 'UserController@getChangePassword');
+    Route::post('password', 'UserController@postChangePassword');
 
     Route::get('billing', 'UserController@getBilling')->name('billing')->middleware('subscribed');
 

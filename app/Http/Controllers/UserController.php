@@ -1,12 +1,10 @@
 <?php namespace App\Http\Controllers;
 
 use App\Plan;
-use App\User;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Hash;
 
 
 class UserController extends Controller {
@@ -71,17 +69,46 @@ class UserController extends Controller {
 
     public function getChangePassword()
     {
-    //
+        $user = Auth::user();
+        return view('user.password', compact('user'));
     }
 
     public function postChangePassword(Request $request)
     {
-        $user = Auth::user();
-        $this->validate( $request, [
-            'newpassword' => 'required|min:6|regex:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/|confirmed',
-        ]);
-    }
 
+        $messages = [
+            'regex' => 'The :attribute must be at least 6 characaters long, contain a number, an upper case letter and a lower case letter.',
+        ];
+
+        $this->validate( $request, [
+            'current_password' => 'required',
+            'password' => 'required|min:6|regex:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/|confirmed',
+        ], $messages);
+
+        $user = Auth::user();
+        $current_password = $user->getAuthPassword();
+
+        if(Hash::check($request['current-password'], $current_password))
+        {
+
+            $user->password = Hash::make($request['password']);;
+            if($user->save())
+            {
+                return back()->with('notice', 'Password updated successfully.');
+            }
+            else
+            {
+                return back()->with('notice', 'Unable to update password.');
+            }
+
+        }
+        else
+        {
+            return back()->with('notice', 'Please enter the correct current password.');
+        }
+
+
+    }
 
 
 }
