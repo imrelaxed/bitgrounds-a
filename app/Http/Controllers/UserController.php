@@ -88,7 +88,7 @@ class UserController extends Controller {
         $user = Auth::user();
         $current_password = $user->getAuthPassword();
 
-        if(Hash::check($request['current-password'], $current_password))
+        if(Hash::check($request['current_password'], $current_password))
         {
 
             $user->password = Hash::make($request['password']);;

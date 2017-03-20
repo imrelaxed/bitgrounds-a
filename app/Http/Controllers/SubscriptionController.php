@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\UserSubscribed;
 use App\Plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -96,7 +97,7 @@ class SubscriptionController extends Controller
             // Catch any error from Stripe API request and show
             return redirect()->back()->withErrors(['status' => $e->getMessage()]);
         }
-
+        event(new UserSubscribedEvent($pickedPlan));
         return redirect()->route('home')->with('status', 'You are now subscribed to ' . $pickedPlan . ' plan.');
     }
 
