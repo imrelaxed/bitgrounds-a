@@ -13,7 +13,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-       
+
         'Illuminate\Auth\Events\Registered' => [
             'App\Listeners\UserSignedUpListener',
         ],
@@ -32,6 +32,10 @@ class EventServiceProvider extends ServiceProvider
 
         'App\Events\UserChangedPlansEvent' => [
             'App\Listeners\UserChangedPlansListener',
+        ],
+
+        'App\Events\UserChangedCreditCardEvent' => [
+            'App\Listeners\UserChangedCreditCardListener',
         ],
     ];
 

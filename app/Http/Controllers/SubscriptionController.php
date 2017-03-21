@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Notifications\UserSubscribed;
 use App\Plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Support\Facades\Input;
+use App\Events\UserSubscribedEvent;
+use App\Events\UserChangedPlansEvent;
 
 class SubscriptionController extends Controller
 {
@@ -32,11 +33,19 @@ class SubscriptionController extends Controller
      */
     public function postSwapPlan()
     {
-        $input = Input::get('plan_to_swap_to');
-        $user = Auth::user();
-        $user->subscription('main')->swap($input);
+        $newPlan = Input::get('plan_to_swap_to');
+        if ($newPlan) {
+            $user = Auth::user();
+            if ($user->subscription('main')->swap($newPlan)) {
+                event(new UserChangedPlansEvent($newPlan));
+                return redirect()->back()->with('notice', 'Your subscription has been changed as requested!');
+            } else {
 
-        return redirect()->back()->with('notice', 'Your subscription has been changed as requested!');
+                return redirect()->back()->with('notice', 'Plan swap failed. Please try again later or contact technical support.');
+            }
+        } else {
+            return redirect()->back();
+        }
     }
 
     public function postUpdateCreditCard()
