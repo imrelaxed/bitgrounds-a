@@ -11,14 +11,15 @@ class UserResubscribed extends Notification
 {
     use Queueable;
 
+    protected $data;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($event)
     {
-        //
+        $this->data = $event;
     }
 
     /**

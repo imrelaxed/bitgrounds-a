@@ -5,6 +5,8 @@ namespace App\Listeners;
 use App\Events\UserResubscribedEvent;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\UserResubscribed;
 
 class UserResubscribedListener
 {
@@ -26,6 +28,7 @@ class UserResubscribedListener
      */
     public function handle(UserResubscribedEvent $event)
     {
-        //
+        Notification::send($event->user, new UserResubscribed($event));
+
     }
 }

@@ -5,6 +5,8 @@ namespace App\Listeners;
 use App\Events\UserUnsubscribedEvent;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\UserUnsubscribed;
 
 class UserUnsubscribedListener
 {
@@ -26,6 +28,7 @@ class UserUnsubscribedListener
      */
     public function handle(UserUnsubscribedEvent $event)
     {
-        //
+        Notification::send($event->user, new UserUnsubscribed($event));
+
     }
 }

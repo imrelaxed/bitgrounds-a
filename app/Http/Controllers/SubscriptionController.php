@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserUnsubscribedEvent;
 use App\Plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -113,10 +114,10 @@ class SubscriptionController extends Controller
             }
         } catch (\Exception $e) {
             // Catch any error from Stripe API request and show
-            return redirect()->back()->withErrors(['status' => $e->getMessage()]);
+            return redirect()->back()->withErrors(['notice' => $e->getMessage()]);
         }
         event(new UserSubscribedEvent($me, $pickedPlan));
-        return redirect()->route('home')->with('status', 'You are now subscribed to ' . $pickedPlan . ' plan.');
+        return redirect()->route('home')->with('notice', 'You are now subscribed to ' . $pickedPlan . ' plan.');
     }
 
     /**
@@ -137,13 +138,15 @@ class SubscriptionController extends Controller
      */
     public function cancelSubscription(Request $request)
     {
+        $user = $request->user();
         try {
-            $request->user()->subscription('main')->cancel();
+            $user->subscription('main')->cancel();
         } catch ( \Exception $e) {
-            return redirect()->route('home')->with('status', $e->getMessage());
+            return redirect()->route('home')->with('notice', $e->getMessage());
         }
 
-        return redirect()->route('home')->with('status',
+        event(new UserUnsubscribedEvent($user));
+        return redirect()->route('home')->with('notice',
             'Your Subscription has been canceled.'
         );
     }
@@ -156,15 +159,15 @@ class SubscriptionController extends Controller
      */
     public function resumeSubscription(Request $request)
     {
-        try {
-            $request->user()->subscription('main')->resume();
-        } catch ( \Exception $e) {
-            return redirect()->route('home')->with('status', $e->getMessage());
-        }
+            try {
+                $request->user()->subscription('main')->resume();
+            } catch (\Exception $e) {
+                return redirect()->route('home')->with('notice', $e->getMessage());
+            }
 
-        return redirect()->route('home')->with('status',
-            'Glad to see you back. Your Subscription has been resumed.'
-        );
+            return redirect()->route('home')->with('notice',
+                'Glad to see you back. Your Subscription has been resumed.'
+            );
     }
 
     /**
