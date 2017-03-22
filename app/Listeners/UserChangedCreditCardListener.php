@@ -5,6 +5,8 @@ namespace App\Listeners;
 use App\Events\UserChangedCreditCardEvent;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Notification;
+
 
 class UserChangedCreditCardListener
 {

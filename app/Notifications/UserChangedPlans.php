@@ -11,14 +11,16 @@ class UserChangedPlans extends Notification
 {
     use Queueable;
 
+    protected $data;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($event)
     {
-        //
+        $this->data = $event;
     }
 
     /**
@@ -41,8 +43,9 @@ class UserChangedPlans extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->subject('You plan has been changed.')
+                    ->success()
+                    ->line('As per your request you are now on the '. $this->data->plan .' plan.')
                     ->line('Thank you for using our application!');
     }
 

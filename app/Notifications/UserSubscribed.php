@@ -12,14 +12,15 @@ class UserSubscribed extends Notification
 {
     use Queueable;
 
+    protected $data;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($event)
     {
-        //
+        $this->data = $event;
     }
 
     /**
@@ -42,9 +43,12 @@ class UserSubscribed extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+            ->subject('Thank you for subscribing to our service!')
+            ->success()
+                    ->line(ucfirst($this->data->user->name) .', you are now subscribed to the '. $this->data->plan .' plan.')
+                    ->line('You can access you control panel using the link below.')
+                    ->action('Control Panel', url('login'))
+                    ->line('Welcome aboard! Feel free to contact support if you have any questions.');
     }
 
     public function toDatabase($notifiable)

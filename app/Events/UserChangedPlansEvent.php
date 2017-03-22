@@ -14,14 +14,19 @@ class UserChangedPlansEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $user;
+    public $plan;
+
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($user, $newPlan)
     {
-        //
+    $this->user = $user;
+    $this->plan = $newPlan;
     }
 
     /**

@@ -5,6 +5,8 @@ namespace App\Listeners;
 use App\Events\UserChangedPlansEvent;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Notifications\UserChangedPlans;
+use Illuminate\Support\Facades\Notification;
 
 class UserChangedPlansListener
 {
@@ -26,6 +28,6 @@ class UserChangedPlansListener
      */
     public function handle(UserChangedPlansEvent $event)
     {
-        //
+        Notification::send($event->user, new UserChangedPlans($event));
     }
 }

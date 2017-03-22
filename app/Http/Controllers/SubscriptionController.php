@@ -9,6 +9,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Support\Facades\Input;
 use App\Events\UserSubscribedEvent;
 use App\Events\UserChangedPlansEvent;
+use App\Events\UserChangedCreditCardEvent;
 
 class SubscriptionController extends Controller
 {
@@ -37,7 +38,9 @@ class SubscriptionController extends Controller
         if ($newPlan) {
             $user = Auth::user();
             if ($user->subscription('main')->swap($newPlan)) {
-                event(new UserChangedPlansEvent($newPlan));
+
+                event(new UserChangedPlansEvent($user, $newPlan));
+
                 return redirect()->back()->with('notice', 'Your subscription has been changed as requested!');
             } else {
 
@@ -50,10 +53,16 @@ class SubscriptionController extends Controller
 
     public function postUpdateCreditCard()
     {
-        $token = Input::get('token');
-        $this->user->updateCard($token);
 
-        return redirect()->back()->with('notice', 'Your credit card information has been updated!');
+        $token = Input::get('token');
+        if ($this->user->updateCard($token)) {
+
+            event(new UserChangedCreditCardEvent($this->user));
+
+            return redirect()->back()->with('notice', 'Your credit card information has been updated!');
+        } else {
+            return redirect()->back();
+        }
     }
 
     /**
@@ -106,7 +115,7 @@ class SubscriptionController extends Controller
             // Catch any error from Stripe API request and show
             return redirect()->back()->withErrors(['status' => $e->getMessage()]);
         }
-        event(new UserSubscribedEvent($pickedPlan));
+        event(new UserSubscribedEvent($me, $pickedPlan));
         return redirect()->route('home')->with('status', 'You are now subscribed to ' . $pickedPlan . ' plan.');
     }
 
