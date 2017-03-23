@@ -81,12 +81,12 @@ Route::get('/plan/{id}', 'SubscriptionController@show')->name('plan');
 Route::group(['prefix' => 'subscription', 'middleware' => 'auth'], function(){
 
     Route::post('/', 'SubscriptionController@subscribe')->name('subscribe');
-    Route::post('/update-credit-card', 'SubscriptionController@postUpdateCreditCard');
-    Route::get('/cancel', 'SubscriptionController@confirmCancellation')->name('confirmCancellation');
-    Route::post('/cancel', 'SubscriptionController@cancelSubscription')->name('subscriptionCancel');
-    Route::post('/resume', 'SubscriptionController@resumeSubscription');
-    Route::get('/resume', 'SubscriptionController@resumeSubscription')->name('subscriptionResume');
-    Route::post('/swap-plan', 'SubscriptionController@postSwapPlan')->name('swapPlans');
+    Route::post('update-credit-card', 'SubscriptionController@postUpdateCreditCard');
+    Route::get('cancel', 'SubscriptionController@confirmCancellation')->name('confirmCancellation');
+    Route::post('cancel', 'SubscriptionController@cancelSubscription')->name('subscriptionCancel');
+    Route::post('resume', 'SubscriptionController@resumeSubscription');
+    Route::get('resume', 'SubscriptionController@resumeSubscription')->name('subscriptionResume');
+    Route::post('swap-plan', 'SubscriptionController@postSwapPlan')->name('swapPlans');
 
 });
 

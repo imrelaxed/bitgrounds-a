@@ -22,6 +22,7 @@ class UserUnsubscribed extends Notification
     {
         $this->data = $event;
         $this->subscription = $this->data->user->subscription('main');
+
     }
 
     /**
@@ -44,14 +45,14 @@ class UserUnsubscribed extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Your '.config('app.name').' Subscription Cancellation')
-            ->greeting('Hi '.ucfirst($this->data->user->name).'!')
+            ->subject(config('app.name').' Subscription Cancelled')
+            ->greeting('Hello '.ucfirst($this->data->user->name).'')
             ->error()
                     ->line('Your '. config('app.name') .' subscription has been cancelled.')
                     ->line('Service will remain active until '.$this->subscription->ends_at->toFormattedDateString() .'. At 
                     which point it will be suspended until you reactivate your subscription.')
-                    ->line('You can login to your dashboard or click the button below to reactivate.')
-                    ->action('Reactivate Subscription', url('subscriptionResume'))
+                    ->line('If you would like to reactivate you can login to your dashboard or click the button below.')
+                    ->action('Reactivate Subscription', route('subscriptionResume'))
                     ->line('Thank you for using '.config('app.name').'!');
     }
 

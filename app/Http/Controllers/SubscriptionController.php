@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\UserUnsubscribedEvent;
 use App\Plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,6 +10,9 @@ use Illuminate\Support\Facades\Input;
 use App\Events\UserSubscribedEvent;
 use App\Events\UserChangedPlansEvent;
 use App\Events\UserChangedCreditCardEvent;
+use App\Events\UserResubscribedEvent;
+use App\Events\UserUnsubscribedEvent;
+
 
 class SubscriptionController extends Controller
 {
@@ -164,6 +166,9 @@ class SubscriptionController extends Controller
             } catch (\Exception $e) {
                 return redirect()->route('home')->with('notice', $e->getMessage());
             }
+            $user = auth()->user();
+
+            event(new UserResubscribedEvent($user));
 
             return redirect()->route('home')->with('notice',
                 'Glad to see you back. Your Subscription has been resumed.'

@@ -6,12 +6,14 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Carbon\Carbon;
 
 class UserResubscribed extends Notification
 {
     use Queueable;
 
     protected $data;
+    protected $subscription;
     /**
      * Create a new notification instance.
      *
@@ -20,6 +22,9 @@ class UserResubscribed extends Notification
     public function __construct($event)
     {
         $this->data = $event;
+        $timestamp = $event->user->asStripeCustomer()["subscriptions"]->data[0]["current_period_end"];
+        $this->subscription = Carbon::createFromTimeStamp($timestamp)->toFormattedDateString();
+
     }
 
     /**
@@ -42,9 +47,13 @@ class UserResubscribed extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+            ->subject(config('app.name').' Subscription Reactivated')
+            ->greeting('Hi '.ucfirst($this->data->user->name).'!')
+            ->success()
+            ->line('Thank you for reactivating your '. config('app.name') .' subscription.')
+            ->line('Your next billing date is '.$this->subscription.'. You can login to your dashboard using the button below.')
+            ->action('Dashboard', route('home'))
+            ->line('Thank you for using '.config('app.name').'!');
     }
 
     /**
