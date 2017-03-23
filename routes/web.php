@@ -104,8 +104,5 @@ Route::get('test/email/new-sign-up', function(){
 //Route::get('t', 'UserController@testNotify');
 
 // Handling Stripe Webhooks
-Route::post(
-    'stripe/webhook',
-    '\Laravel\Cashier\Http\Controllers\WebhookController@handleWebhook'
-);
+Route::post('stripe/webhook', 'WebhookController@handleWebhook');
 

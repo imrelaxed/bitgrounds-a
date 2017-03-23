@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class NotifyAdmin extends Notification
+class PaymentFailed extends Notification
 {
     use Queueable;
 
@@ -18,11 +18,10 @@ class NotifyAdmin extends Notification
      *
      * @return void
      */
-    public function __construct($event)
+    public function __construct($user)
     {
-        $this->data = $event;
+        $this->data = $user;
     }
-
 
     /**
      * Get the notification's delivery channels.
@@ -44,10 +43,12 @@ class NotifyAdmin extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject(config('app.name').': Important Notice')
+            ->subject(config('app.name') . ' Subscription Payment Failed')
+            ->greeting('Hello'. ucfirst($this->data->name))
             ->error()
-                    ->line('This requires your attention:')
-                    ->line($this->data);
+                    ->line('Your payment to '.config('app.name').' has failed. This is probably because you got a new credit card. Please updated your credit card as soon as possible.')
+                    ->action('Update Credit Card', route('billing'))
+                    ->line('We will attempt to charge your card again soon. If the charge fails 3 times in a row your account will be suspended!');
     }
 
     /**
