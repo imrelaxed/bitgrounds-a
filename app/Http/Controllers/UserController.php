@@ -5,6 +5,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
+use App\User;
+use App\Notifications\NotifyAdmin;
+use Illuminate\Support\Facades\Notification;
 
 
 class UserController extends Controller {
@@ -14,6 +17,7 @@ class UserController extends Controller {
         $this->middleware('auth');
         parent::__construct();
     }
+
 
     public function getBilling()
     {
@@ -109,6 +113,16 @@ class UserController extends Controller {
 
 
     }
+ /*
+    public function testNotify() {
 
+        $admins = User::where('admin', '=', 1)->get();
+        try {
+            Notification::send($admins, new NotifyAdmin($admins));
 
+        } catch (\Exception $e) {
+            echo $e;
+        }
+    }
+    */
 }

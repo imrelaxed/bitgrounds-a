@@ -7,6 +7,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\UserUnsubscribed;
+use App\Notifications\NotifyAdmin;
 
 class UserUnsubscribedListener
 {
@@ -29,6 +30,17 @@ class UserUnsubscribedListener
     public function handle(UserUnsubscribedEvent $event)
     {
         Notification::send($event->user, new UserUnsubscribed($event));
+
+        try {
+
+            $user = $event->user;
+            $user->subscription_active = 0;
+            $user->save();
+
+        } catch (\Exception $e) {
+            $admins = User::where('admin', '=', 1)->get();
+            Notification::send($admins, new NotifyAdmin($e));
+        }
 
     }
 }

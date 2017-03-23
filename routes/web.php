@@ -101,6 +101,7 @@ Route::get('test/email/password-reset', function(){ return view('emails.password
 Route::get('test/email/new-sign-up', function(){
     return view('emails.welcome')->with('app_settings', App\ApplicationSetting::find(1));
 });
+//Route::get('t', 'UserController@testNotify');
 
 // Handling Stripe Webhooks
 Route::post(
