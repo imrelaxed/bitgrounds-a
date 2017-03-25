@@ -1,66 +1,148 @@
-<div class="navbar-header">
+
+
+<nav aria-label="Header" id="header" class="top-menu">
+
+    <!--LOGO AREA-->
+
+    <div class="left">
     <a href="{{ url('../') }}" class="navbar-brand">
         @include('modules.logo')
     </a>
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".sq-global-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
-</div>
+    </div>
 
-<nav class="collapse navbar-collapse sq-global-navbar-collapse" role="navigation">
 
-    <ul class="nav navbar-nav">
-        @if( Request::is('home', 'home/*') )
+    <!--NAV START-->
 
-        @else
-            {!! Html::navbarItem('pricing', 'Pricing') !!}
-            {!! Html::navbarItem('', 'Docs') !!}
+    <div class="right">
+        <div class="top-menu-items" id="top-menu-items">
+
+            <a href="{{ url('/about') }}" data-parenturl="/about/" class="top-menu-item">Why Bitgrounds?</a>
+
+            <a href="{{ route('pricing') }}" data-parenturl="/pricing/" class="top-menu-item">Pricing</a>
+
+            <a href="" data-parenturl="" class="top-menu-item">Resources</a>
+
+            <a href="{{ url('/contact') }}" data-parenturl="/contact/" class="top-menu-item">Support</a>
+
+        </div>
+
+        <div class="download">
+
 
             @if( Auth::guest() )
-                {!! Html::navbarItem('register', 'Get Started') !!}
+                <a href="{{ route('register') }}" class="button button--red">
+                    Sign Up
+                </a>
             @elseif( Auth::check() )
-                {!! Html::navbarItem('home', 'Dashboard') !!}
+                <a href="{{ route('home') }}" class="button button--red">
+                    Dashboard
+                </a>
             @endif
-        @endif
 
-    </ul>
+        </div>
 
-    <ul class="nav navbar-nav navbar-right">
-        @if( Auth::guest() )
-            {!! Html::navbarItem('login', 'Sign in') !!}
-        @else
 
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Your account <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('settings') }}">Account Settings</a></li>
-                    @if( auth()->user()->subscribed('main') )
+        <!--ACCOUNT START-->
+
+        <div class="download">
+            @if( Auth::guest() )
+
+            <a href="{{ route('login') }}" class="button button--grey--ghost">
+                Sign In
+            </a>
+            @else
+
+                    <a href="#" class="dropdown-toggle button button--grey--ghost" data-toggle="dropdown" role="button" aria-expanded="false">
+                        My account
+                        <div class="button__icon--nav button__icon--accordion-medium"></div>
+                    </a>
+
+
+                <!--DROPDOWN START-->
+
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ route('home') }}">Home</a></li>
+                        <li><a href="{{ route('settings') }}">Account Settings</a></li>
+                        @if( auth()->user()->subscribed('main') )
+                            <li class="divider"></li>
+                            <li><a href="{{ route('billing') }}">Billing Settings</a></li>
+                            <li><a href="{{ route('invoices') }}">Payment History</a></li>
+                        @endif
                         <li class="divider"></li>
-                        <li><a href="{{ route('billing') }}">Billing Settings</a></li>
-                    <li><a href="{{ route('invoices') }}">Payment History</a></li>
-                    @endif
-                    <li class="divider"></li>
-                    <li><a href="#">Send Feedback...</a></li>
-                    <li><a href="#">Send Invites...</a></li>
+                        <li><a href="#">Send Feedback...</a></li>
+                        <li><a href="#">Send Invites...</a></li>
 
-                    @if( Auth::check() and Auth::user()->isAdmin() )
+                        @if( Auth::check() and Auth::user()->isAdmin() )
+                            <li class="divider"></li>
+                            <li><a href="{{ route('adminDash') }}">Admin Dashboard</a></li>
+                        @endif
+
                         <li class="divider"></li>
-                        {!! Html::navbarItem('admin', 'Admin Dashboard') !!}
-                    @endif
 
-                    <li class="divider"></li>
-                    <li>{!! Html::navbarLogout('logout', 'Sign out') !!}</li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
-                </ul>
-            </li>
+                        <li>
+                            <a href="{{ url('/logout') }}"
+                               onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
 
-        @endif
-    </ul>
+                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+                    </ul>
+
+            @endif
+
+        </div>
+    </div>
+</nav>
+
+
+<!--MOBILE HEADER-->
+
+<nav aria-label="Header" id="mobile-header">
+    <a href="/" class="logo">
+        @include('modules.logo')
+    </a>
+
+    <div class="right">
+        <div class="hamburger">
+            <i class="fa fa-lg fa-bars" aria-hidden="true"></i>
+        </div>
+    </div>
 
 </nav>
+
+<ul id="mobile-menu">
+    <li>
+    <a href="{{ url('/about') }}" data-parenturl="/about/" class="top-menu-item">Why Bitgrounds?</a>
+    </li>
+    <ul>
+
+    </ul>
+
+    <li>
+    <a href="{{ route('pricing') }}" data-parenturl="/pricing/" class="top-menu-item">Pricing</a>
+    </li>
+    <ul>
+
+    </ul>
+
+    <li>
+    <a href="" data-parenturl="" class="top-menu-item">Resources</a>
+    </li>
+    <ul>
+
+    </ul>
+
+    <li>
+    <a href="{{ url('/contact') }}" data-parenturl="/contact/" class="top-menu-item">Support</a>
+    </li>
+    <ul>
+
+    </ul>
+
+
+</ul>
+

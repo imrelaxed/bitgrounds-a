@@ -5,11 +5,9 @@
 
 <body class="@yield('page-class')">
 
-<header class="navbar navbar-static-top {{ $headerClass or '' }}" role="banner">
-    <div class="container-fluid">
+<div class="landing-page">
         @include('modules.navigation')
-    </div>
-</header>
+</div>
 
 @include('modules.sessions.notice')
 

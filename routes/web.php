@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 // Static Pages
 Route::get('/',              'StaticPageController@index');
 Route::get('about',          'StaticPageController@about');
-Route::get('pricing',        'StaticPageController@pricing');
+Route::get('pricing',        'StaticPageController@pricing')->name('pricing');
 Route::get('contact',        'StaticPageController@contact');
 Route::get('terms-of-use',   'StaticPageController@termsOfUse');
 Route::get('privacy-policy', 'StaticPageController@privacyPolicy');
@@ -41,7 +41,7 @@ Route::get('components',     'StaticPageController@components');
 Auth::routes();
 
 // Admin controls
-Route::get('admin', 'AdminController@getIndex');
+Route::get('admin', 'AdminController@getIndex')->name('adminDash');
 Route::post('admin/update-settings', 'AdminController@postUpdateSettings');
 Route::get('admin/users', 'AdminController@getUsers');
 Route::get('admin/developer-zone', 'AdminController@getDeveloperZone');
