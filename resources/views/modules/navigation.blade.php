@@ -107,6 +107,9 @@
     </a>
 
     <div class="right">
+        <a href="https://github.com/magneticio/vamp" target="_blank" class="github-logo">
+            <i class="fa fa-lg fa-github" aria-hidden="true"></i>
+        </a>
         <div class="hamburger">
             <i class="fa fa-lg fa-bars" aria-hidden="true"></i>
         </div>
@@ -116,28 +119,28 @@
 
 <ul id="mobile-menu">
     <li>
-    <a href="{{ url('/about') }}" data-parenturl="/about/" class="top-menu-item">Why Bitgrounds?</a>
+    <a href="{{ url('/about') }}">Why Bitgrounds?</a>
     </li>
     <ul>
 
     </ul>
 
     <li>
-    <a href="{{ route('pricing') }}" data-parenturl="/pricing/" class="top-menu-item">Pricing</a>
+    <a href="{{ route('pricing') }}">Pricing</a>
     </li>
     <ul>
 
     </ul>
 
     <li>
-    <a href="" data-parenturl="" class="top-menu-item">Resources</a>
+    <a href="">Resources</a>
     </li>
     <ul>
 
     </ul>
 
     <li>
-    <a href="{{ url('/contact') }}" data-parenturl="/contact/" class="top-menu-item">Support</a>
+    <a href="{{ url('/contact') }}" >Support</a>
     </li>
     <ul>
 

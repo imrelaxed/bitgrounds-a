@@ -169,11 +169,21 @@ body {
     &--mail {
       background-image: url('../img/003-Small-icons/White/Mail-White.svg');
     }
+    &--nav {
+      height: 20px;
+    }
+    &--accordion-medium {
+      width: 18px;
+      background-image: url("../img/003-Small-icons/Medium-blue/Accordion-Medium.svg"); }
   }
+
 
   &:hover {
     .button__icon--arrow {
       background-image: url('../img/003-Small-icons/White/Arrow-White.svg');
+    }
+    .button__icon--accordion-medium {
+      background-image: url("../img/003-Small-icons/White/Accordion-White.svg");
     }
   }
 
