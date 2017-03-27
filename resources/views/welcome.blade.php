@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('content')
+@section('page-content')
 
     <!--HEROSPACE ROW-->
     <div class="page">
@@ -33,7 +33,11 @@
                 </div>
                 <div class="row">
                     <div class="col center">
-                        <a href="/documentation/installation/hello-world"><img class="laptop" src="img/006-mock-ups/VAMP-light-laptop-v091-hero.png" alt=""></a>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <a href="#"><img class="laptop" src="" alt=""></a>
                     </div>
                 </div>
 
@@ -55,21 +59,21 @@
                 <div class="row">
                     <div class="col center">
                         <a href="documentation/tutorials/run-a-canary-release/" class="image--smaller"><img src="img/001-Big-icons/illustration-01.svg" alt="Easy canary releasing"></a>
-                        <h2 class="h2">Easy canary releasing</h2>
+                        <h2 class="h2">Fast</h2>
                         <p class="text">
                             Percentage and condition based routing for A/B testing and canary releasing. Prevent performance issues and service disruption with gradual rollouts and upgrades.
                         </p>
                     </div>
                     <div class="col center">
                         <a href="documentation/using-vamp/sla/" class="image--smaller second-icon"><img src="img/001-Big-icons/illustration-02.svg" alt="Powerful autoscaling"></a>
-                        <h2 class="h2">Powerful autoscaling</h2>
+                        <h2 class="h2">Secure</h2>
                         <p class="text">
                             Integrated events, SLA and workflows engine. Enable metric-driven canary releasing, autoscaling and other optimisation patterns. Easy to extend with custom workflow scripts.
                         </p>
                     </div>
                     <div class="col center">
                         <a href="documentation/installation/overview" class="image--smaller third-icon"><img src="img/001-Big-icons/illustration-03.svg" alt="Container agnostic deploys"></a>
-                        <h2 class="h2">Container systems agnostic</h2>
+                        <h2 class="h2">Friendly</h2>
                         <p class="text">
                             Integrates with all major container systems to avoid vendor lock-in. YAML based configurations, RESTful API and graphical UI to manage deployments and operations.
                         </p>
@@ -87,33 +91,6 @@
             </div>
         </div>
 
-        <div class="lander-row lander-row--white lander-row--small-padding top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col center">
-                        <h3 class="h3">Vamp friends</h3>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col center">
-                        <img src="/img/004-Logos/004-friends/BBVA.jpg" alt="BBA Innovation team">
-                    </div>
-                    <div class="col center">
-                        <img src="/img/004-Logos/004-friends/Mijndomein.jpg" alt="Mijndomein">
-                    </div>
-                    <div class="col center">
-                        <img src="/img/004-Logos/004-friends/Rabobank.jpg" alt="Rabobank">
-                    </div>
-                    <div class="col center">
-                        <img src="/img/004-Logos/004-friends/Trivento.jpg" alt="Trivento">
-                    </div>
-                    <div class="col center">
-                        <img src="/img/004-Logos/004-friends/Wehkamp.jpg" alt="Wehkamp">
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!--FEATURES LIST ROW 01-->
         <div class="lander-row lander-row--grey features-top">

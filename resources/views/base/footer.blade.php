@@ -41,7 +41,7 @@
                 </p>
 
                 <form action="mail-chimp" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" style="display: inline" target="_blank" novalidate="">
-                    <div class="input-group">
+                    <div class="input-groupy">
                         <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Email">
                         <a onclick="$(this).closest('form').submit()" class="button button--red not-active">
                             <div class="button__icon button__icon--mail">

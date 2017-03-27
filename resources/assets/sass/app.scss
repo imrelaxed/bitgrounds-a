@@ -1,4 +1,3 @@
-// Variables
 @import 'reset';
 @import "variables";
 @import 'grid';
@@ -10,7 +9,7 @@ body {
 /* Components */
 
 .page {
-  min-height: 100vh;
+  min-height: 80vh;
   position: relative;
   //padding-top: 80px;
 
@@ -401,7 +400,7 @@ body {
 }
 
 // Inputs
-.input-group {
+.input-groupy {
   display: flex;
 
   input {
@@ -925,9 +924,9 @@ body {
   }
 
   .logo {
-    height: 40px;
-    width: 120px;
-    background-image: url('../img/005-vamp/Logo/logo-long-white.svg');
+    height: 44px;
+    width: 185px;
+    background-image: url('../img/logo-long-white.svg');
     background-size: contain;
   }
 
@@ -985,7 +984,7 @@ body {
 
 
   .logo {
-    background-image: url('../img/005-vamp/Logo/logo-long-colour.svg');
+    background-image: url('../img/logo-long-black.svg');
   }
 
   .top-menu-item {
@@ -1109,7 +1108,7 @@ body {
     }
   }
 
-  .input-group {
+  .input-groupy {
     margin: 20px 0;
   }
 
@@ -2212,6 +2211,77 @@ pre + pre {
   }
 
   .search-result-item {
+    padding: 20px 0;
+
+    border-bottom: 1px solid $color-bermuda-gray;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    h2 {
+      margin: 0;
+      padding: 0;
+    }
+
+    .text {
+      margin: 0;
+      padding: 0;
+    }
+
+    .path {
+      margin: -4px 0 2px 0;
+      opacity: 0.7;
+      padding: 0;
+      font-size: 13px;
+    }
+
+    a {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      color: $color-radical-red;
+    }
+
+  }
+}
+
+.bit-page {
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 80vh;
+  overflow-y: scroll;
+
+  @media all and (min-width: 1025px) {
+    padding-top: 80px + 40px;
+  }
+
+
+  .bit-title {
+    display: flex;
+
+    h1 {
+      display: inline-block;
+      height: 48px;
+    }
+
+    p {
+      margin-left: 10px;
+      font-size: $font-size-medium;
+      display: inline-block;
+      align-self: flex-end;
+      line-height: 1;
+      padding-bottom: 4px;
+    }
+  }
+
+  .item-container {
+    width: 80%;
+    height: auto;
+  }
+
+  .bit-item {
     padding: 20px 0;
 
     border-bottom: 1px solid $color-bermuda-gray;

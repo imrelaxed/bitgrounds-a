@@ -11,7 +11,7 @@
 
 @include('modules.sessions.notice')
 
-@yield('content')
+@yield('page-content')
 
 @include('base.footer')
 @include('base.scripts')

@@ -6,7 +6,9 @@
 
     <div class="left">
     <a href="{{ url('../') }}" class="navbar-brand">
-        @include('modules.logo')
+
+            <div id="logo" class="logo"></div>
+
     </a>
     </div>
 
@@ -103,13 +105,10 @@
 
 <nav aria-label="Header" id="mobile-header">
     <a href="/" class="logo">
-        @include('modules.logo')
+        <img id="logo" class="logo" src="./img/logo-long-black.svg" alt="">
     </a>
 
     <div class="right">
-        <a href="https://github.com/magneticio/vamp" target="_blank" class="github-logo">
-            <i class="fa fa-lg fa-github" aria-hidden="true"></i>
-        </a>
         <div class="hamburger">
             <i class="fa fa-lg fa-bars" aria-hidden="true"></i>
         </div>

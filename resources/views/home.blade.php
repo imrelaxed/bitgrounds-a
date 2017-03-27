@@ -1,14 +1,9 @@
-@extends('app')
+@extends('page')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
 
-                <div class="panel-body text-center">
-                    <h1>Welcome <span class="text-primary">{{ Auth::user()->name }}</span></h1>
+
+                    <h2>Welcome <span class="text-primary">{{ Auth::user()->name }}</span></h2>
 
                     @if( $is_subscribed )
 
@@ -30,18 +25,16 @@
                             <a href="{{ route('confirmCancellation') }}" class="btn btn-danger">Cancel Subscription</a>
                         @endif
 
-                </div>
-            </div>
+
                     @else
 
-                        <h4 class="text-danger">You are not subscribed to any plan.
+                        <h4 class="text-danger">
+                            You are not subscribed to any plan.
                         </h4>
 
-        </div>
-    </div>
                         @if( !empty($plans) )
 
-                            <p class="lead text-center">Please choose a plan.</p>
+                            <h2>Please choose a plan.</h2>
 
 
 
@@ -62,8 +55,5 @@
 
 
 
-        </div>
-    </div>
-</div>
 
 @endsection
