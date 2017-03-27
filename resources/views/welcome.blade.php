@@ -10,8 +10,9 @@
                 <div class="row">
                     <div class="col">
                         <h1 class="header center">
-                            Canary releasing and autoscaling for microservice systems
+                            Time for a better web hosting provider?
                         </h1>
+
                     </div>
                 </div>
 
@@ -19,7 +20,7 @@
                     <div class="col center">
                         <div class="hero-space-buttons">
                             <a href="/documentation/installation/hello-world" class="button button--red">
-                                Try Vamp
+                                MIGRATE NOW
                             </a>
 
                             <p class="text dark-it-up">or</p>
