@@ -3,16 +3,16 @@
         <div class="row">
             <div class="col col-3">
                 <h2 class="h2">Learn more</h2>
-                <a href="/why-use-vamp/why-use-vamp">
-                    <p class="text">Why use Vamp?</p>
+                <a href="#">
+                    <p class="text">Why use Bitgrounds?</p>
                 </a>
-                <a href="/documentation/how-vamp-works/architecture-and-components">
+                <a href="#">
                     <p class="text">Documentation</p>
                 </a>
                 <a href="/about/">
                     <p class="text">About us</p>
                 </a>
-                <a href="/resources/news/">
+                <a href="#">
                     <p class="text">News</p>
                 </a>
                 <a href="/contact/">
@@ -24,13 +24,13 @@
                 <a href="/support/">
                     <p class="text">Support</p>
                 </a>
-                <a href="/resources/community/">
+                <a href="#">
                     <p class="text">Community</p>
                 </a>
-                <a href="https://github.com/magneticio/vamp" target="_blank">
+                <a href="#" target="_blank">
                     <p class="text">GitHub</p>
                 </a>
-                <a href="https://gitter.im/magneticio/vamp" target="_blank">
+                <a href="#" target="_blank">
                     <p class="text">Gitter</p>
                 </a>
             </div>
@@ -40,7 +40,7 @@
                     Leave your email for the latest news: We won’t spam you and won’t go off topic.
                 </p>
 
-                <form action="//magnetic.us9.list-manage.com/subscribe/post?u=c709b3ab8cce9e00d617e01b6&amp;id=c1465e21d0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" style="display: inline" target="_blank" novalidate="">
+                <form action="mail-chimp" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" style="display: inline" target="_blank" novalidate="">
                     <div class="input-group">
                         <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Email">
                         <a onclick="$(this).closest('form').submit()" class="button button--red not-active">
@@ -50,9 +50,6 @@
                     </div>
                 </form>
 
-                <!--<p class="text">-->
-                <!--Or subscrice to our <a class="rss-feed-link" href="http://vamp.io/index.xml" target="_blank">RSS feed</a>-->
-                <!--</p>-->
 
 
                 <div class="social-buttons">
@@ -74,7 +71,7 @@
             <a href="/">Bitgrounds</a>
         </div>
         <div class="part">
-            <img class="vamp-bat" src="/img/003-Small-icons/Medium-blue/VAMP-Medium.svg" alt="">
+
             <p class="text">© {{ date('Y') }} {{ $app_settings->name or '' }}. All rights reserved.</p>
         </div>
     </div>
