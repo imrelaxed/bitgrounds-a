@@ -173,6 +173,17 @@ function documentReady() {
     $('#mobile-header .hamburger').click(function () {
         $('#mobile-menu').toggleClass('show');
     });
+
+    // Dropdown functionality2
+
+    $('#droper-menu li').click(function () {
+        $(this).toggleClass('active');
+        $(this).next('ul').toggleClass('show');
+    });
+
+    $('#droper-header .hamburger').click(function () {
+        $('#droper-menu').toggleClass('show');
+    });
 }
 
 // Set side menu

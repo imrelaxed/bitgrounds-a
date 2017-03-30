@@ -103,63 +103,7 @@
                 </div>
 
                 <div class="row row--wrap">
-                    <div class="col col-5">
-                        <div class="offer-item">
-                            <img src="/img/002-Medium-icons/Medium-icons-01.svg" alt="">
-                            <p class="text">
-                                Graphical UI and dashboards for clear information and easy management
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col col-5">
-                        <div class="offer-item">
-                            <img src="/img/002-Medium-icons/Medium-icons-02.svg" alt="">
-                            <p class="text">
-                                Integrated javascript based workflow system for flexible automation
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col col-5">
-                        <div class="offer-item">
-                            <img src="/img/002-Medium-icons/Medium-icons-03.svg" alt="">
-                            <p class="text">
-                                Integrated metrics and events system exposed through API, SSE and websockets.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col col-5">
-                        <div class="offer-item">
-                            <img src="/img/002-Medium-icons/Medium-icons-06.svg" alt="">
-                            <p class="text">
-                                Automatic load balancing of scaled out services and containers
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col col-5">
-                        <div class="offer-item">
-                            <img src="/img/002-Medium-icons/Medium-icons-05.svg" alt="">
-                            <p class="text">
-                                API gateway features such as URL rewrites and conditional redirects
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col col-5">
-                        <div class="offer-item">
-                            <img src="/img/002-Medium-icons/Medium-icons-04.svg" alt="">
-                            <p class="text">
-                                CLI and REST API for integration with CI/CD pipelines
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-
-        <!--FEATURES LIST ROW 02-->
-        <div class="lander-row lander-row--grey top-bar features-bottom">
-            <div class="container">
-                <div class="row row--wrap">
                     <div class="col col-5">
                         <div class="lower-offer-item">
                             <img src="/img/003-Small-icons/block-03.svg" alt="">

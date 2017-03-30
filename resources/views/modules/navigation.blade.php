@@ -5,7 +5,7 @@
     <!--LOGO AREA-->
 
     <div class="left">
-    <a href="{{ url('../') }}" class="navbar-brand">
+    <a href="{{ url('../') }}">
 
             <div id="logo" class="logo"></div>
 
