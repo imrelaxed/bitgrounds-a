@@ -1,9 +1,10 @@
-  <h4>Your plan</h4>
-  <p>You are on the <strong>
+  <div class=" text-center">
+  <h4>You are currently subscribed to the <strong class="text-primary">
       {{ $subscription->stripe_plan }}
-  </strong> plan.</p>
+  </strong> plan.</h4>
   
-    <h3>Change your plan</h3>
+    <p>If you'd like you can change your plan below.</p>
+      <hr>
       @foreach($plans as $plan)
           <div class="col-md-6">
               <div class="panel {{ ( $is_subscribed && $subscription->stripe_plan ==  $plan->id ) ? 'panel-success' :  'panel-primary' }}">
@@ -33,5 +34,5 @@
                   </div>
               </div>
           </div>
-          @endforeach
   </div>
+          @endforeach

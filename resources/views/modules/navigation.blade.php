@@ -63,11 +63,11 @@
                 <!--DROPDOWN START-->
 
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ route('home') }}">Home</a></li>
-                        <li><a href="{{ route('settings') }}">Account Settings</a></li>
+                        {!! Html::dropdownItem('home', 'Home') !!}
+                        {!! Html::dropdownItem('user/settings', 'Account Settings') !!}
                         @if( auth()->user()->subscribed('main') )
                             <li class="divider"></li>
-                            <li><a href="{{ route('billing') }}">Billing Settings</a></li>
+                            {!! Html::dropdownItem('user/billing', 'Billing Settings') !!}
                             <li><a href="{{ route('invoices') }}">Payment History</a></li>
                         @endif
                         <li class="divider"></li>

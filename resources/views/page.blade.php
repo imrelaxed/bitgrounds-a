@@ -2,10 +2,8 @@
 
 @section('page-content')
 <div class="page bit-page">
-    <div class="container markdowned">
-        <div class="bit-title">
-            <h1 class="h1">{{ isset($title) ? $title : 'Default' }}</h1>
-        </div>
+    <div class="container bs">
+        @include('modules.sessions.notice')
 
         @yield('content')
 

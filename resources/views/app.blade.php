@@ -9,8 +9,6 @@
         @include('modules.navigation')
 </div>
 
-@include('modules.sessions.notice')
-
 @yield('page-content')
 
 @include('base.footer')

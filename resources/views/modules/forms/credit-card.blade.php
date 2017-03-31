@@ -1,9 +1,10 @@
 <div class="payment-errors"></div>
 
-<div class="form-group">
+<div class="form-row">
+  <div class="col-xs-12 form-group card required">
 
-  <label for="cc-num">
-    <div>Card Number</div>
+  <label for="cc-num" class="control-label">
+    Card Number
   </label>
     
     <input 
@@ -15,17 +16,16 @@
       autocomplete="cc-number"
       required 
     />
-
+  </div>
 </div>
 
-<div class="form-group">
-  <div class="row">
-    
-    <div class="col-xs-6">
-      <label for="cc-exp">
-        <div>Expires</div>
-      </label> 
-        
+<div class="form-row">
+
+    <div class="col-xs-6 expiration required form-group">
+      <label for="cc-exp" class="control-label">
+        Expiration
+      </label>
+
         <input 
           type="tel"
           id="cc-exp"
@@ -37,16 +37,14 @@
         />
 
         <input type="hidden" data-stripe="exp-month">
-        <input type="hidden" data-stripe="exp-year">    
-           
+        <input type="hidden" data-stripe="exp-year">
     </div>
 
-    <div class="col-xs-4">
-      
-      <label for="cc-cvc">
-        <div>CVC</div>
-      </label>
 
+    <div class="col-xs-6 cvc form-group required">
+      <label for="cc-cvc" class="control-label">
+        CVC
+      </label>
         <input 
           type="tel"
           id="cc-cvc"
@@ -57,7 +55,6 @@
           autocomplete="off"
           required
         />
-   
     </div>
-  </div>
+
 </div>

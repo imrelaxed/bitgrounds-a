@@ -58,6 +58,15 @@
 
     return $html;
   });
+  $html->macro('dropdownItem', function($route = '', $title = '', $class = '', $active = 'active')
+  {
+    $html = "";
+    $active = Request::is(ltrim($route, '/')) ? $active : '';
+
+    $html .= "<li class='$active'><a href='" . url($route) . "' class='$class'>$title</a><li>";
+
+    return $html;
+  });
 $html->macro('navbarLogout', function($route = 'logout', $title = 'Logout', $class = '', $active = 'active')
 {
     $html = "";

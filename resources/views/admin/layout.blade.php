@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" role="document">
 
-  @include('base.head')
+  @include('admin.head')
   <script src="https://d26b395fwzu5fz.cloudfront.net/{{ $keen_io_api_version or '3.2.4' }}/keen.min.js"></script>
   @yield('keen')
 

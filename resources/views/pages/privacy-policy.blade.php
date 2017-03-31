@@ -1,4 +1,4 @@
-@extends('app')
+@extends('page')
 
 @section('content')
 <h1>{{ $title }}</h1>

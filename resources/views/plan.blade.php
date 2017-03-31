@@ -1,8 +1,7 @@
-@extends('app')
+@extends('page')
 
 @section('content')
-    <div class="container">
-        <div class="row">
+
             <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0">
 
                 @if (count($errors) > 0)
@@ -17,7 +16,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-body text-center">
-                        <h1>Hi <span class="text-primary">{{ Auth::user()->name }}</span>, your plan details.</h1>
+                        <h3>Please enter your credit card information.</h3>
                         <hr>
                         <div class="panel panel-primary">
                             <div class="panel-heading text-uppercase">{{ $plan['id'] }}</div>
@@ -35,7 +34,6 @@
                                         <span class="payment-errors label label-danger"></span>
                                     </h3>
 
-                                    <div class="row">
                                         <div class='form-row'>
                                             <div class='col-xs-12 form-group card required'>
                                                 <label class='control-label'>Card Number</label>
@@ -49,7 +47,7 @@
                                             </div>
                                             <div class='col-xs-4 form-group expiration required'>
                                                 <label class='control-label'>Expiration Month</label>
-                                                <input class='form-control card-expiry-month' placeholder='MM' value="{{ date('d') }}" data-stripe="exp_month" size='2' type='text' required>
+                                                <input class='form-control card-expiry-month' placeholder='MM' value="{{ date('m') }}" data-stripe="exp_month" size='2' type='text' required>
                                             </div>
                                             <div class='col-xs-4 form-group expiration required'>
                                                 <label class='control-label'> Year</label>
@@ -65,9 +63,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+
                                     <input type="hidden" name="plan" value="{{ $plan['id'] }}">
-                                    <input type="submit" class="submit btn btn-success btn-lg btn-block" value="Make $ {{ $plan['amount'] / 100 }} Payment">
+                                    <input type="submit" class="submit btn btn-success btn-lg btn-block" value="Make {{ $plan['amount'] / 100 }}$ Payment">
                                 </form>
                             </div>
                         </div>
@@ -77,8 +75,7 @@
 
 
             </div>
-        </div>
-    </div>
+
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>

@@ -1,4 +1,4 @@
-@extends('app')
+@extends('page')
 
 @section('content')
     @if( $is_subscribed )
@@ -8,7 +8,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Billing Settings</div>
 
-                    <div class="panel-body text-center">
+                    <div class="panel-body">
 
                         @include('modules.forms.account.change-plan')
                         @include('modules.forms.account.update-credit-card')
@@ -20,7 +20,8 @@
             </div>
         </div>
     </div>
-@else
+
+    @else
             <small>Nothing here.</small>
 
     @endif

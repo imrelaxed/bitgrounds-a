@@ -21,7 +21,7 @@ class UserController extends Controller {
 
     public function getBilling()
     {
-
+        $title = 'Billing';
         $lastfour = auth()->user()->card_last_four;
 
         $settings = $this->app_settings;
@@ -33,13 +33,14 @@ class UserController extends Controller {
         $subscription = Auth::user()->subscription('main');
 
         $title = 'Dashboard';
-        return view('settings', compact('plans', 'settings', 'is_subscribed', 'subscription', 'lastfour'));
+        return view('settings', compact('plans','title', 'settings', 'is_subscribed', 'subscription', 'lastfour'));
     }
 
     public function getSettings()
     {
+        $title='Account Settings';
         $user = Auth::user();
-        return view('user.settings', compact('user'));
+        return view('user.settings', compact('user','title'));
     }
 
     public function postUpdateSettings(Request $request)

@@ -83,11 +83,6 @@ function documentReady() {
     thePath = window.location.pathname;
     setSideMenu();
 
-    // Set anchors on all h2
-    $('.documentation h2, h3, h4').each(function () {
-        $(this).append('<a class="anchor-hover" href="' + window.location.pathname + '#' + $(this).attr('id') + '"><i class="fa fa-link" aria-hidden="true"></i></a>');
-    });
-
     // Top menu color change
     $(window).on("scroll", function () {
         setColorMenu();
@@ -172,17 +167,6 @@ function documentReady() {
 
     $('#mobile-header .hamburger').click(function () {
         $('#mobile-menu').toggleClass('show');
-    });
-
-    // Dropdown functionality2
-
-    $('#droper-menu li').click(function () {
-        $(this).toggleClass('active');
-        $(this).next('ul').toggleClass('show');
-    });
-
-    $('#droper-header .hamburger').click(function () {
-        $('#droper-menu').toggleClass('show');
     });
 }
 
