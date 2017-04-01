@@ -1,6 +1,6 @@
 <div class="lander-row lander-row--blue footer {{ $footerClass or '' }}">
     <div class="container">
-        <div class="row">
+        <div class="row-alt">
             <div class="col col-3">
                 <h2 class="h2">Learn more</h2>
                 <a href="#">

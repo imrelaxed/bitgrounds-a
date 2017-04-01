@@ -130,6 +130,97 @@ body {
   line-height: 1.7;
 }
 
+.gutter {
+  margin: 0 auto !important;
+  &__small{
+    margin: 10px (-($gutter-size/2)) !important;
+  }
+  &__padding {
+    padding: 0;
+  }
+}
+.control-panel {
+
+  align-items: stretch;
+  min-height: 25vh;
+
+  table{
+  margin:0;
+  }
+  a {
+    color: $color-big-stone;
+  }
+  .btn-block {
+    border-radius: 0;
+    margin-top: 0;
+    padding: 12px 12px;
+    text-align: left;
+    font-size: 16px;
+    border-color: $color-big-stone;
+    color: $color-big-stone;
+    border-right: 0;
+    border-top: 0;
+    border-left: 0;
+  }
+  .fa {
+   padding-right: 10px;
+  }
+  .col-md-7{
+    border-right: 1px solid $color-big-stone;
+  }
+  .col-xs-4{
+    border-right: 1px solid $color-big-stone;
+  }
+  li {
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 25px;
+    border-bottom: 1px solid $color-big-stone;
+    background-color: $color-white-squeeze;
+
+  &:hover {
+    background-color: #cadced;
+  }
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 2em;
+  }
+
+  .manage-bar {
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    margin: 0 0;
+  }
+
+  &__head {
+    background-color: $color-cascade;
+    border-bottom: 1px solid $color-big-stone;
+  }
+  &__cell {
+    padding: 0;
+  }
+}
+
+
+
 // Buttons
 .button {
   @extend .h3;
@@ -464,11 +555,11 @@ body {
   height: 100vh;
   position: fixed;
   bottom: 0;
-  overflow-y: scroll;
+  overflow-y: hidden;
   width: 280px + 40px + 40px;
 
   @media all and (min-width: 1025px) {
-    display: block;
+    display: none;
   }
 
   &__item {
@@ -952,6 +1043,20 @@ body {
   }
 }
 .bs {
+
+  .panel-default {
+    border-color: $color-ming;
+
+    .panel-heading {
+    color: $color-white-squeeze;
+    background-color: $color-big-stone;
+    border-color: $color-ming;
+    font-weight: 600;
+  }
+    .panel-footer .button {
+      display: block;
+    }
+  }
   a {
     text-decoration: none;
     &:hover {
@@ -1024,7 +1129,7 @@ body {
       width: auto;
       height: auto;
       margin: 0;
-      overflow: visible;
+      overflow: hidden;
       clip: auto;
     }
   }
@@ -1398,11 +1503,15 @@ body {
     margin-bottom: 1%;
   }
 
+  .bw {
+    font-weight: 400;
+
+  }
 }
 
 // Top menu is considered active when the menu is not on top anymore at the landing page
 .top-menu.active {
-  background-color: #193647;
+  background-color: $color-big-stone;
   /*
   border-bottom: none;
   box-shadow: 0 4px 2px -2px rgba($color-big-stone, 0.25);
@@ -1573,9 +1682,7 @@ body {
       margin: initial;
     }
 
-    .vamp-bat {
-      display: block;
-    }
+
   }
 }
 
@@ -1916,76 +2023,14 @@ body {
 
 
 
-.search-page {
-  width: 100vw;
-  height: 100vh;
-  overflow-y: scroll;
-
-  @media all and (min-width: 1025px) {
-    padding-top: 80px + 40px;
-  }
-
-
-  .search-results-for {
-    display: flex;
-
-    h1 {
-      display: inline-block;
-      height: 48px;
-    }
-
-    p {
-      margin-left: 10px;
-      font-size: $font-size-medium;
-      display: inline-block;
-      align-self: flex-end;
-      line-height: 1;
-      padding-bottom: 4px;
-    }
-  }
-
-  .search-result-item {
-    padding: 20px 0;
-
-    border-bottom: 1px solid $color-bermuda-gray;
-
-    &:last-of-type {
-      border-bottom: none;
-    }
-
-    h2 {
-      margin: 0;
-      padding: 0;
-    }
-
-    .text {
-      margin: 0;
-      padding: 0;
-    }
-
-    .path {
-      margin: -4px 0 2px 0;
-      opacity: 0.7;
-      padding: 0;
-      font-size: 13px;
-    }
-
-    a {
-      margin: 0;
-      padding: 0;
-      text-decoration: none;
-      color: $color-radical-red;
-    }
-
-  }
-}
-
 .bit-page {
   align-items: center;
   flex-direction: column;
+  background: $color-jungle-mist;
   width: 100vw;
   height: auto;
   overflow-y: scroll;
+
 
   @media all and (min-width: 1025px) {
     padding-top: 80px + 40px;

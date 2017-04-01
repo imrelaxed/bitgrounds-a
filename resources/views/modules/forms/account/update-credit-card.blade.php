@@ -9,8 +9,7 @@
     {{ csrf_field() }}
   @include('modules.forms.credit-card')
     <div class="text-center">
-  <a href="#" class="button button--red" onclick="event.preventDefault();
-                                                     document.getElementById('change-card').submit();">Update card</a>
+        <button role="submit" class="button button--grey">Update card</button>
         </div>
 </form>
 

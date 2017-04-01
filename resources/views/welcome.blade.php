@@ -7,7 +7,7 @@
         <div class="lander-row lander-row--blue hero-space">
             <div class="container">
 
-                <div class="row">
+                <div class="row-alt">
                     <div class="col">
                         <h1 class="header center">
                             Time for a better web hosting provider?
@@ -16,7 +16,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row-alt">
                     <div class="col center">
                         <div class="hero-space-buttons">
                             <a href="/documentation/installation/hello-world" class="button button--red">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row-alt">
                     <div class="col center">
                         <br>
                         <br>
@@ -53,10 +53,10 @@
             </div>
         </div>
 
-        <!--ABOUT VAMP ROW-->
-        <div id="about-vamp-row" class="lander-row lander-row--white">
+        <!--ABOUT ROW-->
+        <div id="about-row" class="lander-row lander-row--white">
             <div class="container">
-                <div class="row">
+                <div class="row-alt">
                     <div class="col center">
                         <a href="documentation/tutorials/run-a-canary-release/" class="image--smaller"><img src="img/001-Big-icons/illustration-01.svg" alt="Easy canary releasing"></a>
                         <h2 class="h2">Fast</h2>
@@ -79,7 +79,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row-alt">
                     <div class="col center">
                         <a href="/why-use-vamp/why-use-vamp" class="button button--red--ghost">
                             <p>Learn More</p>
@@ -95,14 +95,14 @@
         <!--FEATURES LIST ROW 01-->
         <div class="lander-row lander-row--grey features-top">
             <div class="container">
-                <div class="row">
+                <div class="row-alt">
                     <div class="col center">
                         <h3 class="h3">Features</h3>
                         <h1 class="h1">What more do we offer</h1>
                     </div>
                 </div>
 
-                <div class="row row--wrap">
+                <div class="row-alt row-alt--wrap">
 
                     <div class="col col-5">
                         <div class="lower-offer-item">
@@ -153,7 +153,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row-alt">
                     <div class="col center">
                         <a href="/why-use-vamp/why-use-vamp" class="button button--red">
                             <p>Learn More</p>
@@ -165,17 +165,17 @@
             </div>
         </div>
 
-        <!--PARTNERS ROW-->
+        <!--NAMEDROP ROW-->
         <div id="partners-row" class="lander-row lander-row--white">
             <div class="container">
-                <div class="row">
+                <div class="row-alt">
                     <div class="col center">
                         <h3 class="h3">Technology Partners</h3>
                         <h1 class="h1">Vamp works with</h1>
                     </div>
                 </div>
 
-                <div class="row logos-row">
+                <div class="row-alt logos-row">
                     <div class="col center">
                         <a href="documentation/installation/kubernetes/"><img src="/img/004-Logos/001-dark-blue/Google-vertical.svg" alt="Google"></a>
                     </div>

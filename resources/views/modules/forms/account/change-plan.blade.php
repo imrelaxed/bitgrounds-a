@@ -18,11 +18,11 @@
                   </div>
                   <div class="panel-footer">
                       @if( $is_subscribed &&  ( $subscription->stripe_plan ==  $plan->id ) )
-                          <a href="#" class="btn btn-default btn-block">
+                          <a href="#" class="button button--grey--ghost">
                               Current Plan
                           </a>
                       @else
-                          <a href="{{ route('plan', $plan->id) }}" class="btn btn-success btn-block" onclick="event.preventDefault();
+                          <a href="{{ route('plan', $plan->id) }}" class="button button--grey" onclick="event.preventDefault();
                                                      document.getElementById('swap-form').submit();">
                               Change
                           </a>
@@ -34,5 +34,5 @@
                   </div>
               </div>
           </div>
-  </div>
           @endforeach
+  </div>
