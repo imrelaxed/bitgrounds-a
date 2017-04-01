@@ -1038,10 +1038,7 @@ body {
 }
 
 .control-panel {
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  min-height: 25vh;
+  min-height: 15vh;
 }
 
 .control-panel table {
@@ -1055,7 +1052,7 @@ body {
 .control-panel .btn-block {
   border-radius: 0;
   margin-top: 0;
-  padding: 12px 12px;
+  padding: 14px 15px;
   text-align: left;
   font-size: 16px;
   border-color: #1a384a;
@@ -1069,12 +1066,28 @@ body {
   padding-right: 10px;
 }
 
-.control-panel .col-md-7 {
-  border-right: 1px solid #1a384a;
+.control-panel .col-md-5 {
+  background-color: #1a384a;
 }
 
 .control-panel .col-xs-4 {
   border-right: 1px solid #1a384a;
+  border-left: 1px solid #1a384a;
+}
+
+.control-panel .col-xs-8 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
 }
 
 .control-panel li {
@@ -1082,13 +1095,12 @@ body {
       -ms-flex: 1;
           flex: 1;
   text-align: center;
-  padding-top: 2vh;
+  padding-top: 1vh;
   padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  line-height: 25px;
+  line-height: 20px;
   border-bottom: 1px solid #1a384a;
   background-color: #F0F5FA;
+  font-size: 14px;
 }
 
 .control-panel li:hover {
@@ -1108,10 +1120,10 @@ body {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;

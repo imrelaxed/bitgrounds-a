@@ -141,8 +141,7 @@ body {
 }
 .control-panel {
 
-  align-items: stretch;
-  min-height: 25vh;
+  min-height: 15vh;
 
   table{
   margin:0;
@@ -153,7 +152,7 @@ body {
   .btn-block {
     border-radius: 0;
     margin-top: 0;
-    padding: 12px 12px;
+    padding: 14px 15px;
     text-align: left;
     font-size: 16px;
     border-color: $color-big-stone;
@@ -165,23 +164,35 @@ body {
   .fa {
    padding-right: 10px;
   }
-  .col-md-7{
-    border-right: 1px solid $color-big-stone;
+  .col-md-5{
+  background-color: $color-big-stone;
+ 
   }
   .col-xs-4{
     border-right: 1px solid $color-big-stone;
+    border-left: 1px solid $color-big-stone;
+  }
+  .col-xs-8 {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    flex-flow: column wrap;
+    -webkit-align-content: stretch;
+    align-content: stretch;
   }
   li {
     -webkit-flex: 1;
     flex: 1;
     text-align: center;
-    padding-top: 2vh;
+    padding-top: 1vh;
     padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    line-height: 25px;
+    //padding-left: 10px;
+    //padding-right: 10px;
+    line-height: 20px;
     border-bottom: 1px solid $color-big-stone;
     background-color: $color-white-squeeze;
+    font-size: 14px;
 
   &:hover {
     background-color: #cadced;
@@ -204,7 +215,7 @@ body {
     -webkit-justify-content: space-around;
     justify-content: space-around;
     -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     -webkit-align-items: stretch;
     align-items: stretch;
     margin: 0 0;
