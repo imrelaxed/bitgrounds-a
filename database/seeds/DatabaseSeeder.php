@@ -54,7 +54,7 @@ class ApplicationSettingsTableSeeder extends Seeder
         DB::table('application_settings')->delete();
         $data = [
             'name' =>	'Bitgrounds',
-            'customer_support_email' => 'support@bitgrounds.com'
+            'customer_support_email' => 'admin@bitgrounds.com'
         ];
         ApplicationSetting::create($data);
     }
