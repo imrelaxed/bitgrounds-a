@@ -1,27 +1,4 @@
 
-.no-gutter [class*="col-"] {
-    padding-right: 0;
-    padding-left: 0;
-    display: table;
-    content: " ";
-}
-.no-padding [class*="panel-"] {
-    padding: 5px 0px;
-}
-/*
-.row {
-    margin-left: -15px;
-    margin-right: -15px;
-}
-*/
-.row:before,
-.row:after {
-    content: " ";
-    display: table;
-}
-.row:after {
-    clear: both;
-}
 
 .navbar-custom .navbar-toggle:focus, .navbar-custom .navbar-toggle:hover, .navbar-custom .navbar-toggle {
     background-color: #6991AA;
@@ -105,14 +82,14 @@
 
 }
 
-header .name {
+.landing-page header .name {
     font-weight: 200;
     font-size: 50px;
     letter-spacing: 5px;
     margin-bottom: 30px;
     text-transform: uppercase;
 }
-header {
+.landing-page header {
     text-align: center;
     background: -webkit-linear-gradient(45deg, #234B5F, #1a384a);
     background: linear-gradient(45deg, #234B5F, #1a384a);
@@ -203,7 +180,7 @@ header .container-fluid {
  margin: 10px 0;
 }
 
-.btn {
+.landing-page .btn {
     border: none;
     height: 40px;
     min-width: 120px;
@@ -221,14 +198,14 @@ header .container-fluid {
     -ms-flex-pack: center;
     justify-content: center;
 }
-.h3, .btn {
+.landing-page .h3, .btn {
     font-weight: 500;
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 0.1em;
 }
 
-.fa {
+.landing-page .fa {
     margin: 0 10px 1px;
 }
 .intro-row {
@@ -292,4 +269,32 @@ footer .fa {
     position: relative;
     padding: 25px 0;
     border-top: 1px solid rgba(55, 100, 125, 0.3);
+}
+
+.no-gutter [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+    display: table;
+    content: " ";
+}
+.no-padding [class*="panel-"] {
+    padding: 5px 0px;
+}
+/*
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+*/
+.row:before,
+.row:after {
+    content: " ";
+    display: table;
+}
+.row:after {
+    clear: both;
+}
+.dropdown-menu {
+    padding: 5px 5px;
+    margin: 20px 10px 0;
 }

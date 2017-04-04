@@ -1,8 +1,8 @@
 @extends('app')
 
 @section('page-content')
-<div class="page bit-page">
-    <div class="container bs">
+<div class="bit-page">
+    <div class="container">
         @include('modules.sessions.notice')
 
         @yield('content')

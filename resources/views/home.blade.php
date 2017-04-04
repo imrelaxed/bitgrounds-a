@@ -1,7 +1,7 @@
 @extends('page')
 
 @section('content')
-
+<div class="control-page">
 <div class="text-center">
                     <h2>Hi <span class="text-primary"> {{ ucfirst(Auth::user()->name) }}</span></h2>
 
@@ -25,6 +25,9 @@
                         @endif
 </div>
 <hr class ="invisible">
+
+<!----Control Panel----->
+
             <div class="panel panel-default control-panel">
                 <div class="panel-heading">Control Panel</div>
                 <div class="panel-body gutter__padding">
@@ -128,6 +131,6 @@
                     @endif
 
 
-
+</div>
 
 @endsection

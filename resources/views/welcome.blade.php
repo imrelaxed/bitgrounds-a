@@ -31,12 +31,7 @@
 
 
             <div class="row bottom-hero">
-                <div class="pixels-left">
-                    <img src="img/herospace/pixels-header-left.gif" alt="">
-                </div>
-                <div class="pixels-right">
-                    <img src="img/herospace/pixels-header-right.gif" alt="">
-                </div>
+
             </div>
         </div>
         </div>
