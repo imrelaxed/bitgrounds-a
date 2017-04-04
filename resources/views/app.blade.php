@@ -5,9 +5,9 @@
 
 <body class="@yield('page-class')">
 
-<div class="landing-page">
+
         @include('modules.navigation')
-</div>
+
 
 @yield('page-content')
 

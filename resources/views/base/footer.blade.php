@@ -1,7 +1,8 @@
-<div class="lander-row lander-row--blue footer {{ $footerClass or '' }}">
+<footer>
+<div class="footer-above {{ $footerClass or '' }}">
     <div class="container">
-        <div class="row-alt">
-            <div class="col col-3">
+        <div class="row">
+            <div class="col-md-3">
                 <h2 class="h2">Learn more</h2>
                 <a href="#">
                     <p class="text">Why use Bitgrounds?</p>
@@ -19,7 +20,7 @@
                     <p class="text">Contact</p>
                 </a>
             </div>
-            <div class="col col-6">
+            <div class="col-md-4">
                 <h2 class="h2">All things code</h2>
                 <a href="/support/">
                     <p class="text">Support</p>
@@ -34,29 +35,30 @@
                     <p class="text">Gitter</p>
                 </a>
             </div>
-            <div class="col col-6">
+            <div class="col-md-5">
                 <h2 class="h2">Stay up to date</h2>
                 <p class="text">
                     Leave your email for the latest news: We won’t spam you and won’t go off topic.
                 </p>
-
-                <form action="mail-chimp" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" style="display: inline" target="_blank" novalidate="">
-                    <div class="input-groupy">
-                        <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Email">
-                        <a onclick="$(this).closest('form').submit()" class="button button--red not-active">
-                            <div class="button__icon button__icon--mail">
-                            </div>
-                        </a>
+            <div class="row mail-chimp">
+                <form action="mail-chimp" method="post" id="mc-subscribe-form" name="mc-subscribe-form" class="validate form-inline" style="display: inline" target="_blank">
+                    <div class="form-group">
+                        <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Email" class="form-control mx-sm-3">
+                        <span class="input-group-btn">
+                        <button class="btn btn-success">
+                            <i class="fa fa-envelope-o"></i>
+                        </button>
+                    </span>
                     </div>
                 </form>
+            </div>
 
 
-
-                <div class="social-buttons">
+                <div class="social">
                     <p class="text">Follow us on: </p>
-                    <div class="social-icons">
+                    <div>
                         <a href="#" target="_blank">
-                            <i class="fa fa-2x fa-twitter"></i><!--<img src="/img/003-Small-icons/Dark-blue/Twitter.svg" alt="">-->
+                            <span class="fa fa-twitter"></span>
                         </a>
 
                     </div>
@@ -65,14 +67,15 @@
         </div>
     </div>
 </div>
-<div class="footer-bottom lander-row--blue">
+<div class="footer-below">
     <div class="container">
-        <div class="part">
-            <a href="/">Bitgrounds</a>
+        <div class="pull-left">
+            <a href="/">{{ config('app.name') }}</a>
         </div>
-        <div class="part">
+        <div class="pull-right">
 
-            <p class="text">© {{ date('Y') }} {{ $app_settings->name or '' }}. All rights reserved.</p>
+            <p class="text">© {{ date('Y') }} {{ config('app.name') }} Web Hosting. All rights reserved.</p>
         </div>
     </div>
 </div>
+</footer>

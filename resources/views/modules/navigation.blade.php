@@ -1,62 +1,62 @@
 
 
-<nav aria-label="Header" id="header" class="top-menu">
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-fixed-top navbar-custom">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a href="{{ url('../') }}">
 
-    <!--LOGO AREA-->
+                <div id="logo" class="logo"></div>
 
-    <div class="left">
-    <a href="{{ url('../') }}">
-
-            <div id="logo" class="logo"></div>
-
-    </a>
-    </div>
+            </a>
+        </div>
 
 
     <!--NAV START-->
 
-    <div class="right">
-        <div class="top-menu-items" id="top-menu-items">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
 
-            <a href="{{ url('/about') }}" data-parenturl="/about/" class="top-menu-item">Why Bitgrounds?</a>
+            <a href="{{ url('/about') }}" data-parenturl="/about/" class="nav-item">Why Bitgrounds?</a>
 
-            <a href="{{ route('pricing') }}" data-parenturl="/pricing/" class="top-menu-item">Pricing</a>
+            <a href="{{ route('pricing') }}" data-parenturl="/pricing/" class="nav-item">Pricing</a>
 
-            <a href="" data-parenturl="" class="top-menu-item">Resources</a>
+            <a href="" data-parenturl="" class="nav-item">Resources</a>
 
-            <a href="{{ url('/contact') }}" data-parenturl="/contact/" class="top-menu-item">Support</a>
+            <a href="{{ url('/contact') }}" data-parenturl="/contact/" class="nav-item">Support</a>
 
-        </div>
 
-        <div class="download">
 
 
             @if( Auth::guest() )
-                <a href="{{ route('register') }}" class="button button--red">
+                <a href="{{ route('register') }}" class="btn btn-success">
                     Sign Up
                 </a>
             @elseif( Auth::check() )
-                <a href="{{ route('home') }}" class="button button--red">
+                <a href="{{ route('home') }}" class="btn btn-success">
                     Dashboard
                 </a>
             @endif
 
-        </div>
 
 
         <!--ACCOUNT START-->
 
-        <div class="download">
             @if( Auth::guest() )
 
-            <a href="{{ route('login') }}" class="button button--grey--ghost">
+            <a href="{{ route('login') }}" class="btn btn-outline-primary">
                 Sign In
             </a>
             @else
 
-                    <a href="#" class="dropdown-toggle button button--grey--ghost" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <a href="#" class="dropdown-toggle btn btn-outline-primary" data-toggle="dropdown" role="button" aria-expanded="false">
                         My account
-                        <div class="button__icon--nav button__icon--accordion-medium"></div>
+                        <span class="fa fa-caret-down"></span>
                     </a>
 
 
@@ -95,56 +95,10 @@
                     </ul>
 
             @endif
-
+        </ul>
+            <!-- /.navbar-collapse -->
         </div>
-    </div>
-</nav>
-
-
-<!--MOBILE HEADER-->
-
-<nav aria-label="Header" id="mobile-header">
-    <a href="/" class="logo">
-        <img id="logo" class="logo" src="./img/logo-long-black.svg" alt="">
-    </a>
-
-    <div class="right">
-        <div class="hamburger">
-            <i class="fa fa-lg fa-bars" aria-hidden="true"></i>
         </div>
-    </div>
-
+        <!-- /.container-fluid -->
 </nav>
-
-<ul id="mobile-menu">
-    <li>
-    <a href="{{ url('/about') }}">Why Bitgrounds?</a>
-    </li>
-    <ul>
-
-    </ul>
-
-    <li>
-    <a href="{{ route('pricing') }}">Pricing</a>
-    </li>
-    <ul>
-
-    </ul>
-
-    <li>
-    <a href="">Resources</a>
-    </li>
-    <ul>
-
-    </ul>
-
-    <li>
-    <a href="{{ url('/contact') }}" >Support</a>
-    </li>
-    <ul>
-
-    </ul>
-
-
-</ul>
 
