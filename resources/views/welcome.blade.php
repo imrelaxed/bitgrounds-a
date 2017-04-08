@@ -107,6 +107,9 @@
                                 Scalable, high available and modular architecture
                             </p>
                     </div>
+
+                </div>
+                <div class="row">
                     <div class="col-md-4">
                             <img src="/img/003-Small-icons/block-03.svg" alt="">
                             <p class="text">
