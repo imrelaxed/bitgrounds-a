@@ -152,6 +152,12 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    background-image: url(../img/bottom-hero.png);
+    background-size: contain;
+    height: 100px;
+    width:100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
   }
 
   .lander-buttons {
@@ -180,12 +186,20 @@
 
   .intro-row {
     padding: 75px 0;
+
+    h2 {
+      font-size: 28px;
+    }
   }
 
   .features{
     background-color: #F0F5FB;
     padding: 75px 0;
 
+    .fa-asterisk, .fa-eercast, .fa-cube, .fa-cubes{
+      font-size: 1.7em;
+      color: $color-ming;
+    }
     img {
       width: 30px;
       height: 30px;
@@ -409,24 +423,42 @@ a {
   }
 }
 
+
+/* Namedrop */
+
+.namedrop {
+  padding-top:75px;
+  padding-bottom: 20px;
+}
+
+
 /* Footer */
 
 footer {
   background-color: #1a384a;
 
   .h2, .fa {
-    color: #F0F5FA!important;
+    color: $color-white-squeeze;
     text-align: left;
     padding-top: initial;
     margin-bottom: 20px;
     font-weight: 300;
-    font-size: 1.7em;
+    font-size: 1.4em;
   }
 
-  a, .text {
+  a {
     font-weight: 100;
-    color: #C3D2DC !important;
+    color: $color-jungle-mist;
     text-decoration: none;
+
+    &:hover {
+      color: $color-white-squeeze;
+    }
+  }
+
+  .text {
+    font-weight: 300;
+    color: $color-white-squeeze;
   }
 
   .btn {
@@ -456,4 +488,8 @@ footer {
   position: relative;
   padding: 25px 0;
   border-top: 1px solid rgba(55, 100, 125, 0.3);
+
+  a {
+    color: $color-white-squeeze;
+  }
 }

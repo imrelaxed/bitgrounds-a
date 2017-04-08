@@ -71,7 +71,7 @@
                     <div class="lander-buttons">
                         <a href="/why-use-vamp/why-use-vamp" class="btn btn-success">
                             Learn More
-                           <span class="fa fa-arrow-circle-o-right"></span>
+                           <span class="fa fa-arrow-right"></span>
                         </a>
                     </div>
                 </div>
@@ -90,19 +90,19 @@
                 <div class="row">
 <hr class="invisible">
                     <div class="col-md-4">
-                            <img src="/img/003-Small-icons/block-03.svg" alt="">
+                            <span class="fa fa-cubes"></span>
                             <p class="text">
                                 Apache 2.0 opensource license
                             </p>
                     </div>
                     <div class="col-md-4">
-                            <img src="/img/003-Small-icons/block-03.svg" alt="">
+                        <span class="fa fa-cubes"></span>
                             <p class="text">
                                 Manages dependencies, environment variables and resources
                             </p>
                     </div>
                     <div class="col-md-4">
-                            <img src="/img/003-Small-icons/block-03.svg" alt="">
+                        <span class="fa fa-cubes"></span>
                             <p class="text">
                                 Scalable, high available and modular architecture
                             </p>
@@ -111,19 +111,19 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4">
-                            <img src="/img/003-Small-icons/block-03.svg" alt="">
+                        <span class="fa fa-cubes"></span>
                             <p class="text">
                                 Support for port based, virtual hosts and external service discovery
                             </p>
                     </div>
                     <div class="col-md-4">
-                            <img src="/img/003-Small-icons/block-03.svg" alt="">
+                        <span class="fa fa-cubes"></span>
                             <p class="text">
                                 Vamp Runner for integration testing and educational purposes
                             </p>
                     </div>
                     <div class="col-md-4">
-                            <img src="/img/003-Small-icons/block-03.svg" alt="">
+                        <span class="fa fa-cubes"></span>
                             <p class="text">
                                 Canary releasing also works without containers and microservices
                             </p>
@@ -141,23 +141,25 @@
             </div>
 
         <!--Namedrop Row-->
-            <div class="container">
+            <div class="container namedrop">
                 <div class="row">
                     <div class="text-center">
-                        <h3 class="h3">Technology Partners</h3>
-                        <h1 class="h1">Vamp works with</h1>
+                        <h3 class="h3">We Use Cutting Edge Tech To Be Better</h3>
+                        <h1 class="h1">Bitgrounds Is Powered By</h1>
                     </div>
                 </div>
+<hr class="invisible">
+
 
                 <div class="row logos-row">
                     <div class="col-md-2">
-                        <a href="documentation/installation/kubernetes/"><img src="/img/004-Logos/001-dark-blue/Google-vertical.svg" alt="Google"></a>
+                        <a href="#"><img src="/img/004-Logos/001-dark-blue/Google-vertical.svg" alt="Google"></a>
                     </div>
                     <div class="col-md-2">
-                        <a href="documentation/how-vamp-works/architecture-and-components/"><img src="/img/004-Logos/001-dark-blue/Amazon-vertical.svg" alt="Amazon AWS"></a>
+                        <a href="#"><img src="/img/004-Logos/001-dark-blue/Amazon-vertical.svg" alt="Amazon AWS"></a>
                     </div>
                     <div class="col-md-2">
-                        <a href="documentation/installation/azure-container-service/"><img src="/img/004-Logos/001-dark-blue/Microsoft-vertical.svg" alt="Microsoft Azure"></a>
+                        <a href="#"><img src="/img/004-Logos/001-dark-blue/Microsoft-vertical.svg" alt="Microsoft Azure"></a>
                     </div>
                     <div class="col-md-2">
                         <a href="documentation/installation/kubernetes/"><img src="/img/004-Logos/001-dark-blue/Kubernetes-vertical.svg" alt="Kubernetes"></a>

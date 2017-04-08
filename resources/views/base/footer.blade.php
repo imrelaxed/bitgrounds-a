@@ -5,34 +5,34 @@
             <div class="col-md-3">
                 <h2 class="h2">Learn more</h2>
                 <a href="#">
-                    <p class="text">Why use Bitgrounds?</p>
+                    <p>Why use Bitgrounds?</p>
                 </a>
                 <a href="#">
-                    <p class="text">Documentation</p>
+                    <p>Documentation</p>
                 </a>
                 <a href="/about/">
-                    <p class="text">About us</p>
+                    <p>About us</p>
                 </a>
                 <a href="#">
-                    <p class="text">News</p>
+                    <p>News</p>
                 </a>
                 <a href="/contact/">
-                    <p class="text">Contact</p>
+                    <p>Contact</p>
                 </a>
             </div>
             <div class="col-md-4">
                 <h2 class="h2">All things code</h2>
                 <a href="/support/">
-                    <p class="text">Support</p>
+                    <p>Support</p>
                 </a>
                 <a href="#">
-                    <p class="text">Community</p>
+                    <p>Community</p>
                 </a>
                 <a href="#" target="_blank">
-                    <p class="text">GitHub</p>
+                    <p>GitHub</p>
                 </a>
                 <a href="#" target="_blank">
-                    <p class="text">Gitter</p>
+                    <p>Gitter</p>
                 </a>
             </div>
             <div class="col-md-5">
