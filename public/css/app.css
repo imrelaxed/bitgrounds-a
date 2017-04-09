@@ -167,10 +167,10 @@
   display: flex;
   background-image: url(../img/bottom-hero.png);
   background-size: contain;
-  height: 100px;
   width: 100%;
-  background-repeat: no-repeat;
-  background-position: center bottom;
+  height: 55px;
+  background-repeat: repeat-x;
+  background-position: left bottom;
 }
 
 .landing-page .lander-buttons {

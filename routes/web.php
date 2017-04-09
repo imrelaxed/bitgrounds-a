@@ -95,14 +95,19 @@ Route::group(['prefix' => 'subscription', 'middleware' => 'auth'], function(){
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('home/your', 'HomeController@index');
 
-// Email Testing Routes
-Route::get('test/email', function(){ return view('emails.layout'); });
-Route::get('test/email/password-reset', function(){ return view('emails.password'); });
+// Handling Stripe Webhooks
+Route::post('stripe/webhook', 'WebhookController@handleWebhook');
+
+
+
+// Testing Routes
 Route::get('test/email/new-sign-up', function(){
     return view('emails.welcome')->with('app_settings', App\ApplicationSetting::find(1));
 });
-//Route::get('t', 'UserController@testNotify');
+Route::get('test/directadmin', 'DirectAdminController@makeUser');
+Route::get('test/directadmin1', 'DirectAdminController@makeUser');
 
-// Handling Stripe Webhooks
-Route::post('stripe/webhook', 'WebhookController@handleWebhook');
+
+
+
 
