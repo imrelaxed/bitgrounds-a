@@ -105,7 +105,7 @@ Route::get('test/email/new-sign-up', function(){
     return view('emails.welcome')->with('app_settings', App\ApplicationSetting::find(1));
 });
 Route::get('test/directadmin', 'DirectAdminController@makeUser');
-Route::get('test/directadmin1', 'DirectAdminController@makeUser');
+Route::get('test/connect', 'DirectAdminController@connectionTest');
 
 
 

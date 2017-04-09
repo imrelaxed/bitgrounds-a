@@ -42,9 +42,19 @@ class DirectAdminController extends Controller
 
         try {
         $resellerContext = DirectAdmin::connectReseller($url, $login, $pw, true);
-        } catch (\Exception $e ) {
-            return view('test', compact('e'));
+        } catch (\Exception $error ) {
+            $createdName = '';
+            $createdType = '';
+            $createdDomain = '';
+
+            return view('test', compact('createdName','createdType', 'createdDomain', 'error'));
         }
 
+        $createdName = $resellerContext->getIPs();
+        $createdName = $createdName[0];
+        $createdType = '';
+        $createdDomain = '';
+
+        return view('test', compact('createdName','createdType', 'createdDomain', 'error'));
     }
 }
