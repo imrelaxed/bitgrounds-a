@@ -316,7 +316,6 @@ a:focus {
       -ms-flex-direction: column;
           flex-direction: column;
   background: #C3D2DC;
-  width: 100vw;
   min-height: 80vh;
 }
 
@@ -334,6 +333,7 @@ a:focus {
 
 .control-panel {
   min-height: 15vh;
+  margin: 40px 0;
 }
 
 .control-panel table {

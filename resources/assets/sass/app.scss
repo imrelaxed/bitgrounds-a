@@ -296,7 +296,6 @@ a {
   align-items: center;
   flex-direction: column;
   background: $color-jungle-mist;
-  width: 100vw;
   min-height: 80vh;
 
   @media all and (min-width: 1025px) {
@@ -314,6 +313,7 @@ a {
 
 .control-panel {
   min-height: 15vh;
+  margin: 40px 0;
 
   table{
   margin:0;

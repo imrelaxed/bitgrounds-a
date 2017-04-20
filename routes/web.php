@@ -94,6 +94,8 @@ Route::group(['prefix' => 'subscription', 'middleware' => 'auth'], function(){
 // Other
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('home/your', 'HomeController@index');
+Route::post('host', 'DirectAdminController@makeUser')->name('host');
+
 
 // Handling Stripe Webhooks
 Route::post('stripe/webhook', 'WebhookController@handleWebhook');

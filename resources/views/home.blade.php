@@ -3,14 +3,14 @@
 <div class="control-page">
     <div class="text-center">
 
-        <h2>Hi <span class="text-primary"> {{ ucfirst(Auth::user()->name) }}</span></h2>
+        <h2>Welcome <span class="text-primary"> {{ ucfirst(Auth::user()->name) }}</span></h2>
 
-        <!------ if subscribed ------->
+        <!------ Subscribed ------->
         @if( $is_subscribed )
 
-            <p> You are currently on the <span class="text-success">{{ $subscription->stripe_plan }}</span> hosting plan. </p>
+            <p> You are subscribed to the <span class="text-success">{{ $subscription->stripe_plan }}</span> hosting plan. </p>
 
-            <!------ if grace period ------->
+            <!------ Grace Period ------->
             @if( $subscription->onGracePeriod() )
 
                             <div class="alert alert-danger">
@@ -27,10 +27,25 @@
             @endif
     </div>
 
-        <!---- controls ---->
+        <!---- Control Panel or Hosting Setup ---->
         @yield('controls')
 
+        <!------ Not Subscribed ------->
+        @else
+                @if( !empty($plans) )
+
+                    <h2>Please choose a plan.</h2>
+
+                    <div class="row text-center">
+
+                        <div class="col-md-12">
+                            @include('modules.plans.all')
+                        </div>
+
+                    </div>
+                @endif
         @endif
+
 </div>
 
 @endsection

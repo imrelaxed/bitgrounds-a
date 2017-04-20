@@ -37,7 +37,12 @@ class HomeController extends Controller
         //Check if hosting is setup
         $is_setup = Auth::user()->hosting_set;
 
-        $title = 'Dashboard';
-        return view('home', compact('title', 'plans', 'is_subscribed', 'subscription', 'app_settings'));
+        if($is_subscribed && !$is_setup){
+            $title = 'Set Up Your Web Hosting Panel';
+            return view('user.hosting', compact('title', 'plans', 'is_subscribed', 'subscription', 'app_settings'));
+        } else {
+            $title = 'Dashboard';
+            return view('user.panel', compact('title', 'plans', 'is_subscribed', 'subscription', 'app_settings'));
+        }
     }
 }
