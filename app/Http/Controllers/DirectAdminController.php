@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Omines\DirectAdmin\DirectAdmin;
 use Omines\DirectAdmin\DirectAdminException;
+use GuzzleHttp;
 use App\GroundsKeeper;
 use Illuminate\Http\Request;
 
@@ -20,41 +21,24 @@ class DirectAdminController extends Controller
             try {
                 $createdUser = $groundskeeper->createUser($login, $password, $email, $domain, $package);
             } catch (\Exception $error) {
-                return view('test', compact('error'));
+                $createdName = '';
+                $createdType = '';
+                $createdDomain = '';
+                return view('test', compact('createdName','createdType', 'createdDomain', 'error'));
             }
         $createdName = $createdUser->getUsername();
         $createdType = $createdUser->getType();
         $createdDomain = $createdUser->getDefaultDomain()->getDomainName();
-
-        return view('test', compact('createdName','createdType', 'createdDomain'));
-        }
-
-        $error='Can\'t find the grounds keeper...';
-        return view('test', compact('error'));
-
-    }
-
-    public function connectionTest() {
-
-        $url = env('DIRECTADMIN_URL');
-        $login = env('DIRECTADMIN_LOGIN');
-        $pw = env('DIRECTADMIN_PASS');
-
-        try {
-        $resellerContext = DirectAdmin::connectReseller($url, $login, $pw, true);
-        } catch (\Exception $error ) {
-            $createdName = '';
-            $createdType = '';
-            $createdDomain = '';
-
-            return view('test', compact('createdName','createdType', 'createdDomain', 'error'));
-        }
-
-        $createdName = $resellerContext->getIPs();
-        $createdName = $createdName[0];
-        $createdType = '';
-        $createdDomain = '';
+        $error = 'none';
 
         return view('test', compact('createdName','createdType', 'createdDomain', 'error'));
+        }
+        $createdName = '';
+        $createdType = '';
+        $createdDomain = '';
+        $error='Can\'t find the grounds keeper...';
+        return view('test', compact('createdName','createdType', 'createdDomain', 'error'));
+
     }
+
 }

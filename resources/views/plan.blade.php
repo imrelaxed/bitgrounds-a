@@ -65,7 +65,7 @@
                                         </div>
 
                                     <input type="hidden" name="plan" value="{{ $plan['id'] }}">
-                                    <input type="submit" class="submit btn btn-success btn-lg btn-block" value="Make {{ $plan['amount'] / 100 }}$ Payment">
+                                    <input type="submit" class="submit btn btn-success btn-lg btn-block" value="Make {{ $plan['amount'] / 100 }} $ Payment">
                                 </form>
                             </div>
                         </div>

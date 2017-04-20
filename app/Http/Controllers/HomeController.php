@@ -27,11 +27,15 @@ class HomeController extends Controller
     public function index()
     {
         $plans = Plan::all();
-        // Check is subscribed
+
+        // Check if subscribed
         $is_subscribed = Auth::user()->subscribed('main');
 
         // If subscribed get the subscription
         $subscription = Auth::user()->subscription('main');
+
+        //Check if hosting is setup
+        $is_setup = Auth::user()->hosting_set;
 
         $title = 'Dashboard';
         return view('home', compact('title', 'plans', 'is_subscribed', 'subscription', 'app_settings'));

@@ -16,7 +16,7 @@ public $createdUser;
         $login = env('DIRECTADMIN_LOGIN');
         $pw = env('DIRECTADMIN_PASS');
 
-        $resellerContext = DirectAdmin::connectReseller($url, $login, $pw, true);
+        $this->resellerContext = DirectAdmin::connectReseller($url, $login, $pw, true);
     }
 
     public function createUser($login, $password, $email, $domain, $package) {

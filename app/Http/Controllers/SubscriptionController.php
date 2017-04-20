@@ -121,7 +121,7 @@ class SubscriptionController extends Controller
             return redirect()->back()->withErrors(['notice' => $e->getMessage()]);
         }
         event(new UserSubscribedEvent($me, $pickedPlan));
-        return redirect()->route('home')->with('notice', 'You are now subscribed to ' . $pickedPlan . ' plan.');
+        return redirect()->route('home')->with('notice', 'You are now subscribed to ' . $pickedPlan . ' plan. Time to setup your hosting account!');
     }
 
     /**

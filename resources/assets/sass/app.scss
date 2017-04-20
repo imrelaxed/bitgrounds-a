@@ -297,11 +297,11 @@ a {
   flex-direction: column;
   background: $color-jungle-mist;
   width: 100vw;
-  height: 70vh;
-  overflow-y: scroll;
+  min-height: 80vh;
 
   @media all and (min-width: 1025px) {
     padding-top: 80px + 40px;
+    padding-bottom: 80px;
   }
 }
 

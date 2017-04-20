@@ -101,12 +101,13 @@ Route::post('stripe/webhook', 'WebhookController@handleWebhook');
 
 
 // Testing Routes
-Route::get('test/email/new-sign-up', function(){
+Route::get('test/env', function(){
     return view('emails.welcome')->with('app_settings', App\ApplicationSetting::find(1));
 });
 Route::get('test/directadmin', 'DirectAdminController@makeUser');
 Route::get('test/connect', 'DirectAdminController@connectionTest');
-
+Route::get('test/host', function(){
+    return view('testhost');});
 
 
 

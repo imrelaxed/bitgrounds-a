@@ -317,13 +317,13 @@ a:focus {
           flex-direction: column;
   background: #C3D2DC;
   width: 100vw;
-  height: 70vh;
-  overflow-y: scroll;
+  min-height: 80vh;
 }
 
 @media all and (min-width: 1025px) {
   .bit-page {
     padding-top: 120px;
+    padding-bottom: 80px;
   }
 }
 
