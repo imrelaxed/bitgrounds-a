@@ -14,7 +14,7 @@
             </p>
 
             <p>
-                When your E-mail account is already setup, there are several ways to access it.
+                When your E-mail account is created, there are several ways to access it.
                 If you do not have any offline mail applications, you may use WebMail.
             </p>
 
@@ -25,11 +25,12 @@
             </ul>
 
 
-            <p>Your login to webmail is email address you have created and password that you have selected inside DirectAdmin -> Email Accounts.
+            <p>
+                Your webmail login and password are the email address and password which you created inside DirectAdmin -> Email Accounts.
             </p>
 
             <p>
-                To configure an offline email client such as Windows Mail, Mac Mail and similar, please use the following settings (if you have any trouble, please contact our support):
+                To configure your mobile phone or a desktop email application such as Outlook, Thunderbird, OSX Mail or similar, please use the following settings (if you have any trouble, please contact our support):
             </p>
 
             <ul>
