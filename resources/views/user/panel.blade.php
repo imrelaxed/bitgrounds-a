@@ -20,19 +20,19 @@
                             <tr>
 
                                 <td>Main Domain:</td>
-                                <td> <a href="http://www.domain.com" target="_blank">http://www.domain.com</a> </td>
+                                <td> <a href="http://{{ $da->getDefaultDomain() }}" target="_blank">{{ $da->getDefaultDomain() }}</a> </td>
 
                             </tr>
                         <tr>
 
-                            <td>Account Status:</td>
-                            <td>Active</td>
+                            <td>Username:</td>
+                            <td>{{ $da->getusername() }}</td>
 
                         </tr>
                         <tr>
 
-                            <td>Payment Details:</td>
-                            <td>Every 1 month(s), via Credit Card</td>
+                            <td>Status:</td>
+                            <td>@if($da->isSuspended()) Suspended @else Active @endif </td>
 
                         </tr>
                         <tr>
@@ -65,9 +65,9 @@
 
                     <ul class="manage-bar">
 
-                        <li><a href="#"><span class="menu-icon fa fa-cogs"></span>Hosting Control </a></li>
-                        <li><a href="#"><span class="menu-icon fa fa-unlock-alt"></span>Hosting Password </a></li>
-                        <li><a href="#"><span class="menu-icon fa fa-envelope"></span>WebMail</a></li>
+                        <li><a href="https://host.bitgrounds.com:2222/" target="_blank"><span class="menu-icon fa fa-cogs"></span>Hosting Control </a></li>
+                        <li><a href="https://host.bitgrounds.com:2222/CMD_LOST_PASSWORD" target="_blank"><span class="menu-icon fa fa-unlock-alt"></span>Hosting Password </a></li>
+                        <li><a href="https://host.bitgrounds.com/webmail/" target="_blank"><span class="menu-icon fa fa-envelope"></span>WebMail</a></li>
 
 
 
@@ -79,7 +79,7 @@
                     <div class="row text-center control-panel__head">
                         <h4>Important Information</h4>
                     </div>
-                    <a href="" class="btn-block btn btn-info"><span class="fa fa-link"></span>  Nameserver / DNS Details</a>
+                    <a href="{{ route('dns') }}" class="btn-block btn btn-info"><span class="fa fa-link"></span>  Nameserver / DNS Details</a>
                     <a href="" class="btn-block btn btn-info"><span class="fa fa-user-o"></span>  Administration Details</a>
                     <a href="" class="btn-block btn btn-info"><span class="fa fa-files-o"></span>  File Upload Details</a>
                     <a href="" class="btn-block btn btn-info"><span class="fa fa-envelope-o"></span>  Email Setup Instructions</a>

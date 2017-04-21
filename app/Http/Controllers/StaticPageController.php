@@ -21,8 +21,14 @@ class StaticPageController extends Controller {
 
     public function index()
     {
-        $title = 'Embark';
+        $title = 'Bitgrounds Web Hosting';
         return view('welcome', compact('title'));
+    }
+    public function nameServers() {
+        return view('support.dns');
+    }
+    public function directAdmin() {
+        return view('support.directadmin');
     }
 
     public function pricing()

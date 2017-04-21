@@ -22,6 +22,8 @@ Route::get('contact',        'StaticPageController@contact');
 Route::get('terms-of-use',   'StaticPageController@termsOfUse');
 Route::get('privacy-policy', 'StaticPageController@privacyPolicy');
 Route::get('components',     'StaticPageController@components');
+Route::get('nameservers',     'StaticPageController@nameServers')->name('dns');
+Route::get('hostingpanel',     'StaticPageController@direcAdmin')->name('directadmin');
 
 /* Helper class that generates the routes required for user authentication
 
@@ -107,9 +109,10 @@ Route::get('test/env', function(){
     return view('emails.welcome')->with('app_settings', App\ApplicationSetting::find(1));
 });
 Route::get('test/directadmin', 'DirectAdminController@makeUser');
-Route::get('test/connect', 'DirectAdminController@connectionTest');
-Route::get('test/host', function(){
-    return view('testhost');});
+Route::get('/clear', function() {
+    $exitCode = Artisan::call('cache:clear');
+    return $exitCode;
+});
 
 
 

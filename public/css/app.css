@@ -306,6 +306,18 @@ a:focus {
   display: block;
 }
 
+.support-panel {
+  margin: 20px 0;
+}
+
+.support-panel li {
+  margin-left: 35px;
+}
+
+.support-panel .panel-footer {
+  min-height: 61px;
+}
+
 /* Default Page */
 .bit-page {
   -webkit-box-align: center;

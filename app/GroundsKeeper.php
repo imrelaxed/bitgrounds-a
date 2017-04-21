@@ -30,4 +30,8 @@ public $createdUser;
             return $user;
         }
     }
+    public function impersonate($username) {
+        $user = $this->resellerContext->impersonateUser($username);
+    return $user;
+    }
 }

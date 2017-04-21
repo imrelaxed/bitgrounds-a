@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Plan;
+use App\GroundsKeeper;
 
 class HomeController extends Controller
 {
@@ -26,8 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $plans = Plan::all();
-
+        $gk = new GroundsKeeper();
+        $da = $gk->impersonate(Auth::user()->username);
+        $da = $da->getContextUser();
         // Check if subscribed
         $is_subscribed = Auth::user()->subscribed('main');
 
@@ -39,10 +41,10 @@ class HomeController extends Controller
 
         if($is_subscribed && !$is_setup){
             $title = 'Set Up Your Web Hosting Panel';
-            return view('user.hosting', compact('title', 'plans', 'is_subscribed', 'subscription', 'app_settings'));
+            return view('user.hosting', compact('title', 'da', 'is_subscribed', 'subscription'));
         } else {
             $title = 'Dashboard';
-            return view('user.panel', compact('title', 'plans', 'is_subscribed', 'subscription', 'app_settings'));
+            return view('user.panel', compact('title', 'da', 'is_subscribed', 'subscription'));
         }
     }
 }
