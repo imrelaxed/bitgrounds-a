@@ -20,8 +20,8 @@
 
             <h4>To access webmail:</h4>
             <ul>
-                <li>Use this link <a href="https://bitgrounds.com/webmail/">https://bitgrounds.com/webmail/</a></li>
-                <li>Or download our <a href="https://host.bitgrounds.com/webmail-install.exe">webmail application.</a></li>
+                <li>Use this link <a href="https://bitgrounds.com/webmail/" target="_blank">https://bitgrounds.com/webmail/</a></li>
+                <li>Or download our <a href="https://host.bitgrounds.com/webmail-install.exe" target="_blank">webmail application.</a></li>
             </ul>
 
 

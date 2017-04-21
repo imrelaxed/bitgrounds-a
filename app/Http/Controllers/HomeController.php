@@ -27,9 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $gk = new GroundsKeeper();
-        $da = $gk->impersonate(Auth::user()->username);
-        $da = $da->getContextUser();
+
+        $plans = Plan::all();
         // Check if subscribed
         $is_subscribed = Auth::user()->subscribed('main');
 
@@ -39,10 +38,16 @@ class HomeController extends Controller
         //Check if hosting is setup
         $is_setup = Auth::user()->hosting_set;
 
-        if($is_subscribed && !$is_setup){
-            $title = 'Set Up Your Web Hosting Panel';
-            return view('user.hosting', compact('title', 'da', 'is_subscribed', 'subscription'));
-        } else {
+        if (!$is_subscribed){
+            return view('user.subscribe', compact('plans'));
+        }
+        if($is_subscribed && !$is_setup) {
+            return view('user.hosting', compact('is_subscribed', 'subscription'));
+        }
+        if ($is_subscribed && $is_setup) {
+            $gk = new GroundsKeeper();
+            $da = $gk->impersonate(Auth::user()->username);
+            $da = $da->getContextUser();
             $title = 'Dashboard';
             return view('user.panel', compact('title', 'da', 'is_subscribed', 'subscription'));
         }

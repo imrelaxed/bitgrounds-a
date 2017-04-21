@@ -16,8 +16,8 @@
 
             <h4>To log into your DirectAdmin hosting panel use one of the following links:</h4>
             <ul>
-                <li><a href="https://host.bitgrounds.com:2222/">https://host.bitgrounds.com:2222/</a></li>
-                <li><a href="https:/158.69.245.96:2222/">https://158.69.245.96:2222/</a></li>
+                <li><a href="https://host.bitgrounds.com:2222/" target="_blank">https://host.bitgrounds.com:2222/</a></li>
+                <li><a href="https:/158.69.245.96:2222/" target="_blank">https://158.69.245.96:2222/</a></li>
             </ul>
 
 

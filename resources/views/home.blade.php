@@ -8,8 +8,6 @@
         <!------ Subscribed ------->
         @if( $is_subscribed )
 
-            <p> You are subscribed to the <span class="text-success">{{ $subscription->stripe_plan }}</span> hosting plan. </p>
-
             <!------ Grace Period ------->
             @if( $subscription->onGracePeriod() )
 
@@ -30,20 +28,7 @@
         <!---- Control Panel or Hosting Setup ---->
         @yield('controls')
 
-        <!------ Not Subscribed ------->
-        @else
-                @if( !empty($plans) )
 
-                    <h2>Please choose a plan.</h2>
-
-                    <div class="row text-center">
-
-                        <div class="col-md-12">
-                            @include('modules.plans.all')
-                        </div>
-
-                    </div>
-                @endif
         @endif
 
 </div>

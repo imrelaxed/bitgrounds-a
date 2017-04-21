@@ -1,4 +1,4 @@
-<div class="col-sm-6">
+<div class="col-sm-4">
   <div class="panel panel-primary">
     <div class="panel-heading text-uppercase">{{ $plan->name }}</div>
   <div class="panel-body text-center">

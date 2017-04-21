@@ -37,9 +37,9 @@
                         </tr>
                         <tr>
 
-                            <td>Card Details:</td>
-                            <td colspan="2">
-                                <a href="https://www.domain.com" target="_blank">Update Credit Card</a> (Order Number 5107640379)
+                            <td>Hosting Plan:</td>
+                            <td>
+                                <span class="text-success">{{ $subscription->stripe_plan }}</span>
                             </td>
 
                         </tr>
@@ -65,7 +65,7 @@
 
                     <ul class="manage-bar">
 
-                        <li><a href="https://host.bitgrounds.com:2222/" target="_blank"><span class="menu-icon fa fa-cogs"></span>Hosting Control </a></li>
+                        <li><a href="https://host.bitgrounds.com:2222/" target="_blank"><span class="menu-icon fa fa-cogs"></span>Hosting Administration </a></li>
                         <li><a href="https://host.bitgrounds.com:2222/CMD_LOST_PASSWORD" target="_blank"><span class="menu-icon fa fa-unlock-alt"></span>Hosting Password </a></li>
                         <li><a href="https://host.bitgrounds.com/webmail/" target="_blank"><span class="menu-icon fa fa-envelope"></span>WebMail</a></li>
 
