@@ -7,7 +7,7 @@
 
         <div class="panel-body">
 
-            <h2>DirectAdmin Details</h2>
+            <h2>Web Hosting Administration</h2>
 
             <p>
                 Bitgrounds uses the DirectAdmin Control Panel for management of it's web hosting backend. DirectAdmin is one of the most user friendly web hosting control

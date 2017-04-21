@@ -3,13 +3,13 @@
 
     <div class="panel panel-default control-panel">
 
-        <div class="panel-heading">Hosting Panel Setup</div>
+        <div class="panel-heading">DirectAdmin Hosting Panel Setup</div>
 
             <div class="panel-body">
                 <div class=" text-center">
 
                     <h4>Just one more step before you can start using Bitgrounds Web Hosting.</h4>
-                    <p>Let's setup the credentials for your hosting panel.</p>
+                    <p>Let's setup the credentials for your DirectAdmin hosting panel.</p>
                     <hr>
 
                 </div>
@@ -77,7 +77,7 @@
                     <div class="form-group">
                         <div class="col-md-6 col-md-offset-4">
                             <button type="submit" class="btn btn-primary">
-                                Register Web Hosting Panel
+                                Register DirectAdmin Hosting Panel
                             </button>
                         </div>
                     </div>

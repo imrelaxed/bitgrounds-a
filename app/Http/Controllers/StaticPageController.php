@@ -30,6 +30,12 @@ class StaticPageController extends Controller {
     public function directAdmin() {
         return view('support.directadmin');
     }
+    public function ftp() {
+        return view('support.ftp');
+    }
+    public function email() {
+        return view('support.email');
+    }
 
     public function pricing()
     {

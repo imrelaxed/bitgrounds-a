@@ -23,7 +23,9 @@ Route::get('terms-of-use',   'StaticPageController@termsOfUse');
 Route::get('privacy-policy', 'StaticPageController@privacyPolicy');
 Route::get('components',     'StaticPageController@components');
 Route::get('nameservers',     'StaticPageController@nameServers')->name('dns');
-Route::get('hostingpanel',     'StaticPageController@direcAdmin')->name('directadmin');
+Route::get('hostingpanel',     'StaticPageController@directAdmin')->name('directadmin');
+Route::get('ftp',     'StaticPageController@ftp')->name('ftp');
+Route::get('email-help',     'StaticPageController@email')->name('email-help');
 
 /* Helper class that generates the routes required for user authentication
 

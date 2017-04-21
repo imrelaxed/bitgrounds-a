@@ -80,9 +80,9 @@
                         <h4>Important Information</h4>
                     </div>
                     <a href="{{ route('dns') }}" class="btn-block btn btn-info"><span class="fa fa-link"></span>  Nameserver / DNS Details</a>
-                    <a href="" class="btn-block btn btn-info"><span class="fa fa-user-o"></span>  Administration Details</a>
-                    <a href="" class="btn-block btn btn-info"><span class="fa fa-files-o"></span>  File Upload Details</a>
-                    <a href="" class="btn-block btn btn-info"><span class="fa fa-envelope-o"></span>  Email Setup Instructions</a>
+                    <a href="{{ route('directadmin') }}" class="btn-block btn btn-info"><span class="fa fa-user-o"></span>  Administration Details</a>
+                    <a href="{{ route('ftp') }}" class="btn-block btn btn-info"><span class="fa fa-files-o"></span>  File Upload Details</a>
+                    <a href="{{ route('email-help') }}" class="btn-block btn btn-info"><span class="fa fa-envelope-o"></span>  Email Setup Instructions</a>
 
                 </div>
 
