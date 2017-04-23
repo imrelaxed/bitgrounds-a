@@ -241,7 +241,7 @@
   background-color: transparent;
 }
 
-.btn-outline-primary:hover {
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
   color: white;
   border: 2px solid #6991AA;
   background-color: #6991AA;
@@ -273,6 +273,33 @@
   padding: 12px 25px;
   min-width: 45%;
   margin-bottom: 1%;
+}
+
+.btn-custom {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  border-bottom: 1px solid #1a384a;
+  background-color: #C3D2DC;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 25%;
+  list-style: none;
+  padding-left: 20px;
+}
+
+.btn-custom:hover {
+  background-color: #cadced;
 }
 
 /* Default Links */
@@ -318,6 +345,10 @@ a:focus {
   min-height: 61px;
 }
 
+.padding-medium {
+  padding: 25px 0;
+}
+
 /* Default Page */
 .bit-page {
   -webkit-box-align: center;
@@ -338,6 +369,10 @@ a:focus {
   }
 }
 
+.row {
+  margin: 0px !important;
+}
+
 /* Control Panel */
 .control-page .row {
   margin: 0 !important;
@@ -350,6 +385,14 @@ a:focus {
 
 .control-panel table {
   margin: 0;
+}
+
+.control-panel table a {
+  color: #6fad97;
+}
+
+.control-panel table a:hover {
+  color: #47ad66;
 }
 
 .control-panel a {
@@ -369,10 +412,6 @@ a:focus {
   border-left: 0;
   letter-spacing: 0.3px;
   text-transform: capitalize;
-}
-
-.control-panel .fa {
-  padding-right: 10px;
 }
 
 .control-panel .col-md-5 {
@@ -399,28 +438,6 @@ a:focus {
       align-content: stretch;
 }
 
-.control-panel li {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  text-align: center;
-  padding-top: 1vh;
-  padding-bottom: 10px;
-  line-height: 20px;
-  border-bottom: 1px solid #1a384a;
-  background-color: #F0F5FA;
-  font-size: 14px;
-}
-
-.control-panel li:hover {
-  background-color: #cadced;
-}
-
-.control-panel .menu-icon {
-  display: block;
-  font-size: 2em;
-}
-
 .control-panel .manage-bar {
   list-style: none;
   display: -webkit-box;
@@ -439,6 +456,32 @@ a:focus {
   margin: 0 0;
 }
 
+.control-panel .manage-bar .fa {
+  padding-bottom: 5px;
+}
+
+.control-panel .manage-bar li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  padding: 12px;
+  line-height: 20px;
+  border-bottom: 1px solid #1a384a;
+  background-color: #F0F5FA;
+  font-size: 14px;
+  min-height: 88px;
+}
+
+.control-panel .manage-bar li:hover {
+  background-color: #cadced;
+}
+
+.control-panel .menu-icon {
+  display: block;
+  font-size: 2em;
+}
+
 .control-panel__head {
   background-color: #96ADAA;
   border-bottom: 1px solid #1a384a;
@@ -446,6 +489,37 @@ a:focus {
 
 .control-panel__cell {
   padding: 0;
+}
+
+.control-panel .panel-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  padding: 0;
+  margin: 0;
+}
+
+.control-panel .panel-section .fa {
+  padding-right: 10px;
+}
+
+.control-panel .panel-section1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
 }
 
 /* Gutters */

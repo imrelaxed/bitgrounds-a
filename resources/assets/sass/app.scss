@@ -221,12 +221,13 @@
   border: 2px solid #6991AA !important;
   color: #6991AA;
   background-color: transparent;
-}
 
-.btn-outline-primary:hover {
-  color: white;
-  border: 2px solid #6991AA;
-  background-color: #6991AA;
+  &:hover, &:focus, &:active {
+    color: white;
+    border: 2px solid #6991AA;
+    background-color: #6991AA;
+  }
+
 }
 
 .btn {
@@ -255,6 +256,23 @@
   padding: 12px 25px;
   min-width:45%;
   margin-bottom: 1%;
+}
+.btn-custom {
+  flex: 1;
+  align-self: stretch;
+  border-bottom: 1px solid $color-big-stone;
+  background-color: $color-jungle-mist;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height:25%;
+  list-style: none;
+  padding-left:20px;
+
+  &:hover {
+    background-color: #cadced;
+  }
+
 }
 
 
@@ -300,6 +318,10 @@ a {
   }
 }
 
+.padding-medium {
+ padding: 25px 0;
+}
+
 /* Default Page */
 
 .bit-page {
@@ -314,6 +336,9 @@ a {
   }
 }
 
+.row {
+  margin: 0px!important;
+}
 
 /* Control Panel */
 
@@ -327,6 +352,12 @@ a {
 
   table{
   margin:0;
+    a {
+      color: $color-tame-lime;
+      &:hover {
+      color: $color-fame-lime;
+      }
+    }
   }
   a {
     color: $color-big-stone;
@@ -346,13 +377,8 @@ a {
     text-transform: capitalize;
   }
 
-  .fa {
-   padding-right: 10px;
-  }
-
   .col-md-5{
   background-color: $color-big-stone;
-
   }
 
   .col-xs-4{
@@ -369,30 +395,6 @@ a {
     -webkit-align-content: stretch;
     align-content: stretch;
   }
-
-  li {
-    -webkit-flex: 1;
-    flex: 1;
-    text-align: center;
-    padding-top: 1vh;
-    padding-bottom: 10px;
-    //padding-left: 10px;
-    //padding-right: 10px;
-    line-height: 20px;
-    border-bottom: 1px solid $color-big-stone;
-    background-color: $color-white-squeeze;
-    font-size: 14px;
-
-  &:hover {
-    background-color: #cadced;
-  }
-  }
-
-  .menu-icon {
-    display: block;
-    font-size: 2em;
-  }
-
   .manage-bar {
     list-style: none;
     display: -webkit-box;
@@ -409,6 +411,29 @@ a {
     align-items: stretch;
     margin: 0 0;
 
+    .fa {
+      padding-bottom: 5px;
+    }
+
+    li {
+      -webkit-flex: 1;
+      flex: 1;
+      text-align: center;
+      padding:12px;
+      line-height: 20px;
+      border-bottom: 1px solid $color-big-stone;
+      background-color: $color-white-squeeze;
+      font-size: 14px;
+      min-height: 88px;
+
+      &:hover {
+        background-color: #cadced;
+        }
+      }
+  }
+  .menu-icon {
+    display: block;
+    font-size: 2em;
   }
 
   &__head {
@@ -417,6 +442,22 @@ a {
   }
   &__cell {
     padding: 0;
+  }
+  .panel-section {
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+    align-self: stretch;
+    padding: 0;
+    margin: 0;
+
+    .fa {
+      padding-right: 10px;
+    }
+  }
+  .panel-section1 {
+    display: flex;
+    flex-flow: row;
   }
 }
 

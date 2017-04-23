@@ -1,20 +1,20 @@
 @extends('home')
 @section('controls')
 
+    <div class=" text-center">
+
+        <h4>Just one more step before you can start using Bitgrounds Web Hosting.</h4>
+        <h4>Let's setup the credentials for your DirectAdmin hosting panel.</h4>
+
+    </div>
+
     <div class="panel panel-default control-panel">
 
         <div class="panel-heading">DirectAdmin Hosting Panel Setup</div>
 
             <div class="panel-body">
-                <div class=" text-center">
 
-                    <h4>Just one more step before you can start using Bitgrounds Web Hosting.</h4>
-                    <p>Let's setup the credentials for your DirectAdmin hosting panel.</p>
-                    <hr>
-
-                </div>
-
-                <form class="form-horizontal" role="form" method="POST" action="{{ route('host') }}">
+                <form class="form-horizontal padding-medium" role="form" method="POST" action="{{ route('host') }}">
                     {{ csrf_field() }}
 
                     <div class="form-group{{ $errors->has('domain') ? ' has-error' : '' }}">

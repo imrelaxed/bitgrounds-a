@@ -39,9 +39,10 @@ class DirectAdminController extends Controller
             $user->username = $login;
             $user->save();
             $da = $createdUser;
+            $subscription = Auth::user()->subscription('main');
 
 
-            return view('user.panel', compact('da'));
+            return view('user.panel', compact('da','subscription'));
         } else {
             return redirect()->back()->with('notice', 'Error, please try again.');
         }

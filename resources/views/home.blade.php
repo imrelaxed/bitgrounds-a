@@ -13,7 +13,7 @@
 
                             <div class="alert alert-danger">
                                 <h4 class="modal-title">Your hosting service subscription will expire on {{ $subscription->ends_at->toFormattedDateString() }}.</h4>
-                                <h4> After this date you will no longer be able to use our hosting services unless your resume you subscription</h4>
+                                <h4> After this date you will no longer be able to use our hosting services unless you resume your subscription.</h4>
                             </div>
 
                             <form method="post" action="{{ route('subscriptionResume') }}">
