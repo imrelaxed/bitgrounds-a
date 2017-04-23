@@ -2,14 +2,14 @@
 
 @section('content')
 
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Password</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <form method="POST" action="/user/password">
+    <div class="col-md-8 col-md-offset-2">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Change Password</div>
+
+            <div class="panel-body">
+
+            <form method="POST" action="/user/password" class="form-horizontal">
                 {!! csrf_field() !!}
 
                 <div class="form-group{{ $errors->has('current_password') ? ' has-error' : '' }}">
@@ -52,13 +52,15 @@
                         @endif
                     </div>
                 </div>
-
-                <div class="raw-margin-top-24">
-                    <a class="btn btn-default pull-left" href="{{ URL::previous() }}">Cancel</a>
-                    <button class="btn btn-primary pull-right" type="submit">Save</button>
+            </div>
+                <div class="panel-footer clearfix">
+                    <div class="pull-right">
+                    <a class="btn-alt btn-success" href="{{ URL::previous() }}">Cancel</a>
+                    <button class="btn-alt btn-primary" type="submit">Change Password</button>
+                </div>
                 </div>
             </form>
-        </div>
-    </div>
 
+    </div>
+    </div>
 @stop

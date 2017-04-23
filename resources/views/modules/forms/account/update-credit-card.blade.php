@@ -1,7 +1,8 @@
 <div class="panel-body">
 <div class="text-center">
-<h4>The credit card we have on file ends with {{ $lastfour }}. </h4>
-    <p> You can use the form below to update attach a different card to your account.</p>
+
+    <h4>The credit card we have on file ends with {{ $lastfour }}. </h4>
+    <p> You can use the form below to attach a different credit card to your account.</p>
 <hr>
 </div>
 
@@ -9,7 +10,7 @@
     {{ csrf_field() }}
   @include('modules.forms.credit-card')
     <div class="text-center">
-        <button role="submit" class="button button--grey">Update card</button>
+        <button role="submit" class="btn-alt btn-primary">Update Card</button>
         </div>
 </form>
 

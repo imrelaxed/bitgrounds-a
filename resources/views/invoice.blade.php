@@ -8,11 +8,9 @@
                 <div class="panel panel-default">
                     <div class="panel-body text-center">
 
-                        <h1>Hi <span class="text-primary">{{ Auth::user()->name }}</span></h1>
+                        <h3>Here are all of your invoices.</h3>
 
-                        <h3>Here are your invoices.</h3>
-
-                        <table class="table table-bordered table-hover table-striped">
+                        <table class="table table-bordered table-hover table-striped support-panel">
                             <tr>
                                 <th>Dated</th>
                                 <th>Total</th>

@@ -63,7 +63,7 @@
                 <!--DROPDOWN START-->
 
                     <ul class="dropdown-menu" role="menu">
-                        {!! Html::dropdownItem('home', 'Home') !!}
+                        {!! Html::dropdownItem('home', 'Dashboard') !!}
                         {!! Html::dropdownItem('user/settings', 'Account Settings') !!}
                         @if( auth()->user()->subscribed('main') )
                             <li class="divider"></li>

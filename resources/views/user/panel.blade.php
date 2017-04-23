@@ -5,7 +5,7 @@
 
 <div class="panel panel-default control-panel">
 
-    <div class="panel-heading">Control Panel</div>
+    <div class="panel-heading">Your Dashboard</div>
 
         <div class="panel-body gutter__padding">
             <div class="col-md-7 gutter__padding">
@@ -19,7 +19,7 @@
                         <tbody>
                             <tr>
 
-                                <td>Username:</td>
+                                <td>DirectAdmin Username:</td>
                                 <td>{{ $da->getusername() }}</td>
 
                             </tr>
