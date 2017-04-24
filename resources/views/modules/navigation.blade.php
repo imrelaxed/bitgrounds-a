@@ -70,9 +70,7 @@
                             {!! Html::dropdownItem('user/billing', 'Billing Settings') !!}
                             <li><a href="{{ route('invoices') }}">Payment History</a></li>
                         @endif
-                        <li class="divider"></li>
-                        <li><a href="#">Send Feedback...</a></li>
-                        <li><a href="#">Send Invites...</a></li>
+
 
                         @if( Auth::check() and Auth::user()->isAdmin() )
                             <li class="divider"></li>

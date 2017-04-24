@@ -45,24 +45,30 @@
                 <div class="intro-row">
                 <div class="row">
                     <div class="col-md-4">
-                        <a href="#" class="img-responsive"><img src="img/001-Big-icons/illustration-01.svg" alt="Easy canary releasing"></a>
-                        <h2 class="h2">Fast</h2>
+                        <a href="#" class="img-responsive"><img src="img/fast.png" alt="Ultra Fast Web Hosting"></a>
+                        <h2 class="h2">Ultra Fast</h2>
                         <p class="text">
-                            Percentage and condition based routing for A/B testing and canary releasing. Prevent performance issues and service disruption with gradual rollouts and upgrades.
+                            Bitgrounds was engineered to be better than other web hosts and we put a lot of time and effort in to making sure that sites hosted with us load ultra fast.
+                            We accomplish this by using the latest web server technologies such as the new http/2 protocol. We also allocate significantly larger server resource chunks per each user
+                            when compared to other hosting companies. <a href ="#">Learn more-></a>
                         </p>
                     </div>
                     <div class="col-md-4">
-                        <a href="documentation/using-vamp/sla/" class="img-responsive"><img src="img/001-Big-icons/illustration-02.svg" alt="Powerful autoscaling"></a>
-                        <h2 class="h2">Secure</h2>
+                        <a href="#" class="img-responsive"><img src="img/search-friendly1.png" alt="Search Engine Optimized Web Hosting"></a>
+                        <h2 class="h2">Search Engine Optimized</h2>
                         <p class="text">
-                            Integrated events, SLA and workflows engine. Enable metric-driven canary releasing, autoscaling and other optimisation patterns. Easy to extend with custom workflow scripts.
+                            Over the last several years Google has been giving higher ranking to sites which load faster and are more secure. Bitgrounds hosting
+                            picked up on this trend and has been fully accommodating it with blazing fast servers for lightning quick page loads and FREE SSL Certificates for exceptional security.
+                            We constantly improve our technology to stay up to date with Google's best practices. <a href ="#">Learn more-></a>
                         </p>
                     </div>
                     <div class="col-md-4">
-                        <a href="documentation/installation/overview" class="img-responsive"><img src="img/001-Big-icons/illustration-03.svg" alt="Container agnostic deploys"></a>
-                        <h2 class="h2">Friendly</h2>
+                        <a href="#" class="img-responsive"><img src="img/easy.png" alt="Easy Web Hosting"></a>
+                        <h2 class="h2">Easy To Use</h2>
                         <p class="text">
-                            Integrates with all major container systems to avoid vendor lock-in. YAML based configurations, RESTful API and graphical UI to manage deployments and operations.
+                            Hosting your web site with Bitgrounds easy very easy. We offer a huge knowledgebase of easy to follow information and video tutorials. And if you ever
+                            run in to trouble you can rest easy knowing that live, friendly and knowledgeable human being is just a click away. A Bitgrounds
+                            subscription includes access to one click installs of popular web software such as WordPress, Joomla, Drupal, etc.  <a href ="#">Learn more-></a>
                         </p>
                     </div>
 
@@ -83,7 +89,7 @@
                 <div class="row">
                     <div class="text-center">
                         <h3 class="h3">Features</h3>
-                        <h1 class="h1">What do we offer</h1>
+                        <h1 class="h1">What we offer</h1>
                     </div>
                 </div>
 <div class="container">
@@ -92,19 +98,19 @@
                     <div class="col-md-4">
                             <span class="fa fa-cubes"></span>
                             <p class="text">
-                                Apache 2.0 opensource license
+                                Amazing WordPress Performance
                             </p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa fa-cubes"></span>
                             <p class="text">
-                                Manages dependencies, environment variables and resources
+                                Support that's knowledgeable, friendly and fluent
                             </p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa fa-cubes"></span>
                             <p class="text">
-                                Scalable, high available and modular architecture
+                                Free SSL Certificates (GoDaddy Charges 60$)
                             </p>
                     </div>
 
@@ -113,19 +119,19 @@
                     <div class="col-md-4">
                         <span class="fa fa-cubes"></span>
                             <p class="text">
-                                Support for port based, virtual hosts and external service discovery
+                                Virtual Private Server level performance on Shared Hosting
                             </p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa fa-cubes"></span>
                             <p class="text">
-                                Vamp Runner for integration testing and educational purposes
+                                One Click Installs of popular web apps like Wordpress
                             </p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa fa-cubes"></span>
                             <p class="text">
-                                Canary releasing also works without containers and microservices
+                                Super secure with daily backups and an advanced hacker detection system
                             </p>
                     </div>
                 </div>
@@ -153,23 +159,26 @@
 
                 <div class="row logos-row">
                     <div class="col-md-2">
-                        <a href="#"><img src="/img/004-Logos/001-dark-blue/Google-vertical.svg" alt="Google"></a>
+                        <a href="#"><img src="/img/powered/http2.jpg" alt="http2"></a>
+
                     </div>
                     <div class="col-md-2">
-                        <a href="#"><img src="/img/004-Logos/001-dark-blue/Amazon-vertical.svg" alt="Amazon AWS"></a>
+                        <a href="#"><img src="/img/powered/https.jpg" alt="https"></a>
+
                     </div>
                     <div class="col-md-2">
-                        <a href="#"><img src="/img/004-Logos/001-dark-blue/Microsoft-vertical.svg" alt="Microsoft Azure"></a>
+                        <a href="#"><img src="/img/powered/cloudlinux.jpg" alt="CloudLinux"></a>
                     </div>
                     <div class="col-md-2">
-                        <a href="documentation/installation/kubernetes/"><img src="/img/004-Logos/001-dark-blue/Kubernetes-vertical.svg" alt="Kubernetes"></a>
+                        <a href="#"><img src="/img/powered/softaculous.jpg" alt="Softaculous Auto Installer"></a>
                     </div>
 
                     <div class="col-md-2">
-                        <a href="documentation/installation/dcos/"><img src="/img/004-Logos/001-dark-blue/DCOS-vertical.svg" alt="DC/OS"></a>
+                        <a href="#"><img src="/img/powered/letsencrypt.jpg" alt="Lets Encrypt"></a>
+
                     </div>
                     <div class="col-md-2">
-                        <a href="documentation/installation/rancher/"><img src="/img/004-Logos/001-dark-blue/Rancher-vertical.svg" alt="Rancher"></a>
+                        <a href="#"><img src="/img/powered/directadmin.jpg" alt="DirectAdmin"></a>
                     </div>
                 </div>
             </div>

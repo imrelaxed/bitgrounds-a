@@ -205,6 +205,11 @@
   padding: 75px 0;
 }
 
+.landing-page .intro-row img {
+  width: 90%;
+  padding-bottom: 45px;
+}
+
 .landing-page .intro-row h2 {
   font-size: 28px;
 }
