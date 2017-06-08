@@ -50,7 +50,7 @@
                         <p class="text">
                             Bitgrounds was engineered to be better than other web hosts and we put a lot of time and effort in to making sure that sites hosted with us load ultra fast.
                             We accomplish this by using the latest web server technologies such as the new http/2 protocol. We also allocate significantly larger server resource chunks per each user
-                            when compared to other hosting companies. <a href ="#">Learn more-></a>
+                            when compared to other hosting companies.
                         </p>
                     </div>
                     <div class="col-md-4">
@@ -59,7 +59,7 @@
                         <p class="text">
                             Over the last several years Google has been giving higher ranking to sites which load faster and are more secure. Bitgrounds hosting
                             picked up on this trend and has been fully accommodating it with blazing fast servers for lightning quick page loads and FREE SSL Certificates for exceptional security.
-                            We constantly improve our technology to stay up to date with Google's best practices. <a href ="#">Learn more-></a>
+                            We constantly improve our technology to stay up to date with Google's best practices.
                         </p>
                     </div>
                     <div class="col-md-4">
@@ -68,7 +68,7 @@
                         <p class="text">
                             Hosting your web site with Bitgrounds easy very easy. We offer a huge knowledgebase of easy to follow information and video tutorials. And if you ever
                             run in to trouble you can rest easy knowing that live, friendly and knowledgeable human being is just a click away. A Bitgrounds
-                            subscription includes access to one click installs of popular web software such as WordPress, Joomla, Drupal, etc.  <a href ="#">Learn more-></a>
+                            subscription includes access to one click installs of popular web software such as WordPress, Joomla, Drupal, etc.
                         </p>
                     </div>
 

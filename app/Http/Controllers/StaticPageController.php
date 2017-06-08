@@ -41,6 +41,7 @@ class StaticPageController extends Controller {
     {
         $title = 'Pricing';
         $plans = Plan::all();
+
         return view('pages.pricing', compact('title', 'plans'));
     }
 

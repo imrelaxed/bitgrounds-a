@@ -3,42 +3,31 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <h2 class="h2">Learn more</h2>
-                <a href="#">
-                    <p>Why use Bitgrounds?</p>
-                </a>
-                <a href="#">
-                    <p>Documentation</p>
-                </a>
+                <h2 class="h2">Learn More</h2>
                 <a href="/about/">
-                    <p>About us</p>
+                    <p>Why Bitgrounds?</p>
+                </a>
+                <a href="/pricing/">
+                    <p>Pricing</p>
                 </a>
                 <a href="#">
-                    <p>News</p>
-                </a>
-                <a href="/contact/">
-                    <p>Contact</p>
+                    <p>Resources</p>
                 </a>
             </div>
             <div class="col-md-4">
-                <h2 class="h2">All things code</h2>
-                <a href="/support/">
-                    <p>Support</p>
+                <h2 class="h2">Quick Nav</h2>
+                <a href="/home/">
+                    <p>Dashboard</p>
                 </a>
                 <a href="#">
-                    <p>Community</p>
+                    <p>Resources</p>
                 </a>
-                <a href="#" target="_blank">
-                    <p>GitHub</p>
-                </a>
-                <a href="#" target="_blank">
-                    <p>Gitter</p>
-                </a>
+
             </div>
             <div class="col-md-5">
                 <h2 class="h2">Stay up to date</h2>
                 <p class="text">
-                    Leave your email for the latest news: We won’t spam you and won’t go off topic.
+                    Leave your email for the latest news: We won’t spam you or go off topic.
                 </p>
             <div class="row mail-chimp">
                 <form action="mail-chimp" method="post" id="mc-subscribe-form" name="mc-subscribe-form" class="validate form-inline" style="display: inline" target="_blank">
@@ -55,11 +44,6 @@
 
 
                 <div class="social">
-                    <p class="text">Follow us on: </p>
-                    <div>
-                        <a href="#" target="_blank">
-                            <span class="fa fa-twitter"></span>
-                        </a>
 
                     </div>
                 </div>

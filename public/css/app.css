@@ -362,6 +362,23 @@ a:focus {
   padding: 25px 0;
 }
 
+.height-adjust {
+  min-height: 100px;
+  padding: 0 10px;
+}
+
+ul.plan__features {
+  list-style-type: none;
+}
+
+.has-tooltip {
+  padding: 5px 0;
+}
+
+.has-tooltip span:first-child {
+  border-bottom: 1px dotted #ccc;
+}
+
 /* Default Page */
 .bit-page {
   -webkit-box-align: center;
@@ -533,6 +550,10 @@ a:focus {
   -webkit-box-direction: normal;
       -ms-flex-flow: row;
           flex-flow: row;
+}
+
+.page-info {
+  padding: 5px 30px;
 }
 
 /* Gutters */

@@ -1,6 +1,7 @@
 @if( count($plans) > 0 )
   <div class="row text-center">
   <div class="col-md-12">
+
   @foreach($plans as $plan)
     @include('modules.plans.plan')
   @endforeach

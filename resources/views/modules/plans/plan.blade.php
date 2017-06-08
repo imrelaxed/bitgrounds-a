@@ -7,7 +7,7 @@
     / {{ $plan->interval }}  
     </small></h3>
   </div>
-    <div class="text-muted">
+    <div class="text-muted height-adjust">
     @if( $plan->description !== "" )
       <p class="plan__description">{!! $plan->description !!}</p>
     @endif 
@@ -15,7 +15,7 @@
     @if( $plan->features !== "" )
       <ul class="plan__features">
           @foreach( explode(',', $plan->features) as $feature )
-            <li>{!! $feature !!}</li>
+            <li class="has-tooltip"><span>{!! $feature !!}</span></li>
           @endforeach
       </ul>
     @endif
