@@ -4,10 +4,10 @@
         <div class="row">
             <div class="col-md-3">
                 <h2 class="h2">Learn More</h2>
-                <a href="/about/">
+                <a href="/about">
                     <p>Why Bitgrounds?</p>
                 </a>
-                <a href="/pricing/">
+                <a href="/pricing">
                     <p>Pricing</p>
                 </a>
                 <a href="#">
@@ -16,11 +16,11 @@
             </div>
             <div class="col-md-4">
                 <h2 class="h2">Quick Nav</h2>
-                <a href="/home/">
+                <a href="/home">
                     <p>Dashboard</p>
                 </a>
-                <a href="#">
-                    <p>Resources</p>
+                <a href="{{ route('support') }}">
+                    <p>Support</p>
                 </a>
 
             </div>
@@ -54,11 +54,11 @@
 <div class="footer-below">
     <div class="container">
         <div class="pull-left">
-            <a href="/">{{ config('app.name') }}</a>
+            <p class="text">© {{ date('Y') }} {{ config('app.name') }} Web Hosting. All rights reserved.</p>
         </div>
         <div class="pull-right">
+            <p class="text"><a href="/terms-of-use">Terms</a> | <a href="/privacy-policy">Privacy</a></p>
 
-            <p class="text">© {{ date('Y') }} {{ config('app.name') }} Web Hosting. All rights reserved.</p>
         </div>
     </div>
 </div>

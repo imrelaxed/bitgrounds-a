@@ -1,4 +1,4 @@
-@extends('page')
+@extends('static')
 
 @section('content')
 <h1>{{ $title }}</h1>

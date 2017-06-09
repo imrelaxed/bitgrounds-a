@@ -1,4 +1,4 @@
-<p><strong>This Privacy Policy was last modified on January 1st, 2015.</strong></p>
+<p><strong>This Privacy Policy was last modified on January 1st, 2017.</strong></p>
 <p>{{ $app_settings->name }} (&#8220;us&#8221;, &#8220;we&#8221;, or &#8220;our&#8221;) operates http:(the &#8220;Site&#8221;). This page informs you of our policies regarding the collection, use and disclosure of Personal Information we receive from users of the Site.</p>
 <p>We use your Personal Information only for providing and improving the Site. By using the Site, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible at <a href="/terms-of-use">this page</a>.</p>
 <h3>Information Collection And Use</h3>

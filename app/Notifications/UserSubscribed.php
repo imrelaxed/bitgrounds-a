@@ -45,8 +45,8 @@ class UserSubscribed extends Notification
         return (new MailMessage)
             ->subject('Thank you for subscribing to our service!')
             ->success()
-                    ->line(ucfirst($this->data->user->name) .', you are now subscribed to the '. $this->data->plan .' plan.')
-                    ->line('You can access you control panel using the link below.')
+                    ->line( 'Congrats '. ucfirst($this->data->user->name) .', you are now subscribed to the '. $this->data->plan .' plan.')
+                    ->line('You may access your control panel using the link below.')
                     ->action('Control Panel', url('login'))
                     ->line('Welcome aboard! Feel free to contact support if you have any questions.');
     }

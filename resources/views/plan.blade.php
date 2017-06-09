@@ -37,7 +37,7 @@
                                         <div class='form-row'>
                                             <div class='col-xs-12 form-group card required'>
                                                 <label class='control-label'>Card Number</label>
-                                                <input autocomplete='off' value="4242 4242 4242 4242" class='form-control card-number' data-stripe="number" size='20' type='text' required>
+                                                <input autocomplete='off' class='form-control card-number' placeholder="•••• •••• •••• ••••" data-stripe="number" size='20' type='text' required>
                                             </div>
                                         </div>
                                         <div class='form-row'>
@@ -47,25 +47,25 @@
                                             </div>
                                             <div class='col-xs-4 form-group expiration required'>
                                                 <label class='control-label'>Expiration Month</label>
-                                                <input class='form-control card-expiry-month' placeholder='MM' value="{{ date('m') }}" data-stripe="exp_month" size='2' type='text' required>
+                                                <input class='form-control card-expiry-month' placeholder='MM' data-stripe="exp_month" size='2' type='text' required>
                                             </div>
                                             <div class='col-xs-4 form-group expiration required'>
                                                 <label class='control-label'> Year</label>
-                                                <input class='form-control card-expiry-year' placeholder='YY' data-stripe="exp_year" size='2'  value="{{ date( 'y', strtotime('+ 4 year')) }}" type='text' required>
+                                                <input class='form-control card-expiry-year' placeholder='YY' data-stripe="exp_year" size='2' type='text' required>
                                             </div>
                                         </div>
 
                                         <div class="form-row">
                                             <div class="col-md-4">
                                                 <div class='form-group cvc required'>
-                                                    <label class='control-label'>Coupon Code</label>
-                                                    <input autocomplete='off' class='form-control' placeholder='Coupon code' name="coupon" type='text'>
+                                                    <label class='control-label'>Promo Code</label>
+                                                    <input autocomplete='off' class='form-control' placeholder='Promotional code' name="coupon" type='text'>
                                                 </div>
                                             </div>
                                         </div>
 
                                     <input type="hidden" name="plan" value="{{ $plan['id'] }}">
-                                    <input type="submit" class="submit btn btn-success btn-lg btn-block" value="Make {{ $plan['amount'] / 100 }} $ Payment">
+                                    <input type="submit" class="submit btn btn-success btn-lg btn-block" value="Make A {{ $plan['amount'] / 100 }} $ Payment">
                                 </form>
                             </div>
                         </div>

@@ -44,27 +44,34 @@ Route::get('email-help',     'StaticPageController@email')->name('email-help');
 */
 Auth::routes();
 
+Route::group(['middleware' => ['auth']], function () {
+
 // Admin controls
-Route::get('admin', 'AdminController@getIndex')->name('adminDash');
-Route::post('admin/update-settings', 'AdminController@postUpdateSettings');
-Route::get('admin/users', 'AdminController@getUsers');
-Route::get('admin/developer-zone', 'AdminController@getDeveloperZone');
-Route::get('admin/analytics', 'AdminController@getAnalytics');
-Route::get('admin/engine-room', 'AdminController@getEngineRoom');
-Route::get('admin/clear-logs', 'AdminController@getClearLogs');
-Route::get('admin/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+    Route::get('admin', 'AdminController@getIndex')->name('adminDash');
+    Route::post('admin/update-settings', 'AdminController@postUpdateSettings');
+    Route::get('admin/users', 'AdminController@getUsers');
+    Route::get('admin/developer-zone', 'AdminController@getDeveloperZone');
+    Route::get('admin/analytics', 'AdminController@getAnalytics');
+    Route::get('admin/engine-room', 'AdminController@getEngineRoom');
+    Route::get('admin/clear-logs', 'AdminController@getClearLogs');
+    Route::get('admin/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 // Admin plan controls
-Route::get('admin/plans', 'AdminController@getPlans');
-Route::get('admin/flush-cached-plans', 'AdminController@getFlushCachedPlan');
-Route::get('admin/import-subscription-plans', 'AdminController@getImportSubscriptionPlans');
-Route::post('admin/update-cached-plan/{plan_id}', 'AdminController@postUpdateCachedPlan');
-Route::post('admin/delete-cached-plan/{plan_id}', 'AdminController@postDeleteCachedPlan');
-Route::post('admin/delete-stripe-plan/{plan_id}', 'AdminController@postDeleteStripePlan');
+    Route::get('admin/plans', 'AdminController@getPlans');
+    Route::get('admin/flush-cached-plans', 'AdminController@getFlushCachedPlan');
+    Route::get('admin/import-subscription-plans', 'AdminController@getImportSubscriptionPlans');
+    Route::post('admin/update-cached-plan/{plan_id}', 'AdminController@postUpdateCachedPlan');
+    Route::post('admin/delete-cached-plan/{plan_id}', 'AdminController@postDeleteCachedPlan');
+    Route::post('admin/delete-stripe-plan/{plan_id}', 'AdminController@postDeleteStripePlan');
+
+// Hosting Panel
+    Route::post('host', 'DirectAdminController@makeUser')->name('host');
+
+});
 
 
 // User controller
-Route::group(['prefix' => 'user'], function(){
+Route::group(['prefix' => 'user', 'middleware' => 'auth'], function(){
 
     Route::get('settings', 'UserController@getSettings')->name('settings');
     Route::post('settings', 'UserController@postUpdateSettings');
@@ -77,11 +84,13 @@ Route::group(['prefix' => 'user'], function(){
     Route::get('invoices', 'InvoiceController@index')->name('invoices');
     Route::get('invoice/{id}', 'InvoiceController@download')->name('downloadInvoice');
 
+    Route::get( 'support', 'StaticPageController@support')->name('support');
+
 });
 
 
 // Subscription Controller
-Route::get('/plan/{id}', 'SubscriptionController@show')->name('plan');
+Route::get('/plan/{id}',  'SubscriptionController@show')->name('plan')->middleware('auth');
 Route::group(['prefix' => 'subscription', 'middleware' => 'auth'], function(){
 
     Route::post('/', 'SubscriptionController@subscribe')->name('subscribe');
@@ -97,7 +106,6 @@ Route::group(['prefix' => 'subscription', 'middleware' => 'auth'], function(){
 
 // Other
 Route::get('home', 'HomeController@index')->name('home');
-Route::post('host', 'DirectAdminController@makeUser')->name('host');
 
 
 // Handling Stripe Webhooks

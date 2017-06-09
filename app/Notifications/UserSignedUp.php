@@ -44,7 +44,7 @@ class UserSignedUp extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('Welcome to Bitgrounds Hosting!')
+                    ->subject('Welcome to '. config('app.name') .' Hosting!')
                     ->success()
                     ->line('Welcome on board '. $this->data->user->name .'! You can access your dashboard by clicking the button below.')
                     ->action('Login', url('login'))

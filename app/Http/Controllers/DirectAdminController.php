@@ -17,7 +17,7 @@ class DirectAdminController extends Controller
             'regex' => 'The :attribute must be at least 6 characaters long, contain a number, an upper case letter and a lower case letter.',
         ];
         $this->validate($request, [
-            'username' => 'required|alpha_num|max:10',
+            'username' => 'required|alpha_num|max:10|unique:gatekeeper.user,User',
             'domain' => 'required|max:128',
             'password' => 'required|min:6|regex:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/|confirmed',
         ], $messages);
@@ -40,9 +40,10 @@ class DirectAdminController extends Controller
             $user->save();
             $da = $createdUser;
             $subscription = Auth::user()->subscription('main');
+            $is_subscribed = Auth::user()->subscribed('main');
 
 
-            return view('user.panel', compact('da','subscription'));
+            return view('user.panel', compact('da','subscription', 'is_subscribed'));
         } else {
             return redirect()->back()->with('notice', 'Error, please try again.');
         }

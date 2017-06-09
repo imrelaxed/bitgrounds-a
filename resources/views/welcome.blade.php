@@ -21,7 +21,7 @@
 
                             <p class="lead">or</p>
 
-                            <a href="{{ url('/about') }}" class="btn btn-primary">
+                            <a href="{{ url('#') }}" class="btn btn-primary">
                                 Learn More
                             </a>
                         </div>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="row">
                     <div class="lander-buttons">
-                        <a href="/why-use-vamp/why-use-vamp" class="btn btn-success">
+                        <a href="#" class="btn btn-success">
                             Learn More
                            <span class="fa fa-arrow-right"></span>
                         </a>

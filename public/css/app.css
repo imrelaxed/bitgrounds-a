@@ -53,6 +53,10 @@
   text-decoration: none;
 }
 
+.navbar-custom .nav-item:active {
+  color: #FF405E;
+}
+
 .navbar-custom .btn {
   margin: 0 20px;
   font-weight: 500;
@@ -87,6 +91,7 @@
 
 .activate {
   background-color: #1a384a !important;
+  box-shadow: 0 4px 2px -2px rgba(20, 45, 60, 0.25);
 }
 
 .dropdown-menu {
@@ -358,8 +363,13 @@ a:focus {
   min-height: 61px;
 }
 
+/* Misc */
 .padding-medium {
   padding: 25px 0;
+}
+
+.padding-large {
+  padding: 70px 0 85px;
 }
 
 .height-adjust {
@@ -379,6 +389,37 @@ ul.plan__features {
   border-bottom: 1px dotted #ccc;
 }
 
+.bit-container {
+  min-height: 100vh;
+  padding-top: 45px;
+  padding-bottom: 75px;
+  padding-right: 35px;
+  padding-left: 35px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+  border-left: 10px solid #F0F5FA;
+  /* border-right: 10px solid #f1f1f1; */
+}
+
+@media (min-width: 768px) {
+  .bit-container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .bit-container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bit-container {
+    width: 1170px;
+  }
+}
+
 /* Default Page */
 .bit-page {
   -webkit-box-align: center;
@@ -394,8 +435,8 @@ ul.plan__features {
 
 @media all and (min-width: 1025px) {
   .bit-page {
-    padding-top: 120px;
-    padding-bottom: 80px;
+    padding-top: 74px;
+    padding-bottom: 0px;
   }
 }
 
@@ -600,7 +641,7 @@ footer a:hover {
 }
 
 footer .text {
-  font-weight: 300;
+  font-weight: 100;
   color: #F0F5FA;
 }
 
@@ -638,4 +679,5 @@ footer .fa {
 
 .footer-below a {
   color: #F0F5FA;
+  font-size: 14px;
 }

@@ -50,10 +50,10 @@ class StaticPageController extends Controller {
         $title = 'About';
         return view('pages.about', compact('title'));
     }
-    public function contact()
+    public function support()
     {
-        $title = 'Contact';
-        return view('pages.contact', compact('title'));
+        $title = 'Support';
+        return view('pages.support', compact('title'));
     }
     public function termsOfUse()
     {

@@ -2,7 +2,7 @@
 
 @section('page-content')
 <div class="bit-page">
-    <div class="container">
+    <div class="container padding-large">
         @include('modules.sessions.notice')
 
         @yield('content')

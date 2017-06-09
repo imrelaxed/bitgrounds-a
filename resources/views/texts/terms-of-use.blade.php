@@ -1,6 +1,6 @@
 <p><strong>{{ $app_settings->name }} Terms of Service (&#8220;Agreement&#8221;)</strong></p>
-<p>This Agreement was last modified on January 1st, 2015.</p>
-<p>Please read these Terms of Service (&#8220;Agreement&#8221;, &#8220;Terms of Service&#8221;) carefully before using http:{!! $_SERVER['SERVER_NAME'] !!} (&#8220;the Site&#8221;) operated by {{ $app_settings->name }} (&#8220;us&#8221;, &#8220;we&#8221;, or &#8220;our&#8221;). This Agreement sets forth the legally binding terms and conditions for your use of the Site at http:{!! $_SERVER['SERVER_NAME'] !!}.</p>
+<p>This Agreement was last modified on January 1st, 2017.</p>
+<p>Please read these Terms of Service (&#8220;Agreement&#8221;, &#8220;Terms of Service&#8221;) carefully before using http://{!! $_SERVER['SERVER_NAME'] !!} (&#8220;the Site&#8221;) operated by {{ $app_settings->name }} (&#8220;us&#8221;, &#8220;we&#8221;, or &#8220;our&#8221;). This Agreement sets forth the legally binding terms and conditions for your use of the Site at http://{!! $_SERVER['SERVER_NAME'] !!}.</p>
 <p>By accessing or using the Site in any manner, including, but not limited to, visiting or browsing the Site or contributing content or other materials to the Site, you agree to be bound by these Terms of Service. Capitalized terms are defined in this Agreement.</p>
 <h3>Intellectual Property</h3>
 <p>{{ $app_settings->name }} does not claim any ownership rights over content published in the Site.</p>
