@@ -22,6 +22,8 @@ Route::get('contact',        'StaticPageController@contact');
 Route::get('terms-of-use',   'StaticPageController@termsOfUse');
 Route::get('privacy-policy', 'StaticPageController@privacyPolicy');
 Route::get('components',     'StaticPageController@components');
+Route::get('resources',     'StaticPageController@resources');
+
 Route::get('nameservers',     'StaticPageController@nameServers')->name('dns');
 Route::get('hostingpanel',     'StaticPageController@directAdmin')->name('directadmin');
 Route::get('ftp',     'StaticPageController@ftp')->name('ftp');

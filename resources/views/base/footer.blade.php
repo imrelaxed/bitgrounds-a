@@ -10,7 +10,7 @@
                 <a href="/pricing">
                     <p>Pricing</p>
                 </a>
-                <a href="#">
+                <a href="{{ url('/resources') }}">
                     <p>Resources</p>
                 </a>
             </div>

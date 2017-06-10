@@ -55,6 +55,9 @@ class StaticPageController extends Controller {
         $title = 'Support';
         return view('pages.support', compact('title'));
     }
+    public function resources() {
+        return view('pages.resources');
+    }
     public function termsOfUse()
     {
         $title = 'Terms of use';

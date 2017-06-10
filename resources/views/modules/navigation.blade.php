@@ -26,7 +26,7 @@
 
             <a href="{{ route('pricing') }}"class="nav-item">Pricing</a>
 
-            <a href="" class="nav-item">Resources</a>
+            <a href="{{ url('/resources') }}" class="nav-item">Resources</a>
 
             <a href="{{ route('support') }}" class="nav-item">Support</a>
 
