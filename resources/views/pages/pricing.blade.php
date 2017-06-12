@@ -14,9 +14,17 @@
             there for you if you ever need us to make sure that your web hosting experience simply incredible.</p>
         </div>
     </div>
+<hr class="invisible">
+    @include('modules.plans.static-all')
+
     <hr class="invisible">
 
+    <div class="into-row cta">
+            <div class="text-center">
+                <h2><strong>100% Risk Free Trial</strong> 30 Day Money Back Guarantee</h2>
+            </div>
 
-    @include('modules.plans.static-all')
+
+    </div>
 
 @endsection

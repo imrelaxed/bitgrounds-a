@@ -4,15 +4,16 @@
         <div class="row">
             <div class="col-md-3">
                 <h2 class="h2">Learn More</h2>
-                <a href="/about">
+                <a href="bitgrounds.com">
                     <p>Why Bitgrounds?</p>
+                </a>
+                <a href="{{ url('/about') }}">
+                    <p>About Us</p>
                 </a>
                 <a href="/pricing">
                     <p>Pricing</p>
                 </a>
-                <a href="{{ url('/resources') }}">
-                    <p>Resources</p>
-                </a>
+
             </div>
             <div class="col-md-4">
                 <h2 class="h2">Quick Nav</h2>

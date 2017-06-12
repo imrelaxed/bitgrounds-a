@@ -12,7 +12,7 @@
 
 /* NavBar */
 .navbar-custom {
-  padding: 20px 10px;
+  padding: 16px 0px;
   -webkit-transition: 0.4s ease-in all;
   -webkit-transition: padding .4s;
   transition: padding .4s;
@@ -22,7 +22,6 @@
   justify-content: space-between;
   position: fixed;
   height: 75px;
-  width: 100vw;
   background-color: transparent;
   z-index: 999;
   border-bottom: 1px solid rgba(240, 245, 250, 0.1);
@@ -140,6 +139,12 @@
   padding-right: 15px;
 }
 
+.landing-page header h4 {
+  font-size: 21px;
+  font-weight: 300;
+  padding: 0 0 30px;
+}
+
 .landing-page .lead {
   margin: 10px 0;
 }
@@ -224,9 +229,10 @@
   padding: 75px 0;
 }
 
-.landing-page .features .fa-asterisk, .landing-page .features .fa-eercast, .landing-page .features .fa-cube, .landing-page .features .fa-cubes {
+.landing-page .features .fa-asterisk, .landing-page .features .fa-eercast, .landing-page .features .fa-cube, .landing-page .features .fa-cubes, .landing-page .features .fa-x {
   font-size: 1.7em;
   color: #37647D;
+  padding-top: 10px;
 }
 
 .landing-page .features img {
@@ -242,6 +248,41 @@
 
 .landing-page .features .col-md-4 .text {
   margin-left: 20px;
+}
+
+/* CTA */
+.cta {
+  border-top: 1px solid #C3D2DC;
+  border-bottom: 1px solid #C3D2DC;
+  padding: 70px 0 65px;
+}
+
+.cta-b {
+  border: 1px solid #C3D2DC;
+  margin-top: 30px;
+  padding: 70px 0 65px;
+}
+
+.cta-b h2 {
+  font-weight: 300;
+}
+
+.cta-b h2 strong {
+  padding: 0 20px 0 0;
+}
+
+.cta h2 {
+  font-weight: 300;
+}
+
+.cta h2 strong {
+  padding: 0 30px 0 0;
+}
+
+.cta .btn {
+  font-size: 15px;
+  padding: 0 50px;
+  line-height: 20px;
 }
 
 /* Buttons */
@@ -368,8 +409,16 @@ a:focus {
   padding: 25px 0;
 }
 
+.padding-fifty {
+  padding: 40px 0 50px;
+}
+
 .padding-large {
   padding: 70px 0 85px;
+}
+
+.margin-small {
+  margin-top: 10px;
 }
 
 .height-adjust {
@@ -390,7 +439,7 @@ ul.plan__features {
 }
 
 .bit-container {
-  min-height: 100vh;
+  min-height: 80vh;
   padding-top: 45px;
   padding-bottom: 75px;
   padding-right: 35px;

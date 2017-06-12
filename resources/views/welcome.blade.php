@@ -11,7 +11,16 @@
                         <h1 class="name">
                             Time for a better web hosting provider?
                         </h1>
-
+                    <div class="container second">
+                    <h4>
+                        If you're unhappy with your previous web hosting provider you've come to the right place.
+                        At Bitgrounds we pull out all stops to provide top of the line web hosting service.
+                        We pledge to be fast, secure and to offer you a tech-savvy helping hand whenever you need it.
+                        Try us risk free with our 30 day money back guarantee.
+                        Our free migration service is included with all web hosting plans and makes it easy for anyone to transfer their Website to Bitgrounds.
+                        Our team will transfer your existing website from your previous web host and optimize it for performance as our thank you for joining the Bitgrounds family!
+                    </h4>
+                    </div>
 
                     <div class="row">
                         <div class="hero-buttons">
@@ -21,7 +30,7 @@
 
                             <p class="lead">or</p>
 
-                            <a href="{{ url('#') }}" class="btn btn-primary">
+                            <a href="{{ url('about') }}" class="btn btn-primary">
                                 Learn More
                             </a>
                         </div>
@@ -55,7 +64,7 @@
                     </div>
                     <div class="col-md-4">
                         <a href="#" class="img-responsive"><img src="img/search-friendly1.png" alt="Search Engine Optimized Web Hosting"></a>
-                        <h2 class="h2">Search Engine Optimized</h2>
+                        <h2 class="h2">Search Engine Friendly</h2>
                         <p class="text">
                             Over the last several years Google has been giving higher ranking to sites which load faster and are more secure. Bitgrounds hosting
                             picked up on this trend and has been fully accommodating it with blazing fast servers for lightning quick page loads and FREE SSL Certificates for exceptional security.
@@ -75,7 +84,7 @@
                 </div>
                 <div class="row">
                     <div class="lander-buttons">
-                        <a href="#" class="btn btn-success">
+                        <a href="{{ url('about') }}" class="btn btn-outline-primary">
                             Learn More
                            <span class="fa fa-arrow-right"></span>
                         </a>
@@ -84,31 +93,45 @@
             </div>
             </div>
 
+                <div class="into-row cta">
+                    <div class="container">
+                        <div class="pull-left">
+                            <h2><strong>100% Risk Free Trial</strong> 30 Day Money Back Guarantee</h2>
+                        </div>
+                        <div class="pull-right">
+                            <a href="{{ url('register') }}" class="btn btn-success">Get Started<span class="fa fa-arrow-right"></span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+
         <!--Features Row-->
+
             <div class="features">
+                <div class="container">
                 <div class="row">
                     <div class="text-center">
                         <h3 class="h3">Features</h3>
                         <h1 class="h1">What we offer</h1>
                     </div>
                 </div>
-<div class="container">
                 <div class="row">
 <hr class="invisible">
                     <div class="col-md-4">
-                            <span class="fa fa-cubes"></span>
+                            <span class="fa fa-wordpress fa-x"></span>
                             <p class="text">
-                                Amazing WordPress Performance
+                                Built for Amazing WordPress Performance
                             </p>
                     </div>
                     <div class="col-md-4">
-                        <span class="fa fa-cubes"></span>
+                        <span class="fa fa-users fa-x"></span>
                             <p class="text">
                                 Support that's knowledgeable, friendly and fluent
                             </p>
                     </div>
                     <div class="col-md-4">
-                        <span class="fa fa-cubes"></span>
+                        <span class="fa fa-lock fa-x"></span>
                             <p class="text">
                                 Free SSL Certificates (GoDaddy Charges 60$)
                             </p>
@@ -117,19 +140,19 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4">
-                        <span class="fa fa-cubes"></span>
+                        <span class="fa fa-server fa-x"></span>
                             <p class="text">
                                 Virtual Private Server level performance on Shared Hosting
                             </p>
                     </div>
                     <div class="col-md-4">
-                        <span class="fa fa-cubes"></span>
+                        <span class="fa fa-spinner fa-x"></span>
                             <p class="text">
-                                One Click Installs of popular web apps like Wordpress
+                                Free Web Site Builder and One Click Installs of popular apps like Wordpress
                             </p>
                     </div>
                     <div class="col-md-4">
-                        <span class="fa fa-cubes"></span>
+                        <span class="fa fa-shield fa-x"></span>
                             <p class="text">
                                 Super secure with daily backups and an advanced hacker detection system
                             </p>
@@ -137,7 +160,7 @@
                 </div>
                 <div class="row">
                     <div class="center-block lander-buttons">
-                        <a href="#" class="btn btn-success">
+                        <a href="{{ url('about') }}" class="btn btn-outline-primary">
                            Learn More
                             <span class="fa fa-arrow-right"></span>
                         </a>
