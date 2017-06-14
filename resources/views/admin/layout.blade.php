@@ -10,6 +10,7 @@
       <aside class="sidebar full-height top-layer text-center">
         <nav role="navigation">
 
+            {!! Html::navItem('/admin/tickets', 'Tickets', 'envelope') !!}
           {!! Html::navItem('/admin', 'Settings', 'cog') !!}
           {!! Html::navItem('/admin/users', 'Users', 'users') !!}
           {!! Html::navItem('/admin/plans', 'Plans', 'birthday-cake') !!}

@@ -20,8 +20,11 @@
                 <a href="/home">
                     <p>Dashboard</p>
                 </a>
-                <a href="{{ route('support') }}">
-                    <p>Support</p>
+                <a href="{{ url('login') }}">
+                    <p>Sign In</p>
+                </a>
+                <a href="{{ url('register') }}">
+                    <p>Register</p>
                 </a>
 
             </div>

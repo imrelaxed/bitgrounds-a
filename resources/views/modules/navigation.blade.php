@@ -29,7 +29,6 @@
 
                 <a href="{{ route('pricing') }}"class="nav-item">Pricing</a>
 
-            <a href="{{ route('support') }}" class="nav-item">Support</a>
 
 
 
@@ -77,6 +76,8 @@
                             <li class="divider"></li>
                             <li><a href="{{ route('adminDash') }}">Admin Dashboard</a></li>
                         @endif
+                        <li class="divider"></li>
+                        {!! Html::dropdownItem('ticket/new', 'Support') !!}
 
                         <li class="divider"></li>
 

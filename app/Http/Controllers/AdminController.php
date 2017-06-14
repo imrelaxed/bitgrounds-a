@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 
 use App\ApplicationSetting;
+use App\Ticket;
+use App\TicketCategory;
 use App\User;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Request;
@@ -36,6 +38,16 @@ class AdminController extends Controller {
         $settings = $this->app_settings;
 
         return view('admin.index', compact('title', 'settings', 'user'));
+
+    }
+
+    public function postTicketCategory(Request $request) {
+
+        $category = new TicketCategory([
+           'name' => Request::input('category')
+        ]);
+        $category->save();
+        return redirect()->back()->with('notice', 'Category added.');
 
     }
 

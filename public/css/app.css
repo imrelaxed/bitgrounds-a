@@ -321,6 +321,10 @@
   justify-content: center;
 }
 
+.btn .fa {
+  margin-right: 10px;
+}
+
 .btn-alt {
   display: inline-block;
   text-align: center;

@@ -41,6 +41,15 @@ class User extends Authenticatable
 
         return false;
     }
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 
     public function findByEmail($email)
     {
