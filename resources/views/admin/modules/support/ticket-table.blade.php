@@ -2,11 +2,10 @@
 @if ($tickets->isEmpty())
     <p>There are currently no tickets.</p>
 @else
-    <table class="table table-striped">
 
-        <caption>Total tickets: {{ $tickets->count() }}</caption>
+        <caption>Total tickets: {{ $tickets->count() }}. Closed tickets: {{ $tickets->where('status', '=', 'closed')->count() }}.</caption>
 
-        <table class="table">
+        <table class="table table-striped">
             <thead>
             <tr>
                 <th>Category</th>

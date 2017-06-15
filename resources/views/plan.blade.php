@@ -30,9 +30,9 @@
                                 <form action="{{ route('subscribe') }}" method="POST" id="payment-form">
                                     {{ csrf_field() }}
 
-                                    <h3 class="text-center">
+                                    <h4 class="text-center">
                                         <span class="payment-errors label label-danger"></span>
-                                    </h3>
+                                    </h4>
 
                                         <div class='form-row'>
                                             <div class='col-xs-12 form-group card required'>
@@ -65,7 +65,7 @@
                                         </div>
 
                                     <input type="hidden" name="plan" value="{{ $plan['id'] }}">
-                                    <input type="submit" class="submit btn btn-success btn-lg btn-block" value="Make A {{ $plan['amount'] / 100 }} $ Payment">
+                                    <input type="submit" class="submit btn btn-success btn-lg btn-block" value="Join Bitgrounds">
                                 </form>
                             </div>
                         </div>

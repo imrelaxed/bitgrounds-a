@@ -12,6 +12,7 @@ use App\Events\UserChangedPlansEvent;
 use App\Events\UserChangedCreditCardEvent;
 use App\Events\UserResubscribedEvent;
 use App\Events\UserUnsubscribedEvent;
+use App\GroundsKeeper;
 
 
 class SubscriptionController extends Controller
@@ -41,6 +42,8 @@ class SubscriptionController extends Controller
         if ($newPlan) {
             $user = Auth::user();
             if ($user->subscription('main')->swap($newPlan)) {
+                $plan = new GroundsKeeper();
+                $plan->changePackage($user->username, $newPlan);
 
                 event(new UserChangedPlansEvent($user, $newPlan));
 

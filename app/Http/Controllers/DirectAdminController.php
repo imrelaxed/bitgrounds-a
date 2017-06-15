@@ -26,7 +26,7 @@ class DirectAdminController extends Controller
         $login = strtolower($request->get('username'));
         $password = $request['password'];
         $email = Auth::user()->email;
-        $package = Auth::user()->subscription('main');
+        $package = Auth::user()->subscription('main')->stripe_plan;
 
         if ($groundskeeper = new GroundsKeeper()) {
             try {
@@ -48,4 +48,5 @@ class DirectAdminController extends Controller
             return redirect()->back()->with('notice', 'Error, please try again.');
         }
     }
+
 }

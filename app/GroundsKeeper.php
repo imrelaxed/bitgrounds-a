@@ -30,8 +30,26 @@ public $createdUser;
             return $user;
         }
     }
+
     public function impersonate($username) {
         $user = $this->resellerContext->impersonateUser($username);
     return $user;
+    }
+
+    public function changePackage($user, $package) {
+        $command ='MODIFY_USER';
+        $params = [
+            'action' => 'package',
+            'user' => $user,
+            'package' => $package
+        ];
+
+        try {
+            $this->resellerContext->invokePost($command, $params);
+
+        } catch ( DirectAdminException $e ) {
+            return redirect()->back()->withErrors(['notice' => $e->getMessage()]);
+        }
+
     }
 }

@@ -54,7 +54,7 @@
                 <div class="intro-row">
                 <div class="row">
                     <div class="col-md-4">
-                        <a href="#" class="img-responsive"><img src="img/fast.png" alt="Ultra Fast Web Hosting"></a>
+                        <img src="img/fast.png" alt="Ultra Fast Web Hosting" class="img-responsive">
                         <h2 class="h2">Ultra Fast</h2>
                         <p class="text">
                             Bitgrounds was engineered to be better than other web hosts and we put a lot of time and effort in to making sure that sites hosted with us load ultra fast.
@@ -63,7 +63,7 @@
                         </p>
                     </div>
                     <div class="col-md-4">
-                        <a href="#" class="img-responsive"><img src="img/search-friendly1.png" alt="Search Engine Optimized Web Hosting"></a>
+                        <img src="img/search-friendly1.png" alt="Search Engine Optimized Web Hosting" class="img-responsive">
                         <h2 class="h2">Search Engine Friendly</h2>
                         <p class="text">
                             Over the last several years Google has been giving higher ranking to sites which load faster and are more secure. Bitgrounds hosting
@@ -72,7 +72,7 @@
                         </p>
                     </div>
                     <div class="col-md-4">
-                        <a href="#" class="img-responsive"><img src="img/easy.png" alt="Easy Web Hosting"></a>
+                       <img src="img/easy.png" alt="Easy Web Hosting" class="img-responsive">
                         <h2 class="h2">Easy To Use</h2>
                         <p class="text">
                             Hosting your web site with Bitgrounds easy very easy. We offer a huge knowledgebase of easy to follow information and video tutorials. And if you ever
@@ -182,26 +182,26 @@
 
                 <div class="row logos-row">
                     <div class="col-md-2">
-                        <a href="#"><img src="/img/powered/http2.jpg" alt="http2"></a>
+                        <img src="/img/powered/http2.jpg" alt="http2">
 
                     </div>
                     <div class="col-md-2">
-                        <a href="#"><img src="/img/powered/https.jpg" alt="https"></a>
+                        <img src="/img/powered/https.jpg" alt="https">
 
                     </div>
                     <div class="col-md-2">
-                        <a href="#"><img src="/img/powered/cloudlinux.jpg" alt="CloudLinux"></a>
+                      <img src="/img/powered/cloudlinux.jpg" alt="CloudLinux">
                     </div>
                     <div class="col-md-2">
-                        <a href="#"><img src="/img/powered/softaculous.jpg" alt="Softaculous Auto Installer"></a>
+                        <img src="/img/powered/softaculous.jpg" alt="Softaculous Auto Installer">
                     </div>
 
                     <div class="col-md-2">
-                        <a href="#"><img src="/img/powered/letsencrypt.jpg" alt="Lets Encrypt"></a>
+                       <img src="/img/powered/letsencrypt.jpg" alt="Lets Encrypt">
 
                     </div>
                     <div class="col-md-2">
-                        <a href="#"><img src="/img/powered/directadmin.jpg" alt="DirectAdmin"></a>
+                       <img src="/img/powered/directadmin.jpg" alt="DirectAdmin">
                     </div>
                 </div>
             </div>
