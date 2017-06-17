@@ -2,6 +2,10 @@
 
 namespace App\Console;
 
+use App\GroundsKeeper;
+use Carbon\Carbon;
+use DB;
+use App\User;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -26,6 +30,18 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+
+
+        $schedule->call(function () {
+            if ($end = DB::table('subscriptions')
+                ->whereDate('ends_at','=<',Carbon::today()->toDateString())
+                ->fistOrFail()) {
+                if ($user = User::where('id', $end->user_id)->firstOrFail()) {
+                    $gk = new GroundsKeeper();
+                    $gk->suspendUser($user->username);
+                }
+            }
+        })->daily();
     }
 
     /**

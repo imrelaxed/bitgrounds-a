@@ -8,7 +8,9 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\UserResubscribed;
 use App\Notifications\NotifyAdmin;
-
+use App\GroundsKeeper;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserResubscribedListener
 {
@@ -31,7 +33,14 @@ class UserResubscribedListener
     public function handle(UserResubscribedEvent $event)
     {
         Notification::send($event->user, new UserResubscribed($event));
-
+        $gk = new GroundsKeeper();
+        $params = ['user' => Auth::user()->username];
+        $config = $gk->invokeGet('SHOW_USER_CONFIG', $params);
+        $config = (object)$config;
+        $suspended = $config->suspended;
+        if ($suspended === 'yes') {
+            $gk->unsuspendUser($event->user->username);
+        }
         try {
 
             $user = $event->user;

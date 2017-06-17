@@ -114,16 +114,11 @@ class UserController extends Controller {
 
 
     }
- /*
+
     public function testNotify() {
 
-        $admins = User::where('admin', '=', 1)->get();
-        try {
-            Notification::send($admins, new NotifyAdmin($admins));
+        $e = User::where('admin', '=', 1)->get();
+            Notification::send($e, new NotifyAdmin($e));
 
-        } catch (\Exception $e) {
-            echo $e;
-        }
     }
-    */
 }

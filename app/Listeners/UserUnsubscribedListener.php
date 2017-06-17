@@ -3,11 +3,13 @@
 namespace App\Listeners;
 
 use App\Events\UserUnsubscribedEvent;
+use App\GroundsKeeper;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\UserUnsubscribed;
 use App\Notifications\NotifyAdmin;
+use App\User;
 
 class UserUnsubscribedListener
 {
@@ -41,6 +43,7 @@ class UserUnsubscribedListener
             $admins = User::where('admin', '=', 1)->get();
             Notification::send($admins, new NotifyAdmin($e));
         }
+
 
     }
 }

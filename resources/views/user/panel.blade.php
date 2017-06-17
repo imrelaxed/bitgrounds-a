@@ -20,26 +20,26 @@
                             <tr>
 
                                 <td>DirectAdmin Username:</td>
-                                <td>{{ $da->getusername() }}</td>
+                                <td>{{ $daUserObject->getusername() }}</td>
 
                             </tr>
                         <tr>
 
                             <td>Main Domain:</td>
-                            <td> <a href="http://{{ $da->getDefaultDomain() }}" target="_blank">{{ $da->getDefaultDomain() }}</a> </td>
+                            <td> <a href="http://{{ $daUserObject->getDefaultDomain() }}" target="_blank">{{ $daUserObject->getDefaultDomain() }}</a> </td>
 
                         </tr>
                             <tr>
 
                                 <td>Domains Hosted:</td>
-                                <td> {{ $da->getDomainUsage() }} out of @if($da->getDomainLimit()) {{ $da->getDomainLimit() }} @else Unlimited @endif </td>
+                                <td> {{ $daUserObject->getDomainUsage() }} out of @if($daUserObject->getDomainLimit()) {{ $daUserObject->getDomainLimit() }} @else Unlimited @endif </td>
 
                             </tr>
                         <tr>
 
                             <td>Hosting Plan:</td>
                             <td>
-                                <span class="text-success">{{ $subscription->stripe_plan }}</span>
+                                <span class="text-success">{{ $subscriptionName->name }}</span>
                             </td>
 
 
@@ -48,7 +48,7 @@
 
 
                             <td>Hosting Status:</td>
-                            <td>@if($da->isSuspended()) Suspended @else Active @endif </td>
+                            <td> @if($suspended === 'yes') Suspended @else Active @endif </td>
 
 
                         </tr>

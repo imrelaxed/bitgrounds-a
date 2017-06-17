@@ -30,10 +30,12 @@ class HomeController extends Controller
 
         $plans = Plan::all();
         // Check if subscribed
-        $is_subscribed = Auth::user()->subscribed('main');
+        if($is_subscribed = Auth::user()->subscribed('main')) {
 
-        // If subscribed get the subscription
-        $subscription = Auth::user()->subscription('main');
+            // If subscribed get the subscription
+            $subscription = Auth::user()->subscription('main');
+            $subscriptionName = Plan::where('plan_id', $subscription->stripe_plan)->firstOrFail();
+        }
 
         //Check if hosting is setup
         $is_setup = Auth::user()->hosting_set;
@@ -46,10 +48,14 @@ class HomeController extends Controller
         }
         if ($is_subscribed && $is_setup) {
             $gk = new GroundsKeeper();
-            $da = $gk->impersonate(Auth::user()->username);
-            $da = $da->getContextUser();
+            $daUserContext = $gk->impersonateUser(Auth::user()->username);
+            $daUserObject = $daUserContext->getContextUser();
+            $params = ['user' => Auth::user()->username];
+            $config = $gk->invokeGet('SHOW_USER_CONFIG', $params);
+            $config = (object)$config;
+            $suspended = $config->suspended;
             $title = 'Dashboard';
-            return view('user.panel', compact('title', 'da', 'is_subscribed', 'subscription'));
+            return view('user.panel', compact('title', 'daUserObject', 'is_subscribed', 'subscription', 'subscriptionName', 'suspended'));
         }
     }
 }

@@ -18,9 +18,9 @@ class NotifyAdmin extends Notification
      *
      * @return void
      */
-    public function __construct($event)
+    public function __construct($e)
     {
-        $this->data = $event;
+        $this->data = $e;
     }
 
 

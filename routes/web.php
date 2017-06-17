@@ -133,7 +133,7 @@ Route::post('stripe/webhook', 'WebhookController@handleWebhook');
 Route::get('test/env', function(){
     return view('emails.welcome')->with('app_settings', App\ApplicationSetting::find(1));
 });
-Route::get('test/directadmin', 'DirectAdminController@makeUser');
+Route::get('test/notify', 'UserController@testNotify');
 Route::get('/clear', function() {
     $exitCode = Artisan::call('cache:clear');
     return $exitCode;

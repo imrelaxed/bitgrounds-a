@@ -4,6 +4,9 @@ namespace App;
 
 use Omines\DirectAdmin\DirectAdmin;
 use Omines\DirectAdmin\DirectAdminException;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\NotifyAdmin;
+use App\User;
 
 class GroundsKeeper {
 
@@ -52,4 +55,35 @@ public $createdUser;
         }
 
     }
+    public function suspendUser($user) {
+        try {
+        $this->resellerContext->suspendAccount($user);
+            } catch ( DirectAdminException $e ) {
+            $admins = User::where('admin', '=', 1)->get();
+            Notification::send($admins, new NotifyAdmin($e));
+        }
+    }
+     public function unsuspendUser($user) {
+        try {
+        $this->resellerContext->unsuspendAccount($user);
+          } catch ( DirectAdminException $e ) {
+            $admins = User::where('admin', '=', 1)->get();
+            Notification::send($admins, new NotifyAdmin($e));
+    }
+    }
+     public function impersonateUser($user) {
+        $user = $this->resellerContext->impersonateUser($user, true);
+        return $user;
+    }
+
+    public function invokePost($command, $params) {
+        $api = $this->resellerContext->invokePost($command, $params);
+        return $api;
+    }
+
+    public function invokeGet($command, $params) {
+        $api = $this->resellerContext->invokeGet($command, $params);
+        return $api;
+    }
+
 }

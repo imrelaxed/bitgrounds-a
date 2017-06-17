@@ -8,6 +8,7 @@ use Omines\DirectAdmin\DirectAdminException;
 use GuzzleHttp;
 use App\GroundsKeeper;
 use Illuminate\Http\Request;
+use App\Plan;
 
 class DirectAdminController extends Controller
 {
@@ -15,6 +16,7 @@ class DirectAdminController extends Controller
     {
         $messages = [
             'regex' => 'The :attribute must be at least 6 characaters long, contain a number, an upper case letter and a lower case letter.',
+            'unique' => 'Username already taken, please try another.',
         ];
         $this->validate($request, [
             'username' => 'required|alpha_num|max:10|unique:gatekeeper.user,User',
@@ -38,12 +40,17 @@ class DirectAdminController extends Controller
             $user->hosting_set = 1;
             $user->username = $login;
             $user->save();
-            $da = $createdUser;
+            $daUserObject = $createdUser;
             $subscription = Auth::user()->subscription('main');
+            $subscriptionName = Plan::where('plan_id', $subscription->stripe_plan)->firstOrFail();
             $is_subscribed = Auth::user()->subscribed('main');
+            $params = ['user' => Auth::user()->username];
+            $config = $groundskeeper->invokeGet('SHOW_USER_CONFIG', $params);
+            $config = (object)$config;
+            $suspended = $config->suspended;
 
 
-            return view('user.panel', compact('da','subscription', 'is_subscribed'));
+            return view('user.panel', compact('daUserObject','subscription', 'is_subscribed','subscriptionName','suspended'));
         } else {
             return redirect()->back()->with('notice', 'Error, please try again.');
         }

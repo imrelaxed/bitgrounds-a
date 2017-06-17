@@ -17,7 +17,7 @@
             </div>
 
                 <div class="col-md-9">
-                <h4 class="card-title">North American Service Team</h4>
+                <h4 class="card-title">North American Support Team</h4>
                 <p class="card-text">We have some of the most knowledgeable people in the business available to help you with your hosting issues.
                     Currently every person on our team is located in US or Canada and every customer support representative is fluent in English.
                     The hosting datacenter maintains a human presence 24 hours a day and 365 days a year, to guarantee that it's constantly maintained.
