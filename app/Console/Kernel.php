@@ -31,17 +31,6 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
 
-
-        $schedule->call(function () {
-            if ($end = DB::table('subscriptions')
-                ->whereDate('ends_at','=<',Carbon::today()->toDateString())
-                ->fistOrFail()) {
-                if ($user = User::where('id', $end->user_id)->firstOrFail()) {
-                    $gk = new GroundsKeeper();
-                    $gk->suspendUser($user->username);
-                }
-            }
-        })->dailyAt('01:00');
     }
 
     /**

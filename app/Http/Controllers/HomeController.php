@@ -67,7 +67,7 @@ class HomeController extends Controller
             if ($suspended === 'yes') {
                 $gk->unsuspendUser(Auth::user()->username);
             }
-            
+
             $title = 'Dashboard';
             return view('user.panel', compact('title', 'daUserObject', 'is_subscribed', 'subscription', 'subscriptionName', 'suspended'));
         }
