@@ -37,6 +37,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\UserChangedCreditCardEvent' => [
             'App\Listeners\UserChangedCreditCardListener',
         ],
+        'App\Events\SubscriptionDeletedEvent' => [
+            'App\Listeners\SubscriptionDeletedListener',
+        ],
     ];
 
     /**

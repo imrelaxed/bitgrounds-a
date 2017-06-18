@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Notifications\NotifyAdmin;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+use App\Events\SubscriptionDeletedEvent;
+use App\Events\UserResubscribedEvent;
 
 
 class UserController extends Controller {
@@ -120,5 +124,12 @@ class UserController extends Controller {
         $e = User::where('admin', '=', 1)->get();
             Notification::send($e, new NotifyAdmin($e));
 
+    }
+    public function testSuspend() {
+        event(new SubscriptionDeletedEvent(Auth::user()));
+    }
+
+    public function testUnsuspend() {
+        event(new UserResubscribedEvent(Auth::user()));
     }
 }

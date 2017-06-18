@@ -46,9 +46,10 @@ class PaymentFailed extends Notification
             ->subject(config('app.name') . ' Subscription Payment Failed')
             ->greeting('Hello'. ucfirst($this->data->name))
             ->error()
-                    ->line('Your payment to '.config('app.name').' has failed. This is probably because you got a new credit card. Please updated your credit card as soon as possible.')
+                    ->line('Your subscription payment to '.config('app.name').' Web Hosting has failed. This is likely because you need to update the credit card attached to your account. 
+                    Please update it as soon as possible by logging into your Bitgrounds account and going to Billing Settings or by using the button below.')
                     ->action('Update Credit Card', route('billing'))
-                    ->line('We will attempt to charge your card again soon. If the charge fails 3 times in a row your account will be suspended!');
+                    ->line('We will attempt to charge your card again soon. If the charge fails 3 times in a row your web hosting will be suspended!');
     }
 
     /**

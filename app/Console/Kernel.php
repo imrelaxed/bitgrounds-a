@@ -41,7 +41,7 @@ class Kernel extends ConsoleKernel
                     $gk->suspendUser($user->username);
                 }
             }
-        })->daily();
+        })->dailyAt('01:00');
     }
 
     /**

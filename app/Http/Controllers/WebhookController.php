@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\UserUnsubscribedEvent;
+use App\Events\SubscriptionDeletedEvent;
+use App\Listeners\SubscriptionDeletedListener;
 use App\Notifications\NotifyAdmin;
 use App\Notifications\PaymentFailed;
 use Exception;
@@ -54,7 +55,7 @@ class WebhookController extends Controller
             })->each(function ($subscription) {
                 $subscription->markAsCancelled();
             });
-            event(new UserUnsubscribedEvent($user));
+            event(new SubscriptionDeletedEvent($user));
         }
 
         return new Response('Webhook Handled', 200);
@@ -115,8 +116,8 @@ class WebhookController extends Controller
         if($user) {
         Notification::send($user, new PaymentFailed($user));
         $admins = User::where('admin', '=', 1)->get();
-        $event = $payload;
-        Notification::send($admins, new NotifyAdmin($event));
+        $e = $payload;
+        Notification::send($admins, new NotifyAdmin($e));
         }
     }
 

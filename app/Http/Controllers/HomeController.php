@@ -27,7 +27,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $plans = Plan::all();
         // Check if subscribed
         if($is_subscribed = Auth::user()->subscribed('main')) {
@@ -39,6 +38,17 @@ class HomeController extends Controller
 
         //Check if hosting is setup
         $is_setup = Auth::user()->hosting_set;
+
+        if ($is_setup && !$is_subscribed){
+            $gg = new GroundsKeeper();
+            $params = ['user' => Auth::user()->username];
+            $config = $gg->invokeGet('SHOW_USER_CONFIG', $params);
+            $config = (object)$config;
+            $suspended = $config->suspended;
+            if ($suspended === 'no') {
+                $gg->suspendUser(Auth::user()->username);
+            }
+        }
 
         if (!$is_subscribed){
             return view('user.subscribe', compact('plans'));
@@ -54,6 +64,10 @@ class HomeController extends Controller
             $config = $gk->invokeGet('SHOW_USER_CONFIG', $params);
             $config = (object)$config;
             $suspended = $config->suspended;
+            if ($suspended === 'yes') {
+                $gk->unsuspendUser(Auth::user()->username);
+            }
+            
             $title = 'Dashboard';
             return view('user.panel', compact('title', 'daUserObject', 'is_subscribed', 'subscription', 'subscriptionName', 'suspended'));
         }

@@ -7,12 +7,11 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class UserUnsubscribed extends Notification
+class AccountSuspended extends Notification
 {
     use Queueable;
 
     protected $data;
-    protected $subscription;
     /**
      * Create a new notification instance.
      *
@@ -21,7 +20,6 @@ class UserUnsubscribed extends Notification
     public function __construct($event)
     {
         $this->data = $event;
-        $this->subscription = $this->data->user->subscription('main');
 
     }
 
@@ -45,15 +43,12 @@ class UserUnsubscribed extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject(config('app.name').' Subscription Cancelled')
+            ->subject(config('app.name').' Web Hosting Account Suspended')
             ->greeting('Hello '.ucfirst($this->data->user->name).'')
             ->error()
-                    ->line('Your '. config('app.name') .' subscription has been cancelled.')
-                    ->line('Service will remain active until '.$this->subscription->ends_at->toFormattedDateString() .'. At 
-                    the end of this grace period your web hosting will be suspended.')
-                    ->line('If you would like to resume your Bitgrounds Web Hosting membership you can login to your dashboard or click the button below.')
-                    ->action('Resume Membership', route('subscriptionResume'))
-                    ->line('Thank you for using '.config('app.name').'!');
+            ->line('Your '. config('app.name') .' web hosting account has been suspended due to non payment. If you would like to reactivate you can login to your dashboard and add a valid payment method to your account.')
+            ->action('Reactivate Web Hosting', route('login'))
+            ->line('Thank you for using '.config('app.name').'! We hope to have the honor of hosting you again in the future.');
     }
 
     /**
